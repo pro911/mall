@@ -1,0 +1,130 @@
+{"level":"DEBUG","time":"2023-04-19T17:09:03.110+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T17:16:22.062+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T17:17:00.278+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T17:49:14.872+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T17:56:41.001+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T17:56:41.001+0800","caller":"middlewares/logger.go:26","msg":"/online","status":200,"method":"GET","path":"/online","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"758.9µs"}
+{"level":"INFO","time":"2023-04-19T18:05:43.190+0800","caller":"mall/main.go:80","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T18:05:43.190+0800","caller":"mall/main.go:88","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T18:19:46.371+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T18:25:35.721+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T18:26:39.433+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T18:27:31.572+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T18:27:55.610+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T18:28:47.737+0800","caller":"mall/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T18:28:47.737+0800","caller":"mall/main.go:94","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T18:28:52.353+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T18:30:08.900+0800","caller":"mall/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T18:30:08.900+0800","caller":"mall/main.go:94","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T18:30:13.485+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T18:30:50.618+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T18:31:26.522+0800","caller":"mall/main.go:39","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-19T19:05:46.962+0800","caller":"mall/main.go:40","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T19:06:23.409+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T19:06:23.409+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T19:06:32.613+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T19:06:32.613+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T19:07:15.507+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T19:07:15.507+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T19:09:33.169+0800","caller":"mall/main.go:87","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T19:09:33.169+0800","caller":"mall/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T19:09:37.743+0800","caller":"mall/main.go:40","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T19:09:39.866+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T19:09:39.866+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.9µs"}
+{"level":"INFO","time":"2023-04-19T19:37:17.928+0800","caller":"mall/main.go:87","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T19:37:17.928+0800","caller":"mall/main.go:95","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T20:10:43.914+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T20:11:02.125+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:11:02.125+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"604.9µs"}
+{"level":"INFO","time":"2023-04-19T20:11:13.371+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:11:13.371+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"365.2µs"}
+{"level":"INFO","time":"2023-04-19T20:11:16.213+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:11:16.213+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:11:16.999+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:11:16.999+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:11:17.473+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:11:17.473+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:11:17.784+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:11:17.784+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:11:18.662+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:11:18.662+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"252.9µs"}
+{"level":"INFO","time":"2023-04-19T20:11:19.407+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:11:19.407+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:36:26.186+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T20:36:26.187+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T20:41:00.981+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T20:41:09.430+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:09.430+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.8µs"}
+{"level":"INFO","time":"2023-04-19T20:41:10.800+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:10.800+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:41:11.553+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:11.553+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:41:11.953+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:11.953+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"480.5µs"}
+{"level":"INFO","time":"2023-04-19T20:41:14.601+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:14.601+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:41:15.004+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:15.004+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:41:15.428+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:15.428+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:41:15.829+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:15.829+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.4µs"}
+{"level":"INFO","time":"2023-04-19T20:41:16.238+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:16.238+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-19T20:41:16.549+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T20:41:16.549+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"331.3µs"}
+{"level":"INFO","time":"2023-04-19T21:17:20.797+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T21:17:20.797+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T21:33:05.865+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T21:33:45.176+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T21:33:45.177+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T21:33:50.283+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T21:35:12.171+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T21:35:12.171+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T21:35:22.403+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T21:46:36.052+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T21:46:36.052+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T21:46:41.196+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T22:20:44.447+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T22:20:44.447+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T22:20:49.508+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T22:20:52.076+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:20:52.076+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.6303ms"}
+{"level":"INFO","time":"2023-04-19T22:21:27.807+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:21:27.807+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.0855ms"}
+{"level":"INFO","time":"2023-04-19T22:21:33.865+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:21:33.865+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.0942ms"}
+{"level":"INFO","time":"2023-04-19T22:21:37.219+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:21:37.219+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.0842ms"}
+{"level":"INFO","time":"2023-04-19T22:32:43.349+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T22:32:43.349+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T22:32:48.250+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-04-19T22:32:50.325+0800","caller":"middlewares/logger.go:71","msg":"[Recovery from panic]","error":"runtime error: invalid memory address or nil pointer dereference","request":"POST /api/login HTTP/1.1\r\nHost: 127.0.0.1:8081\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nCache-Control: no-cache\r\nConnection: keep-alive\r\nContent-Length: 62\r\nContent-Type: application/json\r\nUser-Agent: PostmanRuntime-ApipostRuntime/1.1.0\r\n\r\n","stack":"goroutine 25 [running]:\nruntime/debug.Stack()\n\tD:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65\nmall/middlewares.GinRecovery.func1.1()\n\tD:/wwwroot/private/mall/middlewares/logger.go:74 +0x2da\npanic({0xb68960, 0xab8080})\n\tD:/Program Files/Go/src/runtime/panic.go:884 +0x213\nmall/internal/app/http/hendler.Login(0xc00014c200)\n\tD:/wwwroot/private/mall/internal/app/http/hendler/user.go:43 +0x3fc\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/context.go:174\nmall/middlewares.GinRecovery.func1(0xc00014c200)\n\tD:/wwwroot/private/mall/middlewares/logger.go:87 +0x76\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/context.go:174\nmall/middlewares.GinLogger.func1(0xc00014c200)\n\tD:/wwwroot/private/mall/middlewares/logger.go:21 +0x9d\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/context.go:174\nmall/middlewares.Cors.func1(0xc00014c200)\n\tD:/wwwroot/private/mall/middlewares/cors.go:46 +0x18b\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/context.go:174\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000604680, 0xc00014c200)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go:620 +0x66b\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000604680, {0xd38e30?, 0xc000090000}, 0xc00014c100)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go:576 +0x1dd\nnet/http.serverHandler.ServeHTTP({0xd37528?}, {0xd38e30, 0xc000090000}, 0xc00014c100)\n\tD:/Program Files/Go/src/net/http/server.go:2936 +0x316\nnet/http.(*conn).serve(0xc00033c000, {0xd39818, 0xc0006725d0})\n\tD:/Program Files/Go/src/net/http/server.go:1995 +0x612\ncreated by net/http.(*Server).Serve\n\tD:/Program Files/Go/src/net/http/server.go:3089 +0x5ed\n"}
+{"level":"INFO","time":"2023-04-19T22:32:50.327+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:32:50.327+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":500,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.7071ms"}
+{"level":"INFO","time":"2023-04-19T22:33:18.735+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T22:33:18.735+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T22:33:23.780+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T22:33:27.446+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:33:27.446+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506µs"}
+{"level":"INFO","time":"2023-04-19T22:33:28.858+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:33:28.858+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.3µs"}
+{"level":"INFO","time":"2023-04-19T22:34:08.729+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T22:34:08.729+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T22:34:13.489+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"ERROR","time":"2023-04-19T22:34:16.458+0800","caller":"middlewares/logger.go:71","msg":"[Recovery from panic]","error":"runtime error: invalid memory address or nil pointer dereference","request":"POST /api/login HTTP/1.1\r\nHost: 127.0.0.1:8081\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nCache-Control: no-cache\r\nConnection: keep-alive\r\nContent-Length: 62\r\nContent-Type: application/json\r\nUser-Agent: PostmanRuntime-ApipostRuntime/1.1.0\r\n\r\n","stack":"goroutine 39 [running]:\nruntime/debug.Stack()\n\tD:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65\nmall/middlewares.GinRecovery.func1.1()\n\tD:/wwwroot/private/mall/middlewares/logger.go:74 +0x2da\npanic({0x1118960, 0x1068080})\n\tD:/Program Files/Go/src/runtime/panic.go:884 +0x213\nmall/internal/app/http/hendler.Login(0xc0006aa600)\n\tD:/wwwroot/private/mall/internal/app/http/hendler/user.go:43 +0x3fc\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/context.go:174\nmall/middlewares.GinRecovery.func1(0xc0006aa600)\n\tD:/wwwroot/private/mall/middlewares/logger.go:87 +0x76\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/context.go:174\nmall/middlewares.GinLogger.func1(0xc0006aa600)\n\tD:/wwwroot/private/mall/middlewares/logger.go:21 +0x9d\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/context.go:174\nmall/middlewares.Cors.func1(0xc0006aa600)\n\tD:/wwwroot/private/mall/middlewares/cors.go:46 +0x18b\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/context.go:174\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000482ea0, 0xc0006aa600)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go:620 +0x66b\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000482ea0, {0x12e8e30?, 0xc0000f61c0}, 0xc0006aa500)\n\tD:/Program Files/Go/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go:576 +0x1dd\nnet/http.serverHandler.ServeHTTP({0x12e7528?}, {0x12e8e30, 0xc0000f61c0}, 0xc0006aa500)\n\tD:/Program Files/Go/src/net/http/server.go:2936 +0x316\nnet/http.(*conn).serve(0xc0004ac000, {0x12e9818, 0xc00008b140})\n\tD:/Program Files/Go/src/net/http/server.go:1995 +0x612\ncreated by net/http.(*Server).Serve\n\tD:/Program Files/Go/src/net/http/server.go:3089 +0x5ed\n"}
+{"level":"INFO","time":"2023-04-19T22:34:16.459+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:34:16.459+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":500,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.5872ms"}
+{"level":"INFO","time":"2023-04-19T22:36:21.906+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T22:36:21.906+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-19T22:36:27.186+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-19T22:36:27.431+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:36:27.431+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.031ms"}
+{"level":"INFO","time":"2023-04-19T22:36:30.118+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:36:30.118+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.8µs"}
+{"level":"INFO","time":"2023-04-19T22:36:35.038+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:36:35.038+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"508.7µs"}
+{"level":"INFO","time":"2023-04-19T22:36:38.054+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-19T22:36:38.054+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"510.2µs"}
+{"level":"INFO","time":"2023-04-19T22:37:01.725+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-19T22:37:01.725+0800","caller":"mall/main.go:103","msg":"Server exiting"}
