@@ -10,6 +10,7 @@ type Order struct {
 	DiscountPrice int       `json:"discount_price"` //优惠减免的钱 /分
 	CouponID      int       `json:"coupon_id"`      //优惠券id
 	Status        int8      `json:"status"`         //0待支付 1已支付 -1删除
+	PayType       string    `json:"pay_type"`       //支付类型
 	CreatedAt     time.Time `json:"created_at"`
 	UpdatedAt     time.Time `json:"updated_at"`
 }

@@ -5,8 +5,10 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
+	"mall/initializ"
 	"mall/internal/app/http/rap"
 	"mall/internal/app/logic/order"
+	"mall/internal/app/model"
 	"mall/internal/pkg/errno"
 	"mall/internal/pkg/response"
 	"mall/internal/pkg/tools"
@@ -41,6 +43,13 @@ func Pay(ctx *gin.Context) {
 	if !tools.RandomBool(0.3) {
 		response.ErrorWithMsg(ctx, errno.ErrPayFail, "")
 	}
+
+	//支付成功修改订单数据
+	initializ.SQLiteDB().Model(model.Order{}).Where("order_id", order.OrderID).Updates(model.Order{
+		PayType: p.PayType,
+		Status:  1,
+	})
+
 	response.Success(ctx)
 	return
 }
