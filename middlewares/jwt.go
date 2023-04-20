@@ -4,6 +4,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
+	"go.uber.org/zap"
 	"mall/internal/pkg/errno"
 	"mall/internal/pkg/response"
 	"time"
@@ -11,25 +12,26 @@ import (
 
 func JWT() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		var code int
-		code = errno.Success
 		token := c.GetHeader("token")
 		if token == "" {
-			code = errno.ErrParam
+			response.ErrorWithMsg(c, errno.ErrMustLogin, "")
+			c.Abort()
+			return
 		} else {
 			claims, err := ParseToken(token)
 			if err != nil {
-				code = errno.ErrAuthFailed
+				response.ErrorWithMsg(c, errno.ErrAuthFailed, err.Error())
+				c.Abort()
+				return
 			} else if time.Now().Unix() > claims.ExpiresAt {
-				code = errno.ErrInvalidToken
+				response.ErrorWithMsg(c, errno.ErrInvalidToken, "")
+				c.Abort()
+				return
 			}
+			c.Set("user_id", claims.UserID)
+			zap.L().Info("解析token", zap.Int("user_id", claims.UserID))
 		}
 
-		if code != errno.Success {
-			response.ErrorWithMsg(c, code, "")
-			c.Abort()
-			return
-		}
 		c.Next()
 	}
 }
@@ -37,16 +39,18 @@ func JWT() gin.HandlerFunc {
 var jwtSecret = []byte(viper.GetString("app.jwt_secret"))
 
 type Claims struct {
+	UserID   int    `json:"user_id"`
 	Username string `json:"username"`
 	Password string `json:"password"`
 	jwt.StandardClaims
 }
 
-func GenerateToken(Username, Password string) (string, error) {
+func GenerateToken(UserID int, Username, Password string) (string, error) {
 	nowTime := time.Now()
 	expireTime := nowTime.Add(3 * time.Hour)
 
 	claims := Claims{
+		UserID:   UserID,
 		Username: Username,
 		Password: Password,
 		StandardClaims: jwt.StandardClaims{

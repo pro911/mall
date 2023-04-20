@@ -21,7 +21,6 @@ func GinLogger() gin.HandlerFunc {
 		c.Next()
 
 		cost := time.Since(start) // 本次请求的总共消耗时间
-		zap.L().Info("xxxxxxxxxxxxxxxxxx")
 		// 写入日志
 		zap.L().Info(path,
 			zap.Int("status", c.Writer.Status()),

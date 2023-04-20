@@ -128,3 +128,467 @@
 {"level":"INFO","time":"2023-04-19T22:36:38.054+0800","caller":"middlewares/logger.go:26","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"510.2µs"}
 {"level":"INFO","time":"2023-04-19T22:37:01.725+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2023-04-19T22:37:01.725+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T10:17:59.143+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-20T10:18:52.483+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"DEBUG","time":"2023-04-20T10:19:18.072+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"FATAL","time":"2023-04-20T10:19:18.105+0800","caller":"mall/main.go:83","msg":"listen","error":"listen tcp :8081: bind: An attempt was made to access a socket in a way forbidden by its access permissions."}
+{"level":"DEBUG","time":"2023-04-20T10:20:25.511+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"FATAL","time":"2023-04-20T10:20:25.542+0800","caller":"mall/main.go:83","msg":"listen","error":"listen tcp :8081: bind: An attempt was made to access a socket in a way forbidden by its access permissions."}
+{"level":"DEBUG","time":"2023-04-20T10:21:02.402+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"FATAL","time":"2023-04-20T10:21:02.441+0800","caller":"mall/main.go:83","msg":"listen","error":"listen tcp :8081: bind: An attempt was made to access a socket in a way forbidden by its access permissions."}
+{"level":"DEBUG","time":"2023-04-20T10:22:41.814+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"FATAL","time":"2023-04-20T10:22:41.868+0800","caller":"mall/main.go:83","msg":"listen","error":"listen tcp :8081: bind: An attempt was made to access a socket in a way forbidden by its access permissions."}
+{"level":"DEBUG","time":"2023-04-20T10:22:53.054+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"FATAL","time":"2023-04-20T10:22:53.109+0800","caller":"mall/main.go:83","msg":"listen","error":"listen tcp :8081: bind: An attempt was made to access a socket in a way forbidden by its access permissions."}
+{"level":"DEBUG","time":"2023-04-20T10:23:40.014+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T10:33:48.727+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T10:33:48.728+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T10:33:58.760+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T11:26:33.388+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T11:26:33.389+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T11:26:38.905+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T11:26:55.763+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:26:55.763+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%7B%7Bkeyword%7D%7D","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0461ms"}
+{"level":"INFO","time":"2023-04-20T11:27:28.694+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T11:27:28.694+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T11:27:34.029+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T11:27:36.072+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:27:36.072+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%7B%7Bkeyword%7D%7D","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0293ms"}
+{"level":"INFO","time":"2023-04-20T11:27:38.045+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:27:38.045+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%7B%7Bkeyword%7D%7D","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.1µs"}
+{"level":"INFO","time":"2023-04-20T11:29:54.418+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:29:54.418+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%7B%7Bkeyword%7D%7D","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.1µs"}
+{"level":"INFO","time":"2023-04-20T11:29:55.218+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:29:55.218+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%7B%7Bkeyword%7D%7D","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"508.4µs"}
+{"level":"INFO","time":"2023-04-20T11:29:55.796+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:29:55.796+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%7B%7Bkeyword%7D%7D","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.5µs"}
+{"level":"INFO","time":"2023-04-20T11:29:59.565+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:29:59.565+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.5084ms"}
+{"level":"INFO","time":"2023-04-20T11:30:00.812+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:30:00.812+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"504.1µs"}
+{"level":"INFO","time":"2023-04-20T11:32:20.876+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:32:20.876+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.4µs"}
+{"level":"INFO","time":"2023-04-20T11:32:47.676+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:32:47.676+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"429.5µs"}
+{"level":"INFO","time":"2023-04-20T11:32:49.511+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:32:49.511+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.1µs"}
+{"level":"INFO","time":"2023-04-20T11:43:45.439+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T11:43:45.439+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T11:43:51.267+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T11:43:53.994+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:43:53.994+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.1µs"}
+{"level":"INFO","time":"2023-04-20T11:47:07.999+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T11:47:08.000+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T11:47:34.523+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T11:47:42.928+0800","caller":"middlewares/logger.go:24","msg":"xxxxxxxxxxxxxxxxxx"}
+{"level":"INFO","time":"2023-04-20T11:47:42.928+0800","caller":"middlewares/logger.go:26","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"533.6µs"}
+{"level":"INFO","time":"2023-04-20T11:48:06.563+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T11:48:06.563+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T11:48:12.733+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T11:48:15.490+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.5384ms"}
+{"level":"INFO","time":"2023-04-20T11:48:39.633+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T11:48:39.634+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T11:48:47.153+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T11:48:49.750+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.094ms"}
+{"level":"INFO","time":"2023-04-20T11:59:48.767+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T11:59:48.768+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T12:00:14.486+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T12:00:18.776+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.4µs"}
+{"level":"INFO","time":"2023-04-20T12:00:35.528+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"508.1µs"}
+{"level":"INFO","time":"2023-04-20T12:01:03.204+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T12:01:03.205+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T12:01:10.608+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T13:23:37.164+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.1256ms"}
+{"level":"INFO","time":"2023-04-20T13:23:37.969+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"512.6µs"}
+{"level":"INFO","time":"2023-04-20T13:23:38.478+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"567.1µs"}
+{"level":"INFO","time":"2023-04-20T13:24:18.423+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"574.9µs"}
+{"level":"INFO","time":"2023-04-20T14:14:37.070+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:14:37.071+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:15:01.146+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:19:40.883+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0259ms"}
+{"level":"INFO","time":"2023-04-20T14:19:41.646+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.7µs"}
+{"level":"INFO","time":"2023-04-20T14:19:42.126+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.9µs"}
+{"level":"INFO","time":"2023-04-20T14:19:42.522+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.5µs"}
+{"level":"INFO","time":"2023-04-20T14:19:42.903+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T14:19:43.255+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"425.7µs"}
+{"level":"INFO","time":"2023-04-20T14:19:43.630+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"597.8µs"}
+{"level":"INFO","time":"2023-04-20T14:21:21.085+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506µs"}
+{"level":"INFO","time":"2023-04-20T14:22:15.572+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:22:15.573+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:22:20.921+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:22:22.937+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.4µs"}
+{"level":"INFO","time":"2023-04-20T14:24:15.418+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:24:15.419+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:24:20.722+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:24:26.666+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0423ms"}
+{"level":"INFO","time":"2023-04-20T14:27:26.335+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:27:26.335+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:27:32.077+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:28:49.141+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"527.2µs"}
+{"level":"INFO","time":"2023-04-20T14:29:20.582+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:29:20.582+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:29:25.948+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:29:27.805+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.7µs"}
+{"level":"INFO","time":"2023-04-20T14:29:29.082+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T14:29:29.667+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T14:29:29.979+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T14:29:30.338+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T14:33:57.318+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:33:57.319+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:34:02.721+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:34:06.195+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T14:34:15.206+0800","caller":"middlewares/logger.go:25","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.6µs"}
+{"level":"INFO","time":"2023-04-20T14:34:20.239+0800","caller":"middlewares/logger.go:25","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"511µs"}
+{"level":"INFO","time":"2023-04-20T14:34:25.483+0800","caller":"middlewares/logger.go:25","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.1081ms"}
+{"level":"INFO","time":"2023-04-20T14:34:40.663+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T14:35:12.187+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/list","status":200,"method":"GET","path":"/api/goods/list","query":"keyword=%E4%BB%81","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0617ms"}
+{"level":"INFO","time":"2023-04-20T14:45:37.811+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:45:37.812+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:45:43.632+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:46:32.890+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0343ms"}
+{"level":"INFO","time":"2023-04-20T14:46:38.847+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=4","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.5µs"}
+{"level":"INFO","time":"2023-04-20T14:48:08.567+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:48:08.567+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:48:13.885+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:48:16.660+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=4","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0114ms"}
+{"level":"INFO","time":"2023-04-20T14:49:51.367+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:49:51.367+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:49:57.160+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:49:59.598+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=4","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"898.1µs"}
+{"level":"INFO","time":"2023-04-20T14:51:43.982+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=4","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"876.1µs"}
+{"level":"INFO","time":"2023-04-20T14:51:46.135+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:51:46.136+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:51:55.194+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:51:55.682+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=4","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.5011ms"}
+{"level":"INFO","time":"2023-04-20T14:52:47.187+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:52:47.188+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:52:52.719+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:52:54.258+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=4","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"349.4µs"}
+{"level":"INFO","time":"2023-04-20T14:54:23.005+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:54:23.006+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:54:28.447+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:54:31.085+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=4","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"333.1µs"}
+{"level":"INFO","time":"2023-04-20T14:54:45.252+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:54:45.252+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:54:50.630+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:54:50.865+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=4","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"303.2µs"}
+{"level":"INFO","time":"2023-04-20T14:55:04.228+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T14:55:48.254+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:55:48.254+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:55:53.817+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:55:55.321+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"607.5µs"}
+{"level":"INFO","time":"2023-04-20T14:56:47.880+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:56:47.881+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:56:53.367+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:56:53.836+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"544.6µs"}
+{"level":"INFO","time":"2023-04-20T14:57:06.170+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"511.8µs"}
+{"level":"INFO","time":"2023-04-20T14:57:23.291+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:57:23.291+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:57:29.126+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:57:31.543+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.7µs"}
+{"level":"INFO","time":"2023-04-20T14:58:09.187+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:58:09.188+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:58:14.761+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:58:19.463+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"998.3µs"}
+{"level":"INFO","time":"2023-04-20T14:58:49.979+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T14:58:49.979+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T14:58:59.885+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T14:59:01.986+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0463ms"}
+{"level":"INFO","time":"2023-04-20T15:06:42.534+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:06:42.534+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:06:47.956+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:06:50.373+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0483ms"}
+{"level":"INFO","time":"2023-04-20T15:06:54.766+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"508.7µs"}
+{"level":"INFO","time":"2023-04-20T15:06:55.970+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505.7µs"}
+{"level":"INFO","time":"2023-04-20T15:07:13.230+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:07:13.230+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:07:19.068+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:07:21.247+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0409ms"}
+{"level":"INFO","time":"2023-04-20T15:07:48.147+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:07:48.148+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:07:53.483+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:07:55.957+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"513.2µs"}
+{"level":"INFO","time":"2023-04-20T15:08:04.706+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:08:04.706+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:08:10.290+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:33:54.417+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0509ms"}
+{"level":"INFO","time":"2023-04-20T15:34:43.774+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:34:43.775+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:34:50.067+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:35:01.568+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"527.9µs"}
+{"level":"INFO","time":"2023-04-20T15:35:02.504+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.9µs"}
+{"level":"INFO","time":"2023-04-20T15:35:57.065+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:35:57.066+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:36:03.109+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:36:05.304+0800","caller":"hendler/goods.go:28","msg":"xxxx","error":"record not found"}
+{"level":"INFO","time":"2023-04-20T15:36:05.305+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"546.8µs"}
+{"level":"INFO","time":"2023-04-20T15:37:58.701+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:37:58.701+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:38:04.248+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:38:06.262+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0821ms"}
+{"level":"INFO","time":"2023-04-20T15:39:34.656+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:39:34.656+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:39:40.318+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:39:43.499+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=3","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.1214ms"}
+{"level":"INFO","time":"2023-04-20T15:40:07.493+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/info","status":200,"method":"GET","path":"/api/goods/info","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"511.4µs"}
+{"level":"INFO","time":"2023-04-20T15:53:38.700+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:53:38.700+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:53:44.577+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:55:01.000+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/comment","status":200,"method":"GET","path":"/api/goods/comment","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"509.6µs"}
+{"level":"INFO","time":"2023-04-20T15:55:04.532+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:55:04.532+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:55:09.845+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:55:12.089+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/comment","status":404,"method":"GET","path":"/api/goods/comment","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T15:55:13.135+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/comment","status":404,"method":"GET","path":"/api/goods/comment","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T15:55:13.836+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/comment","status":404,"method":"GET","path":"/api/goods/comment","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
+{"level":"INFO","time":"2023-04-20T15:55:47.976+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T15:55:47.977+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T15:55:53.403+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T15:55:55.696+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/comment","status":200,"method":"GET","path":"/api/goods/comment","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"528.4µs"}
+{"level":"INFO","time":"2023-04-20T15:56:31.707+0800","caller":"middlewares/logger.go:25","msg":"/api/goods/comment","status":200,"method":"GET","path":"/api/goods/comment","query":"goods_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"508.2µs"}
+{"level":"INFO","time":"2023-04-20T16:53:51.132+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T16:53:51.133+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T17:06:45.827+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T17:06:55.010+0800","caller":"middlewares/logger.go:25","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0809ms"}
+{"level":"INFO","time":"2023-04-20T17:07:08.463+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:07:08.465+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.627ms"}
+{"level":"INFO","time":"2023-04-20T17:07:24.671+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:07:24.674+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.6244ms"}
+{"level":"INFO","time":"2023-04-20T17:07:47.840+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:07:47.843+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.0981ms"}
+{"level":"INFO","time":"2023-04-20T17:07:48.319+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:07:48.321+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.6261ms"}
+{"level":"INFO","time":"2023-04-20T17:22:28.694+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T17:22:28.694+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T17:22:34.969+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T17:23:27.410+0800","caller":"middlewares/logger.go:25","msg":"/api/coupon/list","status":200,"method":"GET","path":"/api/coupon/list","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"680µs"}
+{"level":"INFO","time":"2023-04-20T17:24:49.148+0800","caller":"middlewares/logger.go:25","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0754ms"}
+{"level":"INFO","time":"2023-04-20T17:25:16.621+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:25:16.621+0800","caller":"middlewares/logger.go:25","msg":"/api/coupon/list","status":200,"method":"GET","path":"/api/coupon/list","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.3896ms"}
+{"level":"INFO","time":"2023-04-20T17:25:19.629+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:25:19.632+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.2145ms"}
+{"level":"INFO","time":"2023-04-20T17:25:55.120+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:25:55.121+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0458ms"}
+{"level":"INFO","time":"2023-04-20T17:26:02.816+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:26:02.819+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.7426ms"}
+{"level":"INFO","time":"2023-04-20T17:47:48.522+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T17:47:48.522+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T17:47:54.414+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T17:51:11.530+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:51:11.531+0800","caller":"middlewares/logger.go:25","msg":"/api/coupon/list","status":200,"method":"GET","path":"/api/coupon/list","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.4045ms"}
+{"level":"INFO","time":"2023-04-20T17:59:28.486+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T17:59:28.487+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T17:59:33.903+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T17:59:38.290+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T17:59:38.290+0800","caller":"hendler/order.go:37","msg":"OrderCreate","coupon_id":2}
+{"level":"INFO","time":"2023-04-20T17:59:38.291+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0289ms"}
+{"level":"INFO","time":"2023-04-20T18:00:04.702+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"ERROR","time":"2023-04-20T18:00:04.702+0800","caller":"hendler/order.go:24","msg":"OrderCreate with invalid param","error":"EOF"}
+{"level":"INFO","time":"2023-04-20T18:00:04.703+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.6µs"}
+{"level":"INFO","time":"2023-04-20T18:03:15.500+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T18:03:15.501+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T18:03:21.162+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T18:08:40.710+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T18:08:40.711+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T18:08:46.549+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T18:08:58.309+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"ERROR","time":"2023-04-20T18:08:58.309+0800","caller":"hendler/order.go:23","msg":"OrderCreate with invalid param","error":"EOF"}
+{"level":"INFO","time":"2023-04-20T18:08:58.309+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0203ms"}
+{"level":"INFO","time":"2023-04-20T18:08:59.703+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"ERROR","time":"2023-04-20T18:08:59.703+0800","caller":"hendler/order.go:23","msg":"OrderCreate with invalid param","error":"EOF"}
+{"level":"INFO","time":"2023-04-20T18:08:59.703+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"508µs"}
+{"level":"INFO","time":"2023-04-20T18:09:10.265+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T18:09:10.266+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T18:09:16.672+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T18:09:18.961+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"ERROR","time":"2023-04-20T18:09:18.961+0800","caller":"hendler/order.go:23","msg":"OrderCreate with invalid param","error":"EOF"}
+{"level":"INFO","time":"2023-04-20T18:09:18.962+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.4223ms"}
+{"level":"INFO","time":"2023-04-20T18:11:16.181+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T18:11:16.182+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T18:11:21.849+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T18:11:28.638+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"ERROR","time":"2023-04-20T18:11:28.638+0800","caller":"hendler/order.go:17","msg":"OrderCreate with invalid param","error":"EOF"}
+{"level":"INFO","time":"2023-04-20T18:11:28.639+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"1.0329ms"}
+{"level":"INFO","time":"2023-04-20T18:11:56.965+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:11:56.965+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":2}
+{"level":"INFO","time":"2023-04-20T18:11:56.965+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.3µs"}
+{"level":"INFO","time":"2023-04-20T18:12:00.093+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:00.094+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":0}
+{"level":"INFO","time":"2023-04-20T18:12:00.094+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"504.8µs"}
+{"level":"INFO","time":"2023-04-20T18:12:04.330+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:04.331+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":0}
+{"level":"INFO","time":"2023-04-20T18:12:04.331+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"769.1µs"}
+{"level":"INFO","time":"2023-04-20T18:12:05.047+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:05.048+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":0}
+{"level":"INFO","time":"2023-04-20T18:12:05.048+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.5µs"}
+{"level":"INFO","time":"2023-04-20T18:12:14.900+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:14.900+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":22222}
+{"level":"INFO","time":"2023-04-20T18:12:14.900+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"512.6µs"}
+{"level":"INFO","time":"2023-04-20T18:12:18.717+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:18.717+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:18.718+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"504.6µs"}
+{"level":"INFO","time":"2023-04-20T18:12:26.559+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:26.560+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:26.560+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"503.5µs"}
+{"level":"INFO","time":"2023-04-20T18:12:29.525+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:29.525+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":1}
+{"level":"INFO","time":"2023-04-20T18:12:29.526+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"505µs"}
+{"level":"INFO","time":"2023-04-20T18:13:12.375+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T18:13:12.376+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T18:13:17.713+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T18:13:24.535+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:13:24.536+0800","caller":"hendler/order.go:20","msg":"OrderCreate","coupon_id":1,"user_id":1}
+{"level":"INFO","time":"2023-04-20T18:13:24.536+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"523.4µs"}
+{"level":"INFO","time":"2023-04-20T18:32:50.060+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T18:32:50.061+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T18:32:55.629+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T18:32:59.133+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T18:32:59.133+0800","caller":"hendler/order.go:24","msg":"OrderCreate","coupon_id":1,"user_id":1}
+{"level":"INFO","time":"2023-04-20T18:32:59.134+0800","caller":"hendler/order.go:35","msg":"OrderCreate","coupon":{"coupon_id":1,"name":"满5元减1元","satisfy":500,"minus":100,"Desc":"满5元减1元,限时大放送！","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T18:32:59.134+0800","caller":"hendler/order.go:41","msg":"OrderCreate","coupon":{"coupon_id":1,"name":"满5元减1元","satisfy":500,"minus":100,"Desc":"满5元减1元,限时大放送！","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T18:32:59.135+0800","caller":"hendler/order.go:43","msg":"OrderCreate","0":{"cart_id":1,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:08.4635323+08:00","updated_at":"2023-04-20T17:07:08.4635323+08:00"}}
+{"level":"INFO","time":"2023-04-20T18:32:59.135+0800","caller":"hendler/order.go:43","msg":"OrderCreate","1":{"cart_id":2,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:24.6723274+08:00","updated_at":"2023-04-20T17:07:24.6723274+08:00"}}
+{"level":"INFO","time":"2023-04-20T18:32:59.135+0800","caller":"hendler/order.go:43","msg":"OrderCreate","2":{"cart_id":3,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:47.8418263+08:00","updated_at":"2023-04-20T17:07:47.8418263+08:00"}}
+{"level":"INFO","time":"2023-04-20T18:32:59.135+0800","caller":"hendler/order.go:43","msg":"OrderCreate","3":{"cart_id":4,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:48.319793+08:00","updated_at":"2023-04-20T17:07:48.319793+08:00"}}
+{"level":"INFO","time":"2023-04-20T18:32:59.135+0800","caller":"hendler/order.go:43","msg":"OrderCreate","4":{"cart_id":5,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:25:19.6297042+08:00","updated_at":"2023-04-20T17:25:19.6297042+08:00"}}
+{"level":"INFO","time":"2023-04-20T18:32:59.135+0800","caller":"hendler/order.go:43","msg":"OrderCreate","5":{"cart_id":6,"user_id":1,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:26:02.8171241+08:00","updated_at":"2023-04-20T17:26:02.8171241+08:00"}}
+{"level":"INFO","time":"2023-04-20T18:32:59.135+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.6273ms"}
+{"level":"INFO","time":"2023-04-20T19:07:00.301+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T19:07:00.302+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T19:07:06.609+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T19:07:08.681+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T19:07:08.682+0800","caller":"hendler/order.go:26","msg":"OrderCreate","coupon_id":1,"user_id":1}
+{"level":"INFO","time":"2023-04-20T19:07:08.683+0800","caller":"hendler/order.go:37","msg":"OrderCreate","coupon":{"coupon_id":1,"name":"满5元减1元","satisfy":500,"minus":100,"Desc":"满5元减1元,限时大放送！","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:07:08.683+0800","caller":"hendler/order.go:44","msg":"OrderCreate","coupon":{"coupon_id":1,"name":"满5元减1元","satisfy":500,"minus":100,"Desc":"满5元减1元,限时大放送！","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:07:08.683+0800","caller":"hendler/order.go:51","msg":"OrderCreate","0":{"cart_id":1,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:08.4635323+08:00","updated_at":"2023-04-20T17:07:08.4635323+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:07:08.684+0800","caller":"hendler/order.go:51","msg":"OrderCreate","1":{"cart_id":2,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:24.6723274+08:00","updated_at":"2023-04-20T17:07:24.6723274+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:07:08.684+0800","caller":"hendler/order.go:51","msg":"OrderCreate","2":{"cart_id":3,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:47.8418263+08:00","updated_at":"2023-04-20T17:07:47.8418263+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:07:08.684+0800","caller":"hendler/order.go:51","msg":"OrderCreate","3":{"cart_id":4,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:48.319793+08:00","updated_at":"2023-04-20T17:07:48.319793+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:07:08.684+0800","caller":"hendler/order.go:51","msg":"OrderCreate","4":{"cart_id":5,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:25:19.6297042+08:00","updated_at":"2023-04-20T17:25:19.6297042+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:07:08.684+0800","caller":"hendler/order.go:51","msg":"OrderCreate","5":{"cart_id":6,"user_id":1,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:26:02.8171241+08:00","updated_at":"2023-04-20T17:26:02.8171241+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:07:08.685+0800","caller":"hendler/order.go:69","msg":"goodsKv","goodsKv":{"1":{"goods_id":1,"name":"李新宇","Desc":" 李新宇","price":100,"details":"详情","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"},"2":{"goods_id":2,"name":"涂仁铨","Desc":"涂仁铨","price":100,"details":"详情","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}}
+{"level":"INFO","time":"2023-04-20T19:07:08.685+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.6998ms"}
+{"level":"INFO","time":"2023-04-20T19:31:12.863+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T19:31:12.864+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T19:31:18.497+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T19:31:34.140+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T19:31:34.140+0800","caller":"hendler/order.go:27","msg":"OrderCreate","coupon_id":1,"user_id":1}
+{"level":"INFO","time":"2023-04-20T19:31:34.141+0800","caller":"hendler/order.go:38","msg":"OrderCreate","coupon":{"coupon_id":1,"name":"满5元减1元","satisfy":500,"minus":100,"Desc":"满5元减1元,限时大放送！","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:31:34.141+0800","caller":"hendler/order.go:45","msg":"OrderCreate","coupon":{"coupon_id":1,"name":"满5元减1元","satisfy":500,"minus":100,"Desc":"满5元减1元,限时大放送！","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:31:34.141+0800","caller":"hendler/order.go:52","msg":"OrderCreate","0":{"cart_id":1,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:08.4635323+08:00","updated_at":"2023-04-20T17:07:08.4635323+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:31:34.141+0800","caller":"hendler/order.go:52","msg":"OrderCreate","1":{"cart_id":2,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:24.6723274+08:00","updated_at":"2023-04-20T17:07:24.6723274+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:31:34.142+0800","caller":"hendler/order.go:52","msg":"OrderCreate","2":{"cart_id":3,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:47.8418263+08:00","updated_at":"2023-04-20T17:07:47.8418263+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:31:34.142+0800","caller":"hendler/order.go:52","msg":"OrderCreate","3":{"cart_id":4,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:48.319793+08:00","updated_at":"2023-04-20T17:07:48.319793+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:31:34.142+0800","caller":"hendler/order.go:52","msg":"OrderCreate","4":{"cart_id":5,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:25:19.6297042+08:00","updated_at":"2023-04-20T17:25:19.6297042+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:31:34.142+0800","caller":"hendler/order.go:52","msg":"OrderCreate","5":{"cart_id":6,"user_id":1,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:26:02.8171241+08:00","updated_at":"2023-04-20T17:26:02.8171241+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:31:34.142+0800","caller":"hendler/order.go:86","msg":"OrderCreate","markPrice":600,"coupon.Satisfy":500,"coupon.Minus":100}
+{"level":"INFO","time":"2023-04-20T19:31:34.143+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.7243ms"}
+{"level":"INFO","time":"2023-04-20T19:33:06.614+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T19:33:06.615+0800","caller":"hendler/order.go:27","msg":"OrderCreate","coupon_id":0,"user_id":1}
+{"level":"INFO","time":"2023-04-20T19:33:06.615+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"504.1µs"}
+{"level":"INFO","time":"2023-04-20T19:34:27.808+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T19:34:27.808+0800","caller":"hendler/order.go:27","msg":"OrderCreate","coupon_id":0,"user_id":1}
+{"level":"INFO","time":"2023-04-20T19:34:27.808+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"507.2µs"}
+{"level":"INFO","time":"2023-04-20T19:34:30.911+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T19:34:30.912+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T19:34:36.184+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T19:34:38.250+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T19:34:38.250+0800","caller":"hendler/order.go:26","msg":"OrderCreate","coupon_id":0,"user_id":1}
+{"level":"INFO","time":"2023-04-20T19:34:38.251+0800","caller":"hendler/order.go:38","msg":"OrderCreate","coupon":{"coupon_id":0,"name":"","satisfy":0,"minus":0,"Desc":"","created_at":"0001-01-01T00:00:00Z","updated_at":"0001-01-01T00:00:00Z"}}
+{"level":"INFO","time":"2023-04-20T19:34:38.252+0800","caller":"hendler/order.go:45","msg":"OrderCreate","coupon":{"coupon_id":0,"name":"","satisfy":0,"minus":0,"Desc":"","created_at":"0001-01-01T00:00:00Z","updated_at":"0001-01-01T00:00:00Z"}}
+{"level":"INFO","time":"2023-04-20T19:34:38.252+0800","caller":"hendler/order.go:52","msg":"OrderCreate","0":{"cart_id":1,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:08.4635323+08:00","updated_at":"2023-04-20T17:07:08.4635323+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:34:38.252+0800","caller":"hendler/order.go:52","msg":"OrderCreate","1":{"cart_id":2,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:24.6723274+08:00","updated_at":"2023-04-20T17:07:24.6723274+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:34:38.252+0800","caller":"hendler/order.go:52","msg":"OrderCreate","2":{"cart_id":3,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:47.8418263+08:00","updated_at":"2023-04-20T17:07:47.8418263+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:34:38.252+0800","caller":"hendler/order.go:52","msg":"OrderCreate","3":{"cart_id":4,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:48.319793+08:00","updated_at":"2023-04-20T17:07:48.319793+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:34:38.252+0800","caller":"hendler/order.go:52","msg":"OrderCreate","4":{"cart_id":5,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:25:19.6297042+08:00","updated_at":"2023-04-20T17:25:19.6297042+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:34:38.252+0800","caller":"hendler/order.go:52","msg":"OrderCreate","5":{"cart_id":6,"user_id":1,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:26:02.8171241+08:00","updated_at":"2023-04-20T17:26:02.8171241+08:00"}}
+{"level":"INFO","time":"2023-04-20T19:34:38.253+0800","caller":"hendler/order.go:86","msg":"OrderCreate","markPrice":600,"coupon.Satisfy":0,"coupon.Minus":0}
+{"level":"INFO","time":"2023-04-20T19:34:38.253+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.0972ms"}
+{"level":"INFO","time":"2023-04-20T20:02:41.187+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T20:02:41.187+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T20:02:47.240+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T20:02:56.452+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T20:02:56.452+0800","caller":"hendler/order.go:26","msg":"OrderCreate","coupon_id":0,"user_id":1}
+{"level":"INFO","time":"2023-04-20T20:02:56.453+0800","caller":"hendler/order.go:38","msg":"OrderCreate","coupon":{"coupon_id":0,"name":"","satisfy":0,"minus":0,"Desc":"","created_at":"0001-01-01T00:00:00Z","updated_at":"0001-01-01T00:00:00Z"}}
+{"level":"INFO","time":"2023-04-20T20:02:56.454+0800","caller":"hendler/order.go:45","msg":"OrderCreate","coupon":{"coupon_id":0,"name":"","satisfy":0,"minus":0,"Desc":"","created_at":"0001-01-01T00:00:00Z","updated_at":"0001-01-01T00:00:00Z"}}
+{"level":"INFO","time":"2023-04-20T20:02:56.454+0800","caller":"hendler/order.go:52","msg":"OrderCreate","0":{"cart_id":1,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:08.4635323+08:00","updated_at":"2023-04-20T17:07:08.4635323+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:02:56.454+0800","caller":"hendler/order.go:52","msg":"OrderCreate","1":{"cart_id":2,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:24.6723274+08:00","updated_at":"2023-04-20T17:07:24.6723274+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:02:56.454+0800","caller":"hendler/order.go:52","msg":"OrderCreate","2":{"cart_id":3,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:47.8418263+08:00","updated_at":"2023-04-20T17:07:47.8418263+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:02:56.454+0800","caller":"hendler/order.go:52","msg":"OrderCreate","3":{"cart_id":4,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:07:48.319793+08:00","updated_at":"2023-04-20T17:07:48.319793+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:02:56.454+0800","caller":"hendler/order.go:52","msg":"OrderCreate","4":{"cart_id":5,"user_id":1,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:25:19.6297042+08:00","updated_at":"2023-04-20T17:25:19.6297042+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:02:56.454+0800","caller":"hendler/order.go:52","msg":"OrderCreate","5":{"cart_id":6,"user_id":1,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T17:26:02.8171241+08:00","updated_at":"2023-04-20T17:26:02.8171241+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:02:56.455+0800","caller":"hendler/order.go:90","msg":"OrderCreate","markPrice":600,"coupon.Satisfy":0,"coupon.Minus":0}
+{"level":"INFO","time":"2023-04-20T20:02:56.467+0800","caller":"hendler/order.go:130","msg":"OrderCreate","price":0}
+{"level":"INFO","time":"2023-04-20T20:02:56.467+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"15.1183ms"}
+{"level":"INFO","time":"2023-04-20T20:04:15.754+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T20:04:15.754+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-20T20:04:21.029+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-20T20:05:07.212+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":1}
+{"level":"INFO","time":"2023-04-20T20:05:07.212+0800","caller":"hendler/order.go:26","msg":"OrderCreate","coupon_id":0,"user_id":1}
+{"level":"INFO","time":"2023-04-20T20:05:07.213+0800","caller":"hendler/order.go:38","msg":"OrderCreate","coupon":{"coupon_id":0,"name":"","satisfy":0,"minus":0,"Desc":"","created_at":"0001-01-01T00:00:00Z","updated_at":"0001-01-01T00:00:00Z"}}
+{"level":"INFO","time":"2023-04-20T20:05:07.213+0800","caller":"hendler/order.go:45","msg":"OrderCreate","coupon":{"coupon_id":0,"name":"","satisfy":0,"minus":0,"Desc":"","created_at":"0001-01-01T00:00:00Z","updated_at":"0001-01-01T00:00:00Z"}}
+{"level":"INFO","time":"2023-04-20T20:05:07.213+0800","caller":"hendler/order.go:52","msg":"OrderCreate","0":{"cart_id":1,"user_id":1,"goods_id":1,"order_id":0,"price":100,"status":0,"created_at":"2023-04-20T17:07:08.4635323+08:00","updated_at":"2023-04-20T20:02:56.4577274+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:05:07.214+0800","caller":"hendler/order.go:52","msg":"OrderCreate","1":{"cart_id":2,"user_id":1,"goods_id":1,"order_id":0,"price":100,"status":0,"created_at":"2023-04-20T17:07:24.6723274+08:00","updated_at":"2023-04-20T20:02:56.4592731+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:05:07.214+0800","caller":"hendler/order.go:52","msg":"OrderCreate","2":{"cart_id":3,"user_id":1,"goods_id":1,"order_id":0,"price":100,"status":0,"created_at":"2023-04-20T17:07:47.8418263+08:00","updated_at":"2023-04-20T20:02:56.4604097+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:05:07.214+0800","caller":"hendler/order.go:52","msg":"OrderCreate","3":{"cart_id":4,"user_id":1,"goods_id":1,"order_id":0,"price":100,"status":0,"created_at":"2023-04-20T17:07:48.319793+08:00","updated_at":"2023-04-20T20:02:56.4624823+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:05:07.214+0800","caller":"hendler/order.go:52","msg":"OrderCreate","4":{"cart_id":5,"user_id":1,"goods_id":1,"order_id":0,"price":100,"status":0,"created_at":"2023-04-20T17:25:19.6297042+08:00","updated_at":"2023-04-20T20:02:56.4640251+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:05:07.214+0800","caller":"hendler/order.go:52","msg":"OrderCreate","5":{"cart_id":6,"user_id":1,"goods_id":2,"order_id":0,"price":100,"status":0,"created_at":"2023-04-20T17:26:02.8171241+08:00","updated_at":"2023-04-20T20:02:56.4655914+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:05:07.214+0800","caller":"hendler/order.go:90","msg":"OrderCreate","markPrice":600,"coupon.Satisfy":0,"coupon.Minus":0}
+{"level":"INFO","time":"2023-04-20T20:05:07.228+0800","caller":"hendler/order.go:130","msg":"OrderCreate","price":600}
+{"level":"INFO","time":"2023-04-20T20:05:07.228+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"16.31ms"}
+{"level":"INFO","time":"2023-04-20T20:05:34.753+0800","caller":"middlewares/logger.go:25","msg":"/api/login","status":200,"method":"POST","path":"/api/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"506.7µs"}
+{"level":"INFO","time":"2023-04-20T20:09:21.146+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:21.149+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.9887ms"}
+{"level":"INFO","time":"2023-04-20T20:09:21.496+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:21.498+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.6255ms"}
+{"level":"INFO","time":"2023-04-20T20:09:21.883+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:21.886+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.7321ms"}
+{"level":"INFO","time":"2023-04-20T20:09:22.294+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:22.296+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.5915ms"}
+{"level":"INFO","time":"2023-04-20T20:09:25.572+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:25.575+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.7298ms"}
+{"level":"INFO","time":"2023-04-20T20:09:25.980+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:25.984+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.675ms"}
+{"level":"INFO","time":"2023-04-20T20:09:26.361+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:26.364+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.6623ms"}
+{"level":"INFO","time":"2023-04-20T20:09:26.765+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:26.767+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.4368ms"}
+{"level":"INFO","time":"2023-04-20T20:09:27.159+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:27.162+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.7015ms"}
+{"level":"INFO","time":"2023-04-20T20:09:27.531+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:27.534+0800","caller":"middlewares/logger.go:25","msg":"/api/cart","status":200,"method":"POST","path":"/api/cart","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"2.6105ms"}
+{"level":"INFO","time":"2023-04-20T20:09:49.974+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:49.974+0800","caller":"hendler/order.go:26","msg":"OrderCreate","coupon_id":2,"user_id":2}
+{"level":"INFO","time":"2023-04-20T20:09:49.974+0800","caller":"hendler/order.go:38","msg":"OrderCreate","coupon":{"coupon_id":2,"name":"满100元减10元","satisfy":10000,"minus":1000,"Desc":"满100元减10元","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.975+0800","caller":"hendler/order.go:45","msg":"OrderCreate","coupon":{"coupon_id":2,"name":"满100元减10元","satisfy":10000,"minus":1000,"Desc":"满100元减10元","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.975+0800","caller":"hendler/order.go:52","msg":"OrderCreate","0":{"cart_id":7,"user_id":2,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:21.1468155+08:00","updated_at":"2023-04-20T20:09:21.1468155+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.975+0800","caller":"hendler/order.go:52","msg":"OrderCreate","1":{"cart_id":8,"user_id":2,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:21.4966683+08:00","updated_at":"2023-04-20T20:09:21.4966683+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.975+0800","caller":"hendler/order.go:52","msg":"OrderCreate","2":{"cart_id":9,"user_id":2,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:21.8844605+08:00","updated_at":"2023-04-20T20:09:21.8844605+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.975+0800","caller":"hendler/order.go:52","msg":"OrderCreate","3":{"cart_id":10,"user_id":2,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:22.2947461+08:00","updated_at":"2023-04-20T20:09:22.2947461+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.975+0800","caller":"hendler/order.go:52","msg":"OrderCreate","4":{"cart_id":11,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:25.5732281+08:00","updated_at":"2023-04-20T20:09:25.5732281+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.976+0800","caller":"hendler/order.go:52","msg":"OrderCreate","5":{"cart_id":12,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:25.9821636+08:00","updated_at":"2023-04-20T20:09:25.9821636+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.976+0800","caller":"hendler/order.go:52","msg":"OrderCreate","6":{"cart_id":13,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:26.3621309+08:00","updated_at":"2023-04-20T20:09:26.3621309+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.976+0800","caller":"hendler/order.go:52","msg":"OrderCreate","7":{"cart_id":14,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:26.7656275+08:00","updated_at":"2023-04-20T20:09:26.7656275+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.976+0800","caller":"hendler/order.go:52","msg":"OrderCreate","8":{"cart_id":15,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:27.1596892+08:00","updated_at":"2023-04-20T20:09:27.1596892+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.976+0800","caller":"hendler/order.go:52","msg":"OrderCreate","9":{"cart_id":16,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:27.5324569+08:00","updated_at":"2023-04-20T20:09:27.5324569+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:09:49.976+0800","caller":"hendler/order.go:90","msg":"OrderCreate","markPrice":1000,"coupon.Satisfy":10000,"coupon.Minus":1000}
+{"level":"INFO","time":"2023-04-20T20:09:49.977+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"3.1141ms"}
+{"level":"INFO","time":"2023-04-20T20:10:03.260+0800","caller":"middlewares/jwt.go:32","msg":"解析token","user_id":2}
+{"level":"INFO","time":"2023-04-20T20:10:03.260+0800","caller":"hendler/order.go:26","msg":"OrderCreate","coupon_id":1,"user_id":2}
+{"level":"INFO","time":"2023-04-20T20:10:03.260+0800","caller":"hendler/order.go:38","msg":"OrderCreate","coupon":{"coupon_id":1,"name":"满5元减1元","satisfy":500,"minus":100,"Desc":"满5元减1元,限时大放送！","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.261+0800","caller":"hendler/order.go:45","msg":"OrderCreate","coupon":{"coupon_id":1,"name":"满5元减1元","satisfy":500,"minus":100,"Desc":"满5元减1元,限时大放送！","created_at":"2023-04-19T22:21:27.805725+08:00","updated_at":"2023-04-19T22:21:27.805725+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.261+0800","caller":"hendler/order.go:52","msg":"OrderCreate","0":{"cart_id":7,"user_id":2,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:21.1468155+08:00","updated_at":"2023-04-20T20:09:21.1468155+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.261+0800","caller":"hendler/order.go:52","msg":"OrderCreate","1":{"cart_id":8,"user_id":2,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:21.4966683+08:00","updated_at":"2023-04-20T20:09:21.4966683+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.261+0800","caller":"hendler/order.go:52","msg":"OrderCreate","2":{"cart_id":9,"user_id":2,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:21.8844605+08:00","updated_at":"2023-04-20T20:09:21.8844605+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.261+0800","caller":"hendler/order.go:52","msg":"OrderCreate","3":{"cart_id":10,"user_id":2,"goods_id":2,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:22.2947461+08:00","updated_at":"2023-04-20T20:09:22.2947461+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.261+0800","caller":"hendler/order.go:52","msg":"OrderCreate","4":{"cart_id":11,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:25.5732281+08:00","updated_at":"2023-04-20T20:09:25.5732281+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.262+0800","caller":"hendler/order.go:52","msg":"OrderCreate","5":{"cart_id":12,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:25.9821636+08:00","updated_at":"2023-04-20T20:09:25.9821636+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.262+0800","caller":"hendler/order.go:52","msg":"OrderCreate","6":{"cart_id":13,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:26.3621309+08:00","updated_at":"2023-04-20T20:09:26.3621309+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.262+0800","caller":"hendler/order.go:52","msg":"OrderCreate","7":{"cart_id":14,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:26.7656275+08:00","updated_at":"2023-04-20T20:09:26.7656275+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.262+0800","caller":"hendler/order.go:52","msg":"OrderCreate","8":{"cart_id":15,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:27.1596892+08:00","updated_at":"2023-04-20T20:09:27.1596892+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.262+0800","caller":"hendler/order.go:52","msg":"OrderCreate","9":{"cart_id":16,"user_id":2,"goods_id":1,"order_id":0,"price":0,"status":0,"created_at":"2023-04-20T20:09:27.5324569+08:00","updated_at":"2023-04-20T20:09:27.5324569+08:00"}}
+{"level":"INFO","time":"2023-04-20T20:10:03.263+0800","caller":"hendler/order.go:90","msg":"OrderCreate","markPrice":1000,"coupon.Satisfy":500,"coupon.Minus":100}
+{"level":"INFO","time":"2023-04-20T20:10:03.281+0800","caller":"hendler/order.go:130","msg":"OrderCreate","price":900}
+{"level":"INFO","time":"2023-04-20T20:10:03.281+0800","caller":"middlewares/logger.go:25","msg":"/api/order/create","status":200,"method":"POST","path":"/api/order/create","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"21.1736ms"}
+{"level":"INFO","time":"2023-04-20T21:12:27.702+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-20T21:12:27.702+0800","caller":"mall/main.go:103","msg":"Server exiting"}

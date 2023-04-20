@@ -78,6 +78,9 @@ const (
 	ErrEmptySceneFlow                         = 20061
 	ErrEmptyTestCaseFlow                      = 20062
 	ErrNameOverLength                         = 20063
+	ErrCartEmpty                              = 20064
+	ErrCouponDoNotCondition                   = 20065
+	ErrPayFail                                = 20066
 )
 
 // CodeAlertMap 错图码映射错误提示，展示给用户
@@ -159,6 +162,9 @@ var CodeAlertMap = map[int]string{
 	ErrEmptySceneFlow:                         "场景flow不能为空",
 	ErrEmptyTestCaseFlow:                      "场景用例flow不能为空",
 	ErrNameOverLength:                         "名称过长！不可超出30字符",
+	ErrCartEmpty:                              "购物车已空",
+	ErrCouponDoNotCondition:                   "优惠券不满足使用条件",
+	ErrPayFail:                                "支付失败",
 }
 
 // CodeMsgMap 错误码映射错误信息，不展示给用户
@@ -240,4 +246,7 @@ var CodeMsgMap = map[int]string{
 	ErrEmptySceneFlow:                         "ErrEmptySceneFlow",
 	ErrEmptyTestCaseFlow:                      "ErrEmptyTestCaseFlow",
 	ErrNameOverLength:                         "ErrNameOverLength",
+	ErrCartEmpty:                              "ErrCartEmpty",
+	ErrCouponDoNotCondition:                   "ErrCouponDoNotCondition",
+	ErrPayFail:                                "ErrPayFail",
 }

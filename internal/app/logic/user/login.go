@@ -7,16 +7,13 @@ import (
 	"mall/internal/app/model"
 )
 
-func Login(ctx context.Context, req *rap.LoginReq) (int64, error) {
+func Login(ctx context.Context, req *rap.LoginReq) (user model.User, err error) {
 	//查询用户是否存在
-	var count int64
-	result := initializ.SQLiteDB().
-		Model(&model.User{}).
+	err = initializ.SQLiteDB().
 		Where("username", req.Username).
 		Where("password", req.Password).
-		Limit(1).
-		Count(&count)
-	return count, result.Error
+		First(&user).Error
+	return
 }
 
 func AddUser(ctx context.Context, req *rap.LoginReq) error {

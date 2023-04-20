@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"mall/internal/app/http/hendler"
 	"mall/internal/pkg/response"
+	"mall/internal/pkg/tools"
 	"mall/middlewares"
 )
 
@@ -13,7 +14,9 @@ func Init() *gin.Engine {
 	r.Use(middlewares.Cors(), middlewares.GinLogger(), middlewares.GinRecovery(true))
 
 	r.GET("/online", func(ctx *gin.Context) {
-		response.Success(ctx)
+		response.SuccessWithData(ctx, gin.H{
+			"bool": tools.RandomBool(0.9),
+		})
 		return
 	})
 
@@ -21,19 +24,30 @@ func Init() *gin.Engine {
 	{
 		//登录
 		apiV1.POST("/login", hendler.Login)
-		//商品列表
-		apiV1.GET("/goods/list", func(ctx *gin.Context) {
-			response.Success(ctx)
-			return
-		})
+
+		goods := apiV1.Group("/goods")
+		{
+			//商品列表
+			goods.GET("/list", hendler.GoodsList)
+			//商品详情
+			goods.GET("/info", hendler.GoodsInfo)
+			//商品评论
+			goods.GET("/comment", hendler.GoodsComment)
+		}
 
 		apiV1.Use(middlewares.JWT())
 		{
 			//加入购物车
-			apiV1.POST("/cart", func(ctx *gin.Context) {
-				response.Success(ctx)
-				return
-			})
+			apiV1.POST("/cart", hendler.AddCart)
+
+			//获取优惠券
+			apiV1.GET("/coupon/list", hendler.CouponList)
+
+			//生成订单
+			apiV1.POST("/order/create", hendler.OrderCreate)
+
+			//支付
+			apiV1.POST("/pay", hendler.Pay)
 		}
 	}
 	return r

@@ -7,7 +7,7 @@ app:
   jwt_secret: "23347$040412"
 
 http_server:
-  port: 8081
+  port: 8000
 
 log:
   level: "debug"
@@ -35,7 +35,7 @@ sqlite:
 
 redis:
   host: "127.0.0.1"
-  port: 6379
+  port: 3308 #6379
   password: "6nv2lxTHDVuQUQN9"
   db_name: 12
   pool_size: 100 #连接池大小

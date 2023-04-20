@@ -44,6 +44,9 @@ func SQLite(cfg *settings.SQLiteConfig) (err error) {
 		&model.User{},
 		&model.Goods{},
 		&model.Cart{},
+		&model.Order{},
+		&model.Comment{},
+		&model.Coupon{},
 	)
 
 	if err != nil {
