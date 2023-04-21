@@ -22,6 +22,11 @@ func GoodsInfo(ctx *gin.Context, goodsID int) (goods model.Goods, err error) {
 	return
 }
 
+func GoodsWhereCount(ctx *gin.Context, whereMap interface{}) (count int64, err error) {
+	err = initializ.SQLiteDB().Model(model.Goods{}).Where(whereMap).Count(&count).Error
+	return
+}
+
 func GoodsIn(ctx *gin.Context, goodsIDs []int) (goodsList []model.Goods) {
 	initializ.SQLiteDB().Where("goods_id in ?", goodsIDs).Find(&goodsList)
 	return

@@ -81,6 +81,7 @@ const (
 	ErrCartEmpty                              = 20064
 	ErrCouponDoNotCondition                   = 20065
 	ErrPayFail                                = 20066
+	ErrGoodsExist                             = 20067
 )
 
 // CodeAlertMap 错图码映射错误提示，展示给用户
@@ -165,6 +166,7 @@ var CodeAlertMap = map[int]string{
 	ErrCartEmpty:                              "购物车已空",
 	ErrCouponDoNotCondition:                   "优惠券不满足使用条件",
 	ErrPayFail:                                "支付失败",
+	ErrGoodsExist:                             "商品名称已经存在",
 }
 
 // CodeMsgMap 错误码映射错误信息，不展示给用户
@@ -249,4 +251,5 @@ var CodeMsgMap = map[int]string{
 	ErrCartEmpty:                              "ErrCartEmpty",
 	ErrCouponDoNotCondition:                   "ErrCouponDoNotCondition",
 	ErrPayFail:                                "ErrPayFail",
+	ErrGoodsExist:                             "ErrGoodsExist",
 }

@@ -33,6 +33,8 @@ func Init() *gin.Engine {
 			goods.GET("/info", hendler.GoodsInfo)
 			//商品评论
 			goods.GET("/comment", hendler.GoodsComment)
+
+			goods.Use(middlewares.JWT()).POST("/add", hendler.GoodsAdd)
 		}
 
 		apiV1.Use(middlewares.JWT())
