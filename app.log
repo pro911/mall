@@ -622,3 +622,6 @@
 {"level":"INFO","time":"2023-04-20T21:24:21.957+0800","caller":"middlewares/logger.go:25","msg":"/api/pay","status":200,"method":"POST","path":"/api/pay","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime-ApipostRuntime/1.1.0","errors":"","cost":"0s"}
 {"level":"INFO","time":"2023-04-20T21:29:05.574+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2023-04-20T21:29:05.575+0800","caller":"mall/main.go:103","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-04-21T11:37:23.056+0800","caller":"mall/main.go:41","msg":"logger init success..."}
+{"level":"INFO","time":"2023-04-21T11:37:24.743+0800","caller":"mall/main.go:95","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-04-21T11:37:24.744+0800","caller":"mall/main.go:103","msg":"Server exiting"}
