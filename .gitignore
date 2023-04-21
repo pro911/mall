@@ -16,3 +16,4 @@
 app.log
 err.log
 resources/database/mall2.db
+resources/database/mall.db
