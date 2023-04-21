@@ -47,12 +47,12 @@ func main() {
 	//}
 	//defer initializ.MySQLClose() //当程序停止时关闭mysql资源
 
-	//4.初始化Redis连接
-	if err := initializ.Redis(settings.Conf.RedisConfig); err != nil {
-		fmt.Printf("init Redis failed,err:%v\n", err)
-		return
-	}
-	defer initializ.RedisClose()
+	////4.初始化Redis连接
+	//if err := initializ.Redis(settings.Conf.RedisConfig); err != nil {
+	//	fmt.Printf("init Redis failed,err:%v\n", err)
+	//	return
+	//}
+	//defer initializ.RedisClose()
 
 	//5.初始化SQLite连接
 	if err := initializ.SQLite(settings.Conf.SQLiteConfig); err != nil {
