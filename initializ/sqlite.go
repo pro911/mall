@@ -52,10 +52,106 @@ func SQLite(cfg *settings.SQLiteConfig) (err error) {
 	if err != nil {
 		log.Fatal(2, "Fail to sqlite.auto_migrate err:%v\n", err)
 	}
+
+	//初始化项目数据
+	initProject(sdb)
 	return
 }
 
 // SQLiteDB 返回链接数据库
 func SQLiteDB() *gorm.DB {
 	return sdb
+}
+
+// 初始化迁移一些基础数据
+func initProject(sdb *gorm.DB) {
+	var count int64
+	sdb.Model(&model.User{}).Count(&count)
+	if count > 0 {
+		return
+	}
+
+	users := []*model.User{
+		{
+			Username: "proxx01@qq.com",
+			Password: "123456",
+		},
+		{
+			Username: "proxx02@qq.com",
+			Password: "123456",
+		},
+		{
+			Username: "proxx03@qq.com",
+			Password: "123456",
+		},
+	}
+
+	coupons := []*model.Coupon{
+		{
+			Name:    "满5元减1元",
+			Satisfy: 500,
+			Minus:   100,
+			Desc:    "满5元减1元,限时大放送！",
+		},
+		{
+			Name:    "满100元减10元",
+			Satisfy: 10000,
+			Minus:   1000,
+			Desc:    "满100元减10元,限时大放送！",
+		},
+	}
+
+	comments := []*model.Comment{
+		{
+			GoodsID: 1,
+			UserID:  1,
+			Desc:    "商品很好用!",
+		},
+		{
+			GoodsID: 1,
+			UserID:  2,
+			Desc:    "商品很好用!满100元减10元",
+		},
+		{
+			GoodsID: 1,
+			UserID:  1,
+			Desc:    "商品很好用!满100元减10元,限时大放送！",
+		},
+		{
+			GoodsID: 1,
+			UserID:  1,
+			Desc:    "商品很好用!满100元减10元,限时大放送！",
+		},
+		{
+			GoodsID: 1,
+			UserID:  1,
+			Desc:    "商品很好用!满100元减10元,限时大放送！",
+		},
+		{
+			GoodsID: 2,
+			UserID:  2,
+			Desc:    "商品很好用!满100元减10元,限时大放送！",
+		},
+	}
+
+	goodsS := []*model.Goods{
+		{
+			Name:    "测试商品01",
+			Desc:    "测试商品01 描述",
+			Price:   100,
+			Details: "测试商品01 商品很好用!满100元减10元,限时大放送！商品很好用!满100元减10元,限时大放送！商品很好用!满100元减10元,限时大放送！",
+		},
+		{
+			Name:    "测试商品02",
+			Desc:    "测试商品02 描述",
+			Price:   2000,
+			Details: "测试商品02 商品很好用!满100元减10元,限时大放送！商品很好用!满100元减10元,限时大放送！商品很好用!满100元减10元,限时大放送！",
+		},
+	}
+	//否则执行初始化数据
+	sdb.Model(&model.User{}).Create(users)
+	sdb.Model(&model.Coupon{}).Create(coupons)
+	sdb.Model(&model.Comment{}).Create(comments)
+	sdb.Model(&model.Goods{}).Create(goodsS)
+	return
 }
