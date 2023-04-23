@@ -37,11 +37,13 @@ func Pay(ctx *gin.Context) {
 		return
 	} else if order.Status == -1 {
 		response.ErrorWithMsg(ctx, errno.ErrParam, "订单不存在或已被删除")
+		return
 	}
 
 	//执行支付
 	if !tools.RandomBool(0.3) {
 		response.ErrorWithMsg(ctx, errno.ErrPayFail, "")
+		return
 	}
 
 	//支付成功修改订单数据
