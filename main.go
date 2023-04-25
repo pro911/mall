@@ -19,9 +19,11 @@ import (
 )
 
 var configFile string
+var httpIp string
 
 func main() {
 	flag.StringVar(&configFile, "f", "", "传入配置文件路径")
+	flag.StringVar(&httpIp, "i", "0.0.0.0", "传入httpServer.ip 默认是0.0.0.0")
 	//解析命令行参数
 	flag.Parse()
 	fmt.Printf("configFile:%v\n", configFile)
@@ -72,7 +74,7 @@ func main() {
 
 	//6.启动服务(优雅关机)
 	srv := &http.Server{
-		Addr:    fmt.Sprintf(":%d", settings.Conf.HttpServer.Port),
+		Addr:    fmt.Sprintf("%s:%d", httpIp, settings.Conf.HttpServer.Port),
 		Handler: r,
 	}
 	fmt.Printf("httpServer.addr:%s\n", fmt.Sprintf(":%d", settings.Conf.HttpServer.Port))
