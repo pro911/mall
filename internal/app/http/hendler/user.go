@@ -38,19 +38,23 @@ func Login(ctx *gin.Context) {
 	}
 
 	//查询用户是否存在
-	b, err := user.Login(ctx, p)
+	u, err := user.Login(ctx, p)
 	if err != nil {
 		response.ErrorWithMsg(ctx, errno.ErrServer, err.Error())
 		return
 	}
 
 	//获取token
-	token, err := middlewares.GenerateToken(b.UserID, b.Username, b.Password)
+	token, err := middlewares.GenerateToken(u.UserID, u.Username, u.Password)
 	if err != nil {
 		response.ErrorWithMsg(ctx, errno.ErrServer, err.Error())
 		return
 	}
 
-	response.SuccessWithData(ctx, gin.H{"token": token})
+	response.SuccessWithData(ctx, gin.H{
+		"user_id":  u.UserID,
+		"username": u.Username,
+		"token":    token,
+	})
 	return
 }
