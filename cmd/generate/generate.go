@@ -27,13 +27,13 @@ func main() {
 
 	// Initialize the generator with configuration
 	g := gen.NewGenerator(gen.Config{
-		OutPath:       "../../internal/pkg/dal/query",
+		OutPath:       "internal/pkg/dal/query",
 		Mode:          gen.WithDefaultQuery | gen.WithQueryInterface,
 		FieldNullable: true,
 	})
 
 	// Initialize a *gorm.DB instance
-	dsn := fmt.Sprintf("../../%v%v", settings.Conf.SQLiteConfig.Host, settings.Conf.SQLiteConfig.DBName)
+	dsn := fmt.Sprintf("%v%v", settings.Conf.SQLiteConfig.Host, settings.Conf.SQLiteConfig.DBName)
 	log.Printf("dsn: %v\n", dsn)
 	db, err := gorm.Open(sqlite.Open(dsn), &gorm.Config{})
 
