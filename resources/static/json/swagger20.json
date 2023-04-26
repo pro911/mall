@@ -1,0 +1,4544 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "wcmscsix Swagger API",
+    "termsOfService": "https://pig4cloud.com/",
+    "contact": {
+      "url": "https://pig4cloud.com/about.html",
+      "email": "wangiegie@gmail.com"
+    },
+    "license": {
+      "name": "Powered By wcmscsix",
+      "url": "https://pig4cloud.com/"
+    }
+  },
+  "host": "127.0.0.1:9999",
+  "basePath": "/cpbackstage",
+  "tags": [
+    {
+      "name": "企业管理",
+      "description": "Cp Corp Controller"
+    },
+    {
+      "name": "卖方管理",
+      "description": "Cp Seller List Controller"
+    },
+    {
+      "name": "发票管理",
+      "description": "Cp Order Invoice Controller"
+    },
+    {
+      "name": "发票额度管理",
+      "description": "Cp Invoice Amount Controller"
+    },
+    {
+      "name": "文件管理",
+      "description": "Cp File Source Controller"
+    },
+    {
+      "name": "旋切机管理",
+      "description": "Cp Device Info Controller"
+    },
+    {
+      "name": "晒场信息管理",
+      "description": "Cp Air Place Controller"
+    },
+    {
+      "name": "生产人员管理",
+      "description": "Cp Employee Controller"
+    },
+    {
+      "name": "用电数据管理",
+      "description": "Cp Electric Controller"
+    },
+    {
+      "name": "电表列表管理",
+      "description": "Cp Ammeter Controller"
+    },
+    {
+      "name": "货单管理",
+      "description": "Cp Order Controller"
+    },
+    {
+      "name": "货物管理",
+      "description": "Cp Goods Controller"
+    },
+    {
+      "name": "银行卡列表管理",
+      "description": "Bank Card List Controller"
+    }
+  ],
+  "paths": {
+    "/bankcardlist/page": {
+      "get": {
+        "tags": [
+          "银行卡列表管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getBankCardListPageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "cardNumber",
+            "in": "query",
+            "description": "银行卡账号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "持卡人名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/bankcardlist/save": {
+      "post": {
+        "tags": [
+          "银行卡列表管理"
+        ],
+        "summary": "新增银行卡列表",
+        "description": "新增银行卡列表",
+        "operationId": "saveUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bankCardList",
+            "description": "bankCardList",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/银行卡列表",
+              "originalRef": "银行卡列表"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/bankcardlist/update": {
+      "put": {
+        "tags": [
+          "银行卡列表管理"
+        ],
+        "summary": "修改银行卡列表",
+        "description": "修改银行卡列表",
+        "operationId": "updateByIdUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bankCardList",
+            "description": "bankCardList",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/银行卡列表",
+              "originalRef": "银行卡列表"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/bankcardlist/{id}": {
+      "delete": {
+        "tags": [
+          "银行卡列表管理"
+        ],
+        "summary": "通过id删除银行卡列表",
+        "description": "通过id删除银行卡列表",
+        "operationId": "removeByIdUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpairplace/page": {
+      "get": {
+        "tags": [
+          "晒场信息管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpAirPlacePageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "acreage",
+            "in": "query",
+            "description": "场地面积（平方米）",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "name": "corpName",
+            "in": "query",
+            "description": "企业名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "cpAirPlaceId",
+            "in": "query",
+            "description": "晒场Id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "licenseNo",
+            "in": "query",
+            "description": "营业执照统一信用代码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体«Page«晒场信息»»",
+              "originalRef": "响应信息主体«Page«晒场信息»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpairplace/save": {
+      "post": {
+        "tags": [
+          "晒场信息管理"
+        ],
+        "summary": "新增晒场信息",
+        "description": "新增晒场信息",
+        "operationId": "saveUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "addDTO",
+            "description": "addDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/晒场信息1",
+              "originalRef": "晒场信息1"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpairplace/update": {
+      "put": {
+        "tags": [
+          "晒场信息管理"
+        ],
+        "summary": "修改晒场信息",
+        "description": "修改晒场信息",
+        "operationId": "updateByIdUsingPUT_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cpAirPlace",
+            "description": "cpAirPlace",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/晒场信息0",
+              "originalRef": "晒场信息0"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpairplace/{id}": {
+      "delete": {
+        "tags": [
+          "晒场信息管理"
+        ],
+        "summary": "通过id删除晒场信息",
+        "description": "通过id删除晒场信息",
+        "operationId": "removeByIdUsingDELETE_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpammeter/dropdownList": {
+      "get": {
+        "tags": [
+          "电表列表管理"
+        ],
+        "summary": "通过企业id获取电表下拉数据",
+        "description": "通过企业id获取电表下拉数据",
+        "operationId": "getDropdownListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "ammeterCode",
+            "in": "query",
+            "description": "电表号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "productionCorpId",
+            "in": "query",
+            "description": "连续生产企业Id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpammeter/page": {
+      "get": {
+        "tags": [
+          "电表列表管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpAmmeterPageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "ammeterCode",
+            "in": "query",
+            "description": "电表号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "corpName",
+            "in": "query",
+            "description": "企业名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "licenseNo",
+            "in": "query",
+            "description": "营业执照统一信用代码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerIdCode",
+            "in": "query",
+            "description": "户主身份证号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerName",
+            "in": "query",
+            "description": "户主名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ownerPhone",
+            "in": "query",
+            "description": "户主电话",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpammeter/save": {
+      "post": {
+        "tags": [
+          "电表列表管理"
+        ],
+        "summary": "新增电表列表",
+        "description": "新增电表列表",
+        "operationId": "saveUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "addDTO",
+            "description": "addDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电表列表0",
+              "originalRef": "电表列表0"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpammeter/update": {
+      "put": {
+        "tags": [
+          "电表列表管理"
+        ],
+        "summary": "修改电表列表",
+        "description": "修改电表列表",
+        "operationId": "updateByIdUsingPUT_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cpAmmeter",
+            "description": "cpAmmeter",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/电表列表",
+              "originalRef": "电表列表"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpammeter/{id}": {
+      "delete": {
+        "tags": [
+          "电表列表管理"
+        ],
+        "summary": "通过id删除电表",
+        "description": "通过id删除电表",
+        "operationId": "removeByIdUsingDELETE_2",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpcorp/corpDropdownList": {
+      "get": {
+        "tags": [
+          "企业管理"
+        ],
+        "summary": "通过企业id获取电表下拉数据",
+        "description": "通过企业id获取电表下拉数据",
+        "operationId": "getDropdownListUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "corpName",
+            "in": "query",
+            "description": "corpName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpdeviceinfo/page": {
+      "get": {
+        "tags": [
+          "旋切机管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpDeviceInfoPageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "buyTimeBegin",
+            "in": "query",
+            "description": "购买时间开始",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "buyTimeEnd",
+            "in": "query",
+            "description": "购买时间开始",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "corpName",
+            "in": "query",
+            "description": "企业名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "deviceCode",
+            "in": "query",
+            "description": "旋切机编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "deviceType",
+            "in": "query",
+            "description": "旋切机型号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "licenseNo",
+            "in": "query",
+            "description": "营业执照统一信用代码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpdeviceinfo/remove/{id}": {
+      "delete": {
+        "tags": [
+          "旋切机管理"
+        ],
+        "summary": "通过id删除连续生产平台设备信息",
+        "description": "通过id删除连续生产平台设备信息",
+        "operationId": "removeByIdUsingDELETE_3",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpdeviceinfo/save": {
+      "post": {
+        "tags": [
+          "旋切机管理"
+        ],
+        "summary": "新增连续生产平台设备信息",
+        "description": "新增连续生产平台设备信息",
+        "operationId": "saveUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "addDTO",
+            "description": "addDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/连续生产平台设备信息0",
+              "originalRef": "连续生产平台设备信息0"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpdeviceinfo/update": {
+      "put": {
+        "tags": [
+          "旋切机管理"
+        ],
+        "summary": "修改连续生产平台设备信息",
+        "description": "修改连续生产平台设备信息",
+        "operationId": "updateByIdUsingPUT_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cpDeviceInfo",
+            "description": "cpDeviceInfo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/连续生产平台设备信息",
+              "originalRef": "连续生产平台设备信息"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpdoods/dropdownList": {
+      "get": {
+        "tags": [
+          "货物管理"
+        ],
+        "summary": "货物下拉列表",
+        "description": "货物下拉列表",
+        "operationId": "getDropdownListUsingGET_2",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "goodsName",
+            "in": "query",
+            "description": "goodsName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpelectric/getTemplate": {
+      "get": {
+        "tags": [
+          "用电数据管理"
+        ],
+        "summary": "获取电费数据导入模板",
+        "description": "获取电费数据导入模板",
+        "operationId": "getCpElectricTemplateUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpelectric/page": {
+      "get": {
+        "tags": [
+          "用电数据管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpElectricPageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "ammeterCode",
+            "in": "query",
+            "description": "电表好",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "areaCode",
+            "in": "query",
+            "description": "区域编号",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "corpName",
+            "in": "query",
+            "description": "企业名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "electricDateBegin",
+            "in": "query",
+            "description": "用电时间(开始)",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "electricDateEnd",
+            "in": "query",
+            "description": "用电时间(开始)",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "licenseNo",
+            "in": "query",
+            "description": "营业执照统一信用代码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "productionCorpId",
+            "in": "query",
+            "description": "企业编码",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpelectric/save": {
+      "post": {
+        "tags": [
+          "用电数据管理"
+        ],
+        "summary": "导入用电数据",
+        "description": "导入用电数据",
+        "operationId": "saveUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cpElectrics",
+            "description": "cpElectrics",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CpElectricAddDTO",
+                "originalRef": "CpElectricAddDTO"
+              }
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpemployee/page": {
+      "get": {
+        "tags": [
+          "生产人员管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpEmployeePageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "corpName",
+            "in": "query",
+            "description": "企业名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "idCode",
+            "in": "query",
+            "description": "身份证号码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "licenseNo",
+            "in": "query",
+            "description": "营业执照统一信用代码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "生产人员名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "phone",
+            "in": "query",
+            "description": "电话",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpemployee/save": {
+      "post": {
+        "tags": [
+          "生产人员管理"
+        ],
+        "summary": "新增连续生产人员（雇员）",
+        "description": "新增连续生产人员（雇员）",
+        "operationId": "saveUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "addDTO",
+            "description": "addDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/连续生产人员（雇员）0",
+              "originalRef": "连续生产人员（雇员）0"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpemployee/update": {
+      "put": {
+        "tags": [
+          "生产人员管理"
+        ],
+        "summary": "修改连续生产人员（雇员）",
+        "description": "修改连续生产人员（雇员）",
+        "operationId": "updateByIdUsingPUT_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cpEmployee",
+            "description": "cpEmployee",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/连续生产人员（雇员）",
+              "originalRef": "连续生产人员（雇员）"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpemployee/{id}": {
+      "delete": {
+        "tags": [
+          "生产人员管理"
+        ],
+        "summary": "通过id删除连续生产人员（雇员）",
+        "description": "通过id删除连续生产人员（雇员）",
+        "operationId": "removeByIdUsingDELETE_4",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpfile/getBatchFile": {
+      "post": {
+        "tags": [
+          "文件管理"
+        ],
+        "summary": "批量获取文件信息",
+        "description": "批量获取文件信息",
+        "operationId": "getBatchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fileDTOS",
+            "description": "fileDTOS",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FileDTO",
+                "originalRef": "FileDTO"
+              }
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体«List«资源文件»»",
+              "originalRef": "响应信息主体«List«资源文件»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpfile/getByType": {
+      "get": {
+        "tags": [
+          "文件管理"
+        ],
+        "summary": "根据文件资源类型获取文件信息",
+        "description": "根据文件资源类型获取文件信息",
+        "operationId": "getUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "filetypeid",
+            "in": "query",
+            "description": "文件类型",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sourceId",
+            "in": "query",
+            "description": "文件来源id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sourceTypeId",
+            "in": "query",
+            "description": "文件来源类型id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体«List«资源文件»»",
+              "originalRef": "响应信息主体«List«资源文件»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpfile/save": {
+      "post": {
+        "tags": [
+          "文件管理"
+        ],
+        "summary": "绑定的文件信息",
+        "description": "绑定的文件信息",
+        "operationId": "saveUsingPOST_6",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fileSource",
+            "description": "fileSource",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/资源文件",
+              "originalRef": "资源文件"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpfile/saveBatchFile": {
+      "post": {
+        "tags": [
+          "文件管理"
+        ],
+        "summary": "批量绑定文件信息",
+        "description": "批量绑定文件信息",
+        "operationId": "saveBatchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fileSources",
+            "description": "fileSources",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/资源文件",
+                "originalRef": "资源文件"
+              }
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpfile/{id}": {
+      "delete": {
+        "tags": [
+          "文件管理"
+        ],
+        "summary": "通过id删除文件",
+        "description": "通过id删除文件",
+        "operationId": "removeFileByIdUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpinvoiceamount/page": {
+      "get": {
+        "tags": [
+          "发票额度管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpInvoiceAmountPageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "applyDateBegin",
+            "in": "query",
+            "description": "申领月份(开始)",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "applyDateEnd",
+            "in": "query",
+            "description": "申领月份(结束)",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "productionCorpId",
+            "in": "query",
+            "description": "连续生产企业Id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cporder/load": {
+      "put": {
+        "tags": [
+          "货单管理"
+        ],
+        "summary": "拍照装车",
+        "description": "拍照装车",
+        "operationId": "loadByIdUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpOrderLoadingDTO",
+              "originalRef": "CpOrderLoadingDTO"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cporder/page": {
+      "get": {
+        "tags": [
+          "货单管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpOrderPageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "checkStatus",
+            "in": "query",
+            "description": "运单校验状态（是否可以领票，不在意预警状态）: 0不可以 、 1可以",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTimeBegin",
+            "in": "query",
+            "description": "创建时间开始",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "createTimeEnd",
+            "in": "query",
+            "description": "创建时间结束",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "goodsId",
+            "in": "query",
+            "description": "商品Id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "invoiceStatus",
+            "in": "query",
+            "description": "领票状态： 1未领取 2已提交 3支付服务费中",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "orderCode",
+            "in": "query",
+            "description": "订单编号（唯一性）",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "payCode",
+            "in": "query",
+            "description": "支付流水",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "payStatus",
+            "in": "query",
+            "description": "支付状态： 1未支付 2已支付 3支付失败 4付款中",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "payType",
+            "in": "query",
+            "description": "支付方式：1平台支付 2其它支付",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "receiveStatus",
+            "in": "query",
+            "description": "是否收货拍照：1为未拍照收货，2为已拍照收货",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sellerId",
+            "in": "query",
+            "description": "卖方Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sendStatus",
+            "in": "query",
+            "description": "是否发货拍照：1为未拍照发货，2为已拍照发货",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "warnStatus",
+            "in": "query",
+            "description": "预警状态(判断是否满足领票条件)：0为未校验 1为正常 2为不正常",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cporder/save": {
+      "post": {
+        "tags": [
+          "货单管理"
+        ],
+        "summary": "新增连续生产订单",
+        "description": "新增连续生产订单",
+        "operationId": "saveUsingPOST_7",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "addDTO",
+            "description": "addDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpOrderAddDTO",
+              "originalRef": "CpOrderAddDTO"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cporder/unload": {
+      "put": {
+        "tags": [
+          "货单管理"
+        ],
+        "summary": "拍照卸车",
+        "description": "拍照卸车",
+        "operationId": "unloadByIdUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpOrderLoadingDTO",
+              "originalRef": "CpOrderLoadingDTO"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cporder/update": {
+      "put": {
+        "tags": [
+          "货单管理"
+        ],
+        "summary": "修改连续生产订单",
+        "description": "修改连续生产订单",
+        "operationId": "updateByIdUsingPUT_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cpOrder",
+            "description": "cpOrder",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpOrderUpdateDTO",
+              "originalRef": "CpOrderUpdateDTO"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cporder/{orderId}": {
+      "delete": {
+        "tags": [
+          "货单管理"
+        ],
+        "summary": "通过id作废连续生产订单",
+        "description": "通过id作废连续生产订单",
+        "operationId": "removeByIdUsingDELETE_5",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "orderId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cporderinvoice/page": {
+      "get": {
+        "tags": [
+          "发票管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpOrderInvoicePageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "createTimeBegin",
+            "in": "query",
+            "description": "创建时间开始",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "createTimeEnd",
+            "in": "query",
+            "description": "创建时间结束",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "orderCode",
+            "in": "query",
+            "description": "订单编号（唯一性）",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "productionCorpId",
+            "in": "query",
+            "description": "连续生产企业Id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpsellerlist/getCpSellerDropdownList": {
+      "get": {
+        "tags": [
+          "卖方管理"
+        ],
+        "summary": "查询获取卖方下拉信息",
+        "description": "查询获取卖方下拉信息",
+        "operationId": "getCpSellerDropdownListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "sellerIdCode",
+            "in": "query",
+            "description": "卖方身份证号码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sellerName",
+            "in": "query",
+            "description": "卖方名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sellerPhone",
+            "in": "query",
+            "description": "卖方电话",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpsellerlist/getCpSellerList": {
+      "get": {
+        "tags": [
+          "卖方管理"
+        ],
+        "summary": "模糊查询获取卖方信息",
+        "description": "模糊查询获取卖方信息",
+        "operationId": "getCpSellerListUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "sellerIdCode",
+            "in": "query",
+            "description": "卖方身份证号码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sellerName",
+            "in": "query",
+            "description": "卖方名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sellerPhone",
+            "in": "query",
+            "description": "卖方电话",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpsellerlist/page": {
+      "get": {
+        "tags": [
+          "卖方管理"
+        ],
+        "summary": "分页查询",
+        "description": "分页查询",
+        "operationId": "getCpSellerListPageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "sellerIdCode",
+            "in": "query",
+            "description": "卖方身份证号码",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sellerName",
+            "in": "query",
+            "description": "卖方名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sellerPhone",
+            "in": "query",
+            "description": "卖方电话",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "分页大小",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpsellerlist/save": {
+      "post": {
+        "tags": [
+          "卖方管理"
+        ],
+        "summary": "新增连续生产",
+        "description": "新增连续生产",
+        "operationId": "saveUsingPOST_8",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "addDTO",
+            "description": "addDTO",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CpSellerListAddDTO",
+              "originalRef": "CpSellerListAddDTO"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpsellerlist/update": {
+      "put": {
+        "tags": [
+          "卖方管理"
+        ],
+        "summary": "修改连续生产卖方",
+        "description": "修改连续生产卖方",
+        "operationId": "updateByIdUsingPUT_6",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cpSellerList",
+            "description": "cpSellerList",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/连续生产卖方列表",
+              "originalRef": "连续生产卖方列表"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/cpsellerlist/{id}": {
+      "delete": {
+        "tags": [
+          "卖方管理"
+        ],
+        "summary": "通过id删除连续生产卖方",
+        "description": "通过id删除连续生产卖方",
+        "operationId": "removeByIdUsingDELETE_6",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/file/deleteBatchByIds": {
+      "post": {
+        "tags": [
+          "文件管理"
+        ],
+        "summary": "根据filesource表的id批量删除文件信息",
+        "description": "根据filesource表的id批量删除文件信息",
+        "operationId": "deleteBatchByIdsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "fileSourceIds",
+            "description": "fileSourceIds",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/file/getFileByType": {
+      "get": {
+        "tags": [
+          "文件管理"
+        ],
+        "summary": "根据来源类型、来源id、文件类型（可选）获取文件列表",
+        "description": "根据来源类型、来源id、文件类型（可选）获取文件列表",
+        "operationId": "getFileByTypeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "fileTypeId",
+            "in": "query",
+            "description": "文件类型id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sourceId",
+            "in": "query",
+            "description": "来源id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "sourceTypeId",
+            "in": "query",
+            "description": "来源类型id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    },
+    "/file/saveFile": {
+      "post": {
+        "tags": [
+          "文件管理"
+        ],
+        "summary": "保存文件信息",
+        "description": "保存文件信息",
+        "operationId": "saveFileUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "dto",
+            "description": "dto",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FileInfo",
+              "originalRef": "FileInfo"
+            }
+          },
+          {
+            "name": "VERSION",
+            "in": "header",
+            "description": "灰度路由版本信息",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应信息主体",
+              "originalRef": "响应信息主体"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "server"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "oauth2": {
+      "type": "oauth2",
+      "tokenUrl": "/auth/oauth/token",
+      "flow": "password",
+      "scopes": {
+        "server": "server all"
+      }
+    }
+  },
+  "definitions": {
+    "CpElectricAddDTO": {
+      "type": "object",
+      "properties": {
+        "ammeterCode": {
+          "type": "string",
+          "description": "电表号"
+        },
+        "ammeterId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "电表Id"
+        },
+        "corpName": {
+          "type": "string",
+          "description": "连续生产企业名称"
+        },
+        "electricDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "用电时间"
+        },
+        "electricNum": {
+          "type": "number",
+          "description": "用电度数"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        }
+      },
+      "title": "CpElectricAddDTO"
+    },
+    "CpOrderAddDTO": {
+      "type": "object",
+      "properties": {
+        "carId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆Id"
+        },
+        "countMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "计算方式：1、体积，2重量。默认是体积"
+        },
+        "driverId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "司机Id"
+        },
+        "fileAddDTO": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/资源文件",
+            "originalRef": "资源文件"
+          }
+        },
+        "goodsCategoryId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "关联货物分类ID"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "关联货物字典ID"
+        },
+        "payCode": {
+          "type": "string",
+          "description": "支付流水"
+        },
+        "payTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "支付支付时间"
+        },
+        "payType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式：1平台支付 2其它支付"
+        },
+        "quantity": {
+          "type": "number",
+          "description": "数量(方、吨)"
+        },
+        "sellerId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "卖方Id"
+        },
+        "totalPrice": {
+          "type": "number",
+          "description": "总价"
+        }
+      },
+      "title": "CpOrderAddDTO"
+    },
+    "CpOrderLoadingDTO": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "装车地址"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "装车纬度"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "装车经度"
+        },
+        "orderId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "订单id"
+        }
+      },
+      "title": "CpOrderLoadingDTO"
+    },
+    "CpOrderUpdateDTO": {
+      "type": "object",
+      "properties": {
+        "carId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "车辆Id"
+        },
+        "countMode": {
+          "type": "integer",
+          "format": "int32",
+          "description": "计算方式：1、体积，2重量。默认是体积"
+        },
+        "driverId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "司机Id"
+        },
+        "goodsCategoryId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "关联货物分类ID"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "关联货物字典ID"
+        },
+        "orderGoodsId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "订单货物Id"
+        },
+        "orderId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "订单Id主键自增"
+        },
+        "payCode": {
+          "type": "string",
+          "description": "支付流水"
+        },
+        "payTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "支付支付时间"
+        },
+        "payType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "支付方式：1平台支付 2其它支付"
+        },
+        "quantity": {
+          "type": "number",
+          "description": "数量(方、吨)"
+        },
+        "sellerId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "卖方Id"
+        },
+        "totalPrice": {
+          "type": "number",
+          "description": "总价"
+        }
+      },
+      "title": "CpOrderUpdateDTO"
+    },
+    "CpSellerListAddDTO": {
+      "type": "object",
+      "properties": {
+        "cardNumber": {
+          "type": "string",
+          "description": "银行卡账号"
+        },
+        "cardholderName": {
+          "type": "string",
+          "description": "持卡人名称"
+        },
+        "sellerIdCode": {
+          "type": "string",
+          "description": "卖方身份证号码"
+        },
+        "sellerName": {
+          "type": "string",
+          "description": "卖方名称"
+        },
+        "sellerPhone": {
+          "type": "string",
+          "description": "卖方电话"
+        }
+      },
+      "title": "CpSellerListAddDTO"
+    },
+    "FileAddDTO": {
+      "type": "object",
+      "properties": {
+        "fileguid": {
+          "type": "string",
+          "description": "图片guid"
+        },
+        "filename": {
+          "type": "string",
+          "description": "文件guid"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "维度"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "经度"
+        }
+      },
+      "title": "FileAddDTO"
+    },
+    "FileDTO": {
+      "type": "object",
+      "properties": {
+        "filetypeid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "文件类型"
+        },
+        "sourceId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "文件来源id"
+        },
+        "sourceTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "文件来源类型id"
+        }
+      },
+      "title": "FileDTO"
+    },
+    "FileInfo": {
+      "type": "object",
+      "properties": {
+        "fileGuid": {
+          "type": "string",
+          "description": "文件guid"
+        },
+        "fileId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "文件id"
+        },
+        "fileName": {
+          "type": "string",
+          "description": "文件名"
+        },
+        "fileTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "文件类型id"
+        },
+        "lat": {
+          "type": "number",
+          "description": "纬度"
+        },
+        "lon": {
+          "type": "number",
+          "description": "经度"
+        },
+        "sourceId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "来源id"
+        },
+        "sourceTypeId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "来源类型id"
+        }
+      },
+      "title": "FileInfo"
+    },
+    "FileTypesAddDTO": {
+      "type": "object",
+      "properties": {
+        "fileguid": {
+          "type": "string",
+          "description": "图片guid"
+        },
+        "filename": {
+          "type": "string",
+          "description": "文件guid"
+        },
+        "filetypeid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "文件类型（1身份证正面、2身份证反面、3手写签名、4合同、5发货装车、6收货卸车、7合同模板、8营业执照、9驾驶证正面、10驾驶证反面、11行驶证、12营运证）"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "维度"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "经度"
+        },
+        "sourcetypeid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "资源类型（1合同、2旋切机主、3胶合板厂、4货单、5分账规则、6营业执照、7司机、8车辆）"
+        }
+      },
+      "title": "FileTypesAddDTO"
+    },
+    "FileVO": {
+      "type": "object",
+      "properties": {
+        "fileguid": {
+          "type": "string",
+          "description": "文件guid"
+        },
+        "filename": {
+          "type": "string",
+          "description": "文件guid"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键ID"
+        }
+      },
+      "title": "FileVO"
+    },
+    "OrderItem": {
+      "type": "object",
+      "properties": {
+        "asc": {
+          "type": "boolean"
+        },
+        "column": {
+          "type": "string"
+        }
+      },
+      "title": "OrderItem"
+    },
+    "Page«晒场信息»": {
+      "type": "object",
+      "properties": {
+        "countId": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "maxLimit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "optimizeCountSql": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderItem",
+            "originalRef": "OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/晒场信息",
+            "originalRef": "晒场信息"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«晒场信息»"
+    },
+    "响应信息主体": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回标记：成功标记=0，失败标记=1"
+        },
+        "data": {
+          "type": "object",
+          "description": "数据"
+        },
+        "msg": {
+          "type": "string",
+          "description": "返回信息"
+        }
+      },
+      "title": "响应信息主体"
+    },
+    "响应信息主体«List«资源文件»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回标记：成功标记=0，失败标记=1"
+        },
+        "data": {
+          "type": "array",
+          "description": "数据",
+          "items": {
+            "$ref": "#/definitions/资源文件",
+            "originalRef": "资源文件"
+          }
+        },
+        "msg": {
+          "type": "string",
+          "description": "返回信息"
+        }
+      },
+      "title": "响应信息主体«List«资源文件»»"
+    },
+    "响应信息主体«Page«晒场信息»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回标记：成功标记=0，失败标记=1"
+        },
+        "data": {
+          "description": "数据",
+          "$ref": "#/definitions/Page«晒场信息»",
+          "originalRef": "Page«晒场信息»"
+        },
+        "msg": {
+          "type": "string",
+          "description": "返回信息"
+        }
+      },
+      "title": "响应信息主体«Page«晒场信息»»"
+    },
+    "晒场信息": {
+      "type": "object",
+      "properties": {
+        "acreage": {
+          "type": "number",
+          "description": "场地面积（平方米）"
+        },
+        "address": {
+          "type": "string",
+          "description": "地址"
+        },
+        "corpName": {
+          "type": "string",
+          "description": "企业名称"
+        },
+        "corpType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "企业类型:1胶合板厂 2旋切机厂"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "fileVOS": {
+          "type": "array",
+          "description": "晒场图片列表",
+          "items": {
+            "$ref": "#/definitions/FileVO",
+            "originalRef": "FileVO"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增晒场Id"
+        },
+        "isAudit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否已通过审核：0未审核、1已审核"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "维度"
+        },
+        "licenseNo": {
+          "type": "string",
+          "description": "营业执照统一信用代码"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "经度"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "晒场信息"
+    },
+    "晒场信息0": {
+      "type": "object",
+      "properties": {
+        "acreage": {
+          "type": "number",
+          "description": "场地面积（平方米）"
+        },
+        "address": {
+          "type": "string",
+          "description": "地址"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增晒场Id"
+        },
+        "isAudit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否已通过审核：0未审核、1已审核"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "维度"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "经度"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "晒场信息0"
+    },
+    "晒场信息1": {
+      "type": "object",
+      "properties": {
+        "acreage": {
+          "type": "number",
+          "description": "场地面积（平方米）"
+        },
+        "address": {
+          "type": "string",
+          "description": "地址"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "fileAddDTO": {
+          "type": "array",
+          "description": "图片信息列表",
+          "items": {
+            "$ref": "#/definitions/FileAddDTO",
+            "originalRef": "FileAddDTO"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增晒场Id"
+        },
+        "isAudit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否已通过审核：0未审核、1已审核"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "维度"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "经度"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "晒场信息1"
+    },
+    "电表列表": {
+      "type": "object",
+      "properties": {
+        "ammeterCode": {
+          "type": "string",
+          "description": "电表号"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增电表Id"
+        },
+        "ownerIdCode": {
+          "type": "string",
+          "description": "户主身份证号"
+        },
+        "ownerName": {
+          "type": "string",
+          "description": "户主名称"
+        },
+        "ownerPhone": {
+          "type": "string",
+          "description": "户主电话"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "电表列表"
+    },
+    "电表列表0": {
+      "type": "object",
+      "properties": {
+        "ammeterCode": {
+          "type": "string",
+          "description": "电表号"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "fileAddDTO": {
+          "type": "array",
+          "description": "图片信息列表",
+          "items": {
+            "$ref": "#/definitions/FileAddDTO",
+            "originalRef": "FileAddDTO"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增电表Id"
+        },
+        "ownerIdCode": {
+          "type": "string",
+          "description": "户主身份证号"
+        },
+        "ownerName": {
+          "type": "string",
+          "description": "户主名称"
+        },
+        "ownerPhone": {
+          "type": "string",
+          "description": "户主电话"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "电表列表0"
+    },
+    "资源文件": {
+      "type": "object",
+      "properties": {
+        "createdtime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "fileguid": {
+          "type": "string",
+          "description": "文件guid"
+        },
+        "fileid": {
+          "type": "integer",
+          "format": "int64",
+          "description": "文件ID"
+        },
+        "filename": {
+          "type": "string",
+          "description": "文件名"
+        },
+        "filetypeid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "文件类型（1身份证正面、2身份证反面、3手写签名、4合同、5发货装车、6收货卸车、7合同模板、8营业执照、9驾驶证正面、10驾驶证反面、11行驶证、12营运证）"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键ID"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "纬度"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "经度"
+        },
+        "sourceid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "来源ID(合同ID、货单ID、分账规则ID）"
+        },
+        "sourcetypeid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "资源类型（1合同、2旋切机主、3胶合板厂、4货单、5分账规则、6营业执照、7司机、8车辆）"
+        }
+      },
+      "title": "资源文件"
+    },
+    "连续生产人员（雇员）": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增生产人员Id"
+        },
+        "idCode": {
+          "type": "string",
+          "description": "身份证号码"
+        },
+        "isValid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是效有否  1:有效 0:无效"
+        },
+        "name": {
+          "type": "string",
+          "description": "生产人员名称"
+        },
+        "phone": {
+          "type": "string",
+          "description": "电话"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "连续生产人员（雇员）"
+    },
+    "连续生产人员（雇员）0": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "fileTypesAddDTOS": {
+          "type": "array",
+          "description": "图片信息列表",
+          "items": {
+            "$ref": "#/definitions/FileTypesAddDTO",
+            "originalRef": "FileTypesAddDTO"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增生产人员Id"
+        },
+        "idCode": {
+          "type": "string",
+          "description": "身份证号码"
+        },
+        "isValid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是效有否  1:有效 0:无效"
+        },
+        "name": {
+          "type": "string",
+          "description": "生产人员名称"
+        },
+        "phone": {
+          "type": "string",
+          "description": "电话"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "连续生产人员（雇员）0"
+    },
+    "连续生产卖方列表": {
+      "type": "object",
+      "properties": {
+        "bankCardId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "绑定银行卡id"
+        },
+        "bankName": {
+          "type": "string",
+          "description": "银行名称"
+        },
+        "cardNumber": {
+          "type": "string",
+          "description": "银行卡账号"
+        },
+        "cardholderName": {
+          "type": "string",
+          "description": "持卡人名称"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增卖方Id"
+        },
+        "sellerIdCode": {
+          "type": "string",
+          "description": "卖方身份证号码"
+        },
+        "sellerName": {
+          "type": "string",
+          "description": "卖方名称"
+        },
+        "sellerPhone": {
+          "type": "string",
+          "description": "卖方电话"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "连续生产卖方列表"
+    },
+    "连续生产平台设备信息": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "地址"
+        },
+        "buyTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "购买时间"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "deviceCode": {
+          "type": "string",
+          "description": "旋切机编号（18位）"
+        },
+        "deviceType": {
+          "type": "string",
+          "description": "旋切机型号"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增设备id"
+        },
+        "isAudit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否已通过审核：0未审核、1已审核"
+        },
+        "isValid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是效有否  1:有效 0:无效"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "维度"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "经度"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "连续生产平台设备信息"
+    },
+    "连续生产平台设备信息0": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "地址"
+        },
+        "buyTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "购买时间"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "deviceCode": {
+          "type": "string",
+          "description": "旋切机编号（18位）"
+        },
+        "deviceType": {
+          "type": "string",
+          "description": "旋切机型号"
+        },
+        "fileAddDTO": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileAddDTO",
+            "originalRef": "FileAddDTO"
+          }
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键自增设备id"
+        },
+        "isAudit": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否已通过审核：0未审核、1已审核"
+        },
+        "isValid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是效有否  1:有效 0:无效"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "维度"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "经度"
+        },
+        "productionCorpId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "连续生产企业Id"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "连续生产平台设备信息0"
+    },
+    "银行卡列表": {
+      "type": "object",
+      "properties": {
+        "bankCode": {
+          "type": "string",
+          "description": "银行代码（以阿里云接口返回为准"
+        },
+        "bankName": {
+          "type": "string",
+          "description": "银行名称"
+        },
+        "cardNumber": {
+          "type": "string",
+          "description": "银行卡账号"
+        },
+        "cardholderName": {
+          "type": "string",
+          "description": "持卡人名称"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "自增ID"
+        },
+        "isValid": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是效有否  1:有效 0:无效"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改时间"
+        }
+      },
+      "title": "银行卡列表"
+    }
+  }
+}

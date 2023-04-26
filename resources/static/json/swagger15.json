@@ -1,0 +1,112 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "111111",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/echo.apipost.cn/get.php": {
+      "post": {
+        "summary": "11111",
+        "x-apifox-folder": "",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "212121",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "header",
+            "in": "header",
+            "description": "888999",
+            "required": false,
+            "example": "11222111222",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "example": "file://D:\\lemon\\背景\\111.bmp",
+                    "format": "binary"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "111222333"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例 ",
+                    "value": {
+                      "errcode": 0,
+                      "errstr": "success",
+                      "post": {
+                        "message": "111222333"
+                      },
+                      "get": {
+                        "query": "212121"
+                      },
+                      "request": {
+                        "query": "212121",
+                        "message": "111222333"
+                      },
+                      "file": [],
+                      "put": "",
+                      "header": {
+                        "Header": "11222111222",
+                        "User-Agent": "apifox/1.0.0 (https://www.apifox.cn)",
+                        "Accept": "*/*",
+                        "Host": "echo.apipost.cn",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "Connection": "keep-alive",
+                        "Content-Type": "multipart/form-data; boundary=--------------------------306239738111730685863677",
+                        "Content-Length": "171"
+                      },
+                      "cookie": [],
+                      "bigint": 248963637882912770
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

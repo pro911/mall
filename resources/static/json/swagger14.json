@@ -1,0 +1,7155 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "全景监视",
+    "version": "v1.0",
+    "termsOfService": "http://www.xx.com",
+    "contact": {
+      "name": "hongliang-zu@sac.com"
+    }
+  },
+  "host": "10.1.0.201:18005",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "defect-controller",
+      "description": "Defect Controller"
+    },
+    {
+      "name": "defect-rule-controller",
+      "description": "Defect Rule Controller"
+    },
+    {
+      "name": "devstat-cms-main-devwrn-controller",
+      "description": "Devstat Cms Main Devwrn Controller"
+    },
+    {
+      "name": "history-controller",
+      "description": "History Controller"
+    },
+    {
+      "name": "panorama-model-instance-controller",
+      "description": "Panorama Model Instance Controller"
+    },
+    {
+      "name": "panorama-model-instance-device-controller",
+      "description": "Panorama Model Instance Device Controller"
+    },
+    {
+      "name": "panorama-region-plan-controller",
+      "description": "Panorama Region Plan Controller"
+    },
+    {
+      "name": "panorama-region-plan-device-controller",
+      "description": "Panorama Region Plan Device Controller"
+    },
+    {
+      "name": "panorama-scene-controller",
+      "description": "Panorama Scene Controller"
+    },
+    {
+      "name": "patrol-plan-controller",
+      "description": "Patrol Plan Controller"
+    },
+    {
+      "name": "patrol-plan-task-relation-controller",
+      "description": "Patrol Plan Task Relation Controller"
+    },
+    {
+      "name": "patrol-task-content-controller",
+      "description": "Patrol Task Content Controller"
+    },
+    {
+      "name": "patrol-task-controller",
+      "description": "Patrol Task Controller"
+    },
+    {
+      "name": "patrol-task-instance-controller",
+      "description": "Patrol Task Instance Controller"
+    },
+    {
+      "name": "quartz-manager-controller",
+      "description": "Quartz Manager Controller"
+    },
+    {
+      "name": "subsystem-funpoint-controller",
+      "description": "Subsystem Funpoint Controller"
+    },
+    {
+      "name": "system-config-controller",
+      "description": "System Config Controller"
+    },
+    {
+      "name": "test-contronller",
+      "description": "Test Contronller"
+    }
+  ],
+  "paths": {
+    "/alarmConvertDefect": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "告警转缺陷",
+        "operationId": "alarmConvertDefectUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "defectBodyList",
+            "description": "defectBodyList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "RequestDefectBody",
+                "$ref": "#/definitions/RequestDefectBody"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/alarmEvent/queryAlarmStatus": {
+      "post": {
+        "tags": [
+          "devstat-cms-main-devwrn-controller"
+        ],
+        "summary": "queryAlarmStatus",
+        "operationId": "queryAlarmStatusUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«DevstatCmsMainDevwrn对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«DevstatCmsMainDevwrn对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/alarmEvent/queryPrimaryAlarmStatus": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "queryAlarmStatus",
+        "operationId": "queryAlarmStatusUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/alarmEvent/statisticsAlarmTrend": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "统计区域下，某站点、某一子系统类的设备每日告警信息数量",
+        "operationId": "statisticsAlarmTrendUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "historyRequestBody",
+            "description": "historyRequestBody",
+            "required": true,
+            "schema": {
+              "originalRef": "RequestHistoryDataBody",
+              "$ref": "#/definitions/RequestHistoryDataBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/alarmEvent/statisticsAllAuxiliaryAlarm": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "统计所有辅控告警",
+        "operationId": "statisticsAllAuxiliaryAlarmUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "json",
+            "description": "json",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/confirmAlarm": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "确认告警",
+        "operationId": "confirmAlarmUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "arrayList",
+            "description": "arrayList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "RequestConfirmAlarm",
+                "$ref": "#/definitions/RequestConfirmAlarm"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defect/addrules": {
+      "post": {
+        "tags": [
+          "defect-rule-controller"
+        ],
+        "summary": "新增缺陷规则",
+        "operationId": "createRuleUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "rules",
+            "description": "rules",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "DefectRule对象",
+                "$ref": "#/definitions/DefectRule对象"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defect/deleterules": {
+      "post": {
+        "tags": [
+          "defect-rule-controller"
+        ],
+        "summary": "删除缺陷规则",
+        "operationId": "deleteRuleUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ruleIds",
+            "description": "ruleIds",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defect/getdefect": {
+      "post": {
+        "tags": [
+          "defect-controller"
+        ],
+        "summary": "获取缺陷",
+        "operationId": "getDefectUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«Defect对象»",
+              "$ref": "#/definitions/PageData«Defect对象»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«Page«Defect对象»»",
+              "$ref": "#/definitions/ResponseMsg«Page«Defect对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defect/getrules": {
+      "get": {
+        "tags": [
+          "defect-rule-controller"
+        ],
+        "summary": "获取缺陷规则",
+        "operationId": "getRulesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«DefectRule对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«DefectRule对象»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defect/statistics/all": {
+      "post": {
+        "tags": [
+          "defect-controller"
+        ],
+        "summary": "缺陷统计图表查询",
+        "operationId": "getEchartDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List»",
+              "$ref": "#/definitions/ResponseMsg«List»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defect/statistics/stateEvaluation": {
+      "post": {
+        "tags": [
+          "defect-controller"
+        ],
+        "summary": "getStateEvaluation",
+        "operationId": "getStateEvaluationUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "SubId",
+            "in": "query",
+            "description": "SubId",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseEntity",
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defect/updaterules": {
+      "post": {
+        "tags": [
+          "defect-rule-controller"
+        ],
+        "summary": "修改缺陷规则",
+        "operationId": "uddateRuleUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "rules",
+            "description": "rules",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "DefectRule对象",
+                "$ref": "#/definitions/DefectRule对象"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defectStatistics": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "缺陷统计",
+        "operationId": "defectStatisticsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/defectStatisticsByDate": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "通过日期统计缺陷",
+        "operationId": "defectStatisticsByDateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/history/queryHistoryData": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "通用的历史数据分页查询接口",
+        "operationId": "queryHistoryDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "requestHistoryDataBody",
+            "description": "requestHistoryDataBody",
+            "required": true,
+            "schema": {
+              "originalRef": "RequestHistoryDataBody",
+              "$ref": "#/definitions/RequestHistoryDataBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponsePageMsg",
+              "$ref": "#/definitions/ResponsePageMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/history/queryHistoryLimitData": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "历史数据曲线接口",
+        "operationId": "queryHistoryLimitDataUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "requestHistoryLimitDataBody",
+            "description": "requestHistoryLimitDataBody",
+            "required": true,
+            "schema": {
+              "originalRef": "RequestHistoryLimitDataBody",
+              "$ref": "#/definitions/RequestHistoryLimitDataBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/insertDefect": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "填报缺陷",
+        "operationId": "insertDefectUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "defectBodyList",
+            "description": "defectBodyList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "RequestDefectBody",
+                "$ref": "#/definitions/RequestDefectBody"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/add": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "新增模型实例与设备关系",
+        "operationId": "addUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstanceDevice",
+            "description": "panoramaModelInstanceDevice",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstanceDevice对象",
+              "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/addBatch": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "批量新增模型实例与设备关系",
+        "operationId": "addBatchUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstanceDevices",
+            "description": "panoramaModelInstanceDevices",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "PanoramaModelInstanceDevice对象",
+                "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/delete": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "删除模型实例与设备关系",
+        "operationId": "deleteUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstanceDevice",
+            "description": "panoramaModelInstanceDevice",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstanceDevice对象",
+              "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/deleteBatch": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "批量删除模型实例与设备关系",
+        "operationId": "deleteBatchUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ids",
+            "description": "ids",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/get": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "获取模型实例与设备关系",
+        "operationId": "getUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstanceDevice",
+            "description": "panoramaModelInstanceDevice",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstanceDevice对象",
+              "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«PanoramaModelInstanceDevice对象»",
+              "$ref": "#/definitions/ResponseMsg«PanoramaModelInstanceDevice对象»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/getAll": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "获取所有模型实例与设备关系",
+        "operationId": "getAllUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaModelInstanceDevice对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaModelInstanceDevice对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/pagequery": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "分页查询模型实例与设备关系",
+        "operationId": "pagequeryUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«PanoramaModelInstanceDevice对象»",
+              "$ref": "#/definitions/PageData«PanoramaModelInstanceDevice对象»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«Page«PanoramaModelInstanceDevice对象»»",
+              "$ref": "#/definitions/ResponseMsg«Page«PanoramaModelInstanceDevice对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/query": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "查询模型实例与设备关系",
+        "operationId": "queryUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstanceDevice",
+            "description": "panoramaModelInstanceDevice",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstanceDevice对象",
+              "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaModelInstanceDevice对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaModelInstanceDevice对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/queryBatch": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "批量查询模型实例与设备关系",
+        "operationId": "queryBatchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "instanceIds",
+            "description": "instanceIds",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaModelInstanceDevice对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaModelInstanceDevice对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/update": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "修改模型实例与设备关系",
+        "operationId": "updateUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstanceDevice",
+            "description": "panoramaModelInstanceDevice",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstanceDevice对象",
+              "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance-device/updateBatch": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-device-controller"
+        ],
+        "summary": "批量修改模型实例与设备关系",
+        "operationId": "updateBatchUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstanceDevices",
+            "description": "panoramaModelInstanceDevices",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "PanoramaModelInstanceDevice对象",
+                "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/add": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "新增全景模型文件的实例",
+        "operationId": "addUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstance",
+            "description": "panoramaModelInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstance对象",
+              "$ref": "#/definitions/PanoramaModelInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/addBatch": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "批量新增全景模型文件的实例",
+        "operationId": "addBatchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstances",
+            "description": "panoramaModelInstances",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "PanoramaModelInstance对象",
+                "$ref": "#/definitions/PanoramaModelInstance对象"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/delete": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "删除全景模型文件的实例",
+        "operationId": "deleteUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstance",
+            "description": "panoramaModelInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstance对象",
+              "$ref": "#/definitions/PanoramaModelInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/deleteBatch": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "批量删除全景模型文件的实例",
+        "operationId": "deleteBatchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "instanceIds",
+            "description": "instanceIds",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/get": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "获取全景模型文件的实例",
+        "operationId": "getUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstance",
+            "description": "panoramaModelInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstance对象",
+              "$ref": "#/definitions/PanoramaModelInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«PanoramaModelInstance对象»",
+              "$ref": "#/definitions/ResponseMsg«PanoramaModelInstance对象»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/getAll": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "获取所有全景模型文件的实例",
+        "operationId": "getAllUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaModelInstance对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaModelInstance对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/getPanoramaModelInstanceByDeviceId": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "根据设备获取全景模型文件的实例",
+        "operationId": "getPanoramaModelInstanceByDeviceIdUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "condition",
+            "description": "condition",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaModelInstance对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaModelInstance对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/pagequery": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "分页查询全景模型文件的实例",
+        "operationId": "pagequeryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«PanoramaModelInstance对象»",
+              "$ref": "#/definitions/PageData«PanoramaModelInstance对象»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«Page«PanoramaModelInstance对象»»",
+              "$ref": "#/definitions/ResponseMsg«Page«PanoramaModelInstance对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/query": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "查询全景模型文件的实例",
+        "operationId": "queryUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstance",
+            "description": "panoramaModelInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstance对象",
+              "$ref": "#/definitions/PanoramaModelInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaModelInstance对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaModelInstance对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/update": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "修改全景模型文件的实例",
+        "operationId": "updateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstance",
+            "description": "panoramaModelInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaModelInstance对象",
+              "$ref": "#/definitions/PanoramaModelInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-model-instance/updateBatch": {
+      "post": {
+        "tags": [
+          "panorama-model-instance-controller"
+        ],
+        "summary": "批量修改全景模型文件的实例",
+        "operationId": "updateBatchUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaModelInstances",
+            "description": "panoramaModelInstances",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "PanoramaModelInstance对象",
+                "$ref": "#/definitions/PanoramaModelInstance对象"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-scene/add": {
+      "post": {
+        "tags": [
+          "panorama-scene-controller"
+        ],
+        "summary": "新增全景监视场景",
+        "operationId": "addUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaScene",
+            "description": "panoramaScene",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaScene对象",
+              "$ref": "#/definitions/PanoramaScene对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-scene/delete": {
+      "post": {
+        "tags": [
+          "panorama-scene-controller"
+        ],
+        "summary": "删除全景监视场景",
+        "operationId": "deleteUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaScene",
+            "description": "panoramaScene",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaScene对象",
+              "$ref": "#/definitions/PanoramaScene对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-scene/get": {
+      "post": {
+        "tags": [
+          "panorama-scene-controller"
+        ],
+        "summary": "获取全景监视场景",
+        "operationId": "getUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaScene",
+            "description": "panoramaScene",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaScene对象",
+              "$ref": "#/definitions/PanoramaScene对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«PanoramaScene对象»",
+              "$ref": "#/definitions/ResponseMsg«PanoramaScene对象»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-scene/getAll": {
+      "post": {
+        "tags": [
+          "panorama-scene-controller"
+        ],
+        "summary": "获取所有全景监视场景",
+        "operationId": "getAllUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaScene对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaScene对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-scene/pagequery": {
+      "post": {
+        "tags": [
+          "panorama-scene-controller"
+        ],
+        "summary": "分页查询全景监视场景",
+        "operationId": "pagequeryUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«PanoramaScene对象»",
+              "$ref": "#/definitions/PageData«PanoramaScene对象»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«Page«PanoramaScene对象»»",
+              "$ref": "#/definitions/ResponseMsg«Page«PanoramaScene对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-scene/query": {
+      "post": {
+        "tags": [
+          "panorama-scene-controller"
+        ],
+        "summary": "查询全景监视场景",
+        "operationId": "queryUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaScene",
+            "description": "panoramaScene",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaScene对象",
+              "$ref": "#/definitions/PanoramaScene对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaScene对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaScene对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-scene/queryBatch": {
+      "post": {
+        "tags": [
+          "panorama-scene-controller"
+        ],
+        "summary": "根据mrids查询全景监视场景",
+        "operationId": "queryBatchUsingPOST_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "mrids",
+            "description": "mrids",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaScene对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaScene对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panorama-scene/update": {
+      "post": {
+        "tags": [
+          "panorama-scene-controller"
+        ],
+        "summary": "修改全景监视场景",
+        "operationId": "updateUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaScene",
+            "description": "panoramaScene",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaScene对象",
+              "$ref": "#/definitions/PanoramaScene对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panoramaRegionPlan/add": {
+      "post": {
+        "tags": [
+          "panorama-region-plan-controller"
+        ],
+        "summary": "新增全景监视区域布局图",
+        "operationId": "addUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaRegionPlan",
+            "description": "panoramaRegionPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaRegionPlan",
+              "$ref": "#/definitions/PanoramaRegionPlan"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panoramaRegionPlan/delete": {
+      "post": {
+        "tags": [
+          "panorama-region-plan-controller"
+        ],
+        "summary": "删除全景监视区域布局图",
+        "operationId": "deleteUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaRegionPlan",
+            "description": "panoramaRegionPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaRegionPlan",
+              "$ref": "#/definitions/PanoramaRegionPlan"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panoramaRegionPlan/query": {
+      "post": {
+        "tags": [
+          "panorama-region-plan-controller"
+        ],
+        "summary": "查询全景监视区域布局图",
+        "operationId": "queryUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaRegionPlan",
+            "description": "panoramaRegionPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaRegionPlan",
+              "$ref": "#/definitions/PanoramaRegionPlan"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaRegionPlan»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaRegionPlan»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panoramaRegionPlan/update": {
+      "post": {
+        "tags": [
+          "panorama-region-plan-controller"
+        ],
+        "summary": "修改全景监视区域布局图",
+        "operationId": "updateUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaRegionPlan",
+            "description": "panoramaRegionPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaRegionPlan",
+              "$ref": "#/definitions/PanoramaRegionPlan"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panoramaRegionPlanDevice/add": {
+      "post": {
+        "tags": [
+          "panorama-region-plan-device-controller"
+        ],
+        "summary": "新增全景监视区域布局图设备",
+        "operationId": "addUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaRegionPlanDevices",
+            "description": "panoramaRegionPlanDevices",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "PanoramaRegionPlanDevice",
+                "$ref": "#/definitions/PanoramaRegionPlanDevice"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panoramaRegionPlanDevice/delete": {
+      "post": {
+        "tags": [
+          "panorama-region-plan-device-controller"
+        ],
+        "summary": "删除全景监视区域布局图设备",
+        "operationId": "deleteUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "requestDeletePlanDeviceBody",
+            "description": "requestDeletePlanDeviceBody",
+            "required": true,
+            "schema": {
+              "originalRef": "RequestDeletePlanDeviceBody",
+              "$ref": "#/definitions/RequestDeletePlanDeviceBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panoramaRegionPlanDevice/query": {
+      "post": {
+        "tags": [
+          "panorama-region-plan-device-controller"
+        ],
+        "summary": "查询模型实例与设备关系",
+        "operationId": "queryUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "panoramaRegionPlanDevice",
+            "description": "panoramaRegionPlanDevice",
+            "required": true,
+            "schema": {
+              "originalRef": "PanoramaRegionPlanDevice",
+              "$ref": "#/definitions/PanoramaRegionPlanDevice"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PanoramaRegionPlanDevice»»",
+              "$ref": "#/definitions/ResponseMsg«List«PanoramaRegionPlanDevice»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/panoramaRegionPlanDevice/update": {
+      "post": {
+        "tags": [
+          "panorama-region-plan-device-controller"
+        ],
+        "summary": "修改模型实例与设备关系",
+        "operationId": "updateUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "planDeviceArrayList",
+            "description": "planDeviceArrayList",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "PanoramaRegionPlanDevice",
+                "$ref": "#/definitions/PanoramaRegionPlanDevice"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan-task-relation/add": {
+      "post": {
+        "tags": [
+          "patrol-plan-task-relation-controller"
+        ],
+        "summary": "新增巡视计划关联任务",
+        "operationId": "addUsingPOST_6",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlanTaskInput",
+            "description": "patrolPlanTaskInput",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlanTaskInput",
+              "$ref": "#/definitions/PatrolPlanTaskInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan-task-relation/delete": {
+      "post": {
+        "tags": [
+          "patrol-plan-task-relation-controller"
+        ],
+        "summary": "删除巡视计划关联任务",
+        "operationId": "deleteUsingPOST_6",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlanTaskInput",
+            "description": "patrolPlanTaskInput",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlanTaskInput",
+              "$ref": "#/definitions/PatrolPlanTaskInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan-task-relation/query": {
+      "post": {
+        "tags": [
+          "patrol-plan-task-relation-controller"
+        ],
+        "summary": "查询巡视计划关联任务",
+        "operationId": "queryUsingPOST_6",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlanTaskInput",
+            "description": "patrolPlanTaskInput",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlanTaskInput",
+              "$ref": "#/definitions/PatrolPlanTaskInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolTaskInput»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolTaskInput»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/activatePlan": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "启用巡视计划",
+        "operationId": "activateUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/add": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "新增巡视计划",
+        "operationId": "addUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/delete": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "删除巡视计划",
+        "operationId": "deleteUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/deleteBatch": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "批量删除巡视计划",
+        "operationId": "deleteBatchUsingPOST_2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ids",
+            "description": "ids",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/get": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "获取巡视计划",
+        "operationId": "getUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«PatrolPlan对象»",
+              "$ref": "#/definitions/ResponseMsg«PatrolPlan对象»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/getAll": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "获取巡视计划",
+        "operationId": "getAllUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolPlan对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolPlan对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/pagequery": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "分页查询巡视计划",
+        "operationId": "pagequeryUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«PatrolPlan对象»",
+              "$ref": "#/definitions/PageData«PatrolPlan对象»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«Page«PatrolPlan对象»»",
+              "$ref": "#/definitions/ResponseMsg«Page«PatrolPlan对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/query": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "查询巡视计划",
+        "operationId": "queryUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolPlan对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolPlan对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-plan/update": {
+      "post": {
+        "tags": [
+          "patrol-plan-controller"
+        ],
+        "summary": "修改巡视计划",
+        "operationId": "updateUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-content/pagequery": {
+      "post": {
+        "tags": [
+          "patrol-task-content-controller"
+        ],
+        "summary": "分页查询巡视任务内容",
+        "operationId": "pagequeryUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«PatrolTaskContent对象»",
+              "$ref": "#/definitions/PageData«PatrolTaskContent对象»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«Page«PatrolTaskContent对象»»",
+              "$ref": "#/definitions/ResponseMsg«Page«PatrolTaskContent对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-instance/add": {
+      "post": {
+        "tags": [
+          "patrol-task-instance-controller"
+        ],
+        "summary": "新增巡视任务实例",
+        "operationId": "addUsingPOST_8",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTaskInstance",
+            "description": "patrolTaskInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTaskInstance对象",
+              "$ref": "#/definitions/PatrolTaskInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-instance/delete": {
+      "post": {
+        "tags": [
+          "patrol-task-instance-controller"
+        ],
+        "summary": "删除巡视任务实例",
+        "operationId": "deleteUsingPOST_8",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTaskInstance",
+            "description": "patrolTaskInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTaskInstance对象",
+              "$ref": "#/definitions/PatrolTaskInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-instance/deleteBatch": {
+      "post": {
+        "tags": [
+          "patrol-task-instance-controller"
+        ],
+        "summary": "批量删除巡视任务实例",
+        "operationId": "deleteBatchUsingPOST_3",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ids",
+            "description": "ids",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-instance/get": {
+      "post": {
+        "tags": [
+          "patrol-task-instance-controller"
+        ],
+        "summary": "获取巡视任务实例",
+        "operationId": "getUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTaskInstance",
+            "description": "patrolTaskInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTaskInstance对象",
+              "$ref": "#/definitions/PatrolTaskInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«PatrolTaskInstance对象»",
+              "$ref": "#/definitions/ResponseMsg«PatrolTaskInstance对象»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-instance/getAll": {
+      "post": {
+        "tags": [
+          "patrol-task-instance-controller"
+        ],
+        "summary": "获取巡视任务实例",
+        "operationId": "getAllUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolTaskInstance对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolTaskInstance对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-instance/pagequery": {
+      "post": {
+        "tags": [
+          "patrol-task-instance-controller"
+        ],
+        "summary": "分页查询巡视任务实例",
+        "operationId": "pagequeryUsingPOST_6",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«PatrolTaskInstance对象»",
+              "$ref": "#/definitions/PageData«PatrolTaskInstance对象»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«Page«PatrolTaskInstance对象»»",
+              "$ref": "#/definitions/ResponseMsg«Page«PatrolTaskInstance对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-instance/query": {
+      "post": {
+        "tags": [
+          "patrol-task-instance-controller"
+        ],
+        "summary": "查询巡视任务实例",
+        "operationId": "queryUsingPOST_8",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTaskInstance",
+            "description": "patrolTaskInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTaskInstance对象",
+              "$ref": "#/definitions/PatrolTaskInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolTaskInstance对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolTaskInstance对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task-instance/update": {
+      "post": {
+        "tags": [
+          "patrol-task-instance-controller"
+        ],
+        "summary": "修改巡视任务实例",
+        "operationId": "updateUsingPOST_7",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTaskInstance",
+            "description": "patrolTaskInstance",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTaskInstance对象",
+              "$ref": "#/definitions/PatrolTaskInstance对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task/add": {
+      "post": {
+        "tags": [
+          "patrol-task-controller"
+        ],
+        "summary": "新增巡视任务内容",
+        "operationId": "addUsingPOST_7",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTaskInput",
+            "description": "patrolTaskInput",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTaskInput",
+              "$ref": "#/definitions/PatrolTaskInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task/delete": {
+      "post": {
+        "tags": [
+          "patrol-task-controller"
+        ],
+        "summary": "删除巡视任务内容",
+        "operationId": "deleteUsingPOST_7",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTask",
+            "description": "patrolTask",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTask对象",
+              "$ref": "#/definitions/PatrolTask对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task/get": {
+      "post": {
+        "tags": [
+          "patrol-task-controller"
+        ],
+        "summary": "获取巡视任务内容",
+        "operationId": "getUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTask",
+            "description": "patrolTask",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTask对象",
+              "$ref": "#/definitions/PatrolTask对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«PatrolTask对象»",
+              "$ref": "#/definitions/ResponseMsg«PatrolTask对象»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task/getAll": {
+      "post": {
+        "tags": [
+          "patrol-task-controller"
+        ],
+        "summary": "获取所有巡视任务内容",
+        "operationId": "getAllUsingPOST_4",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolTask对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolTask对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task/pagequery": {
+      "post": {
+        "tags": [
+          "patrol-task-controller"
+        ],
+        "summary": "分页查询巡视任务内容",
+        "operationId": "pagequeryUsingPOST_5",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«PatrolTask对象»",
+              "$ref": "#/definitions/PageData«PatrolTask对象»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponsePageMsg«List«PatrolTaskInput»»",
+              "$ref": "#/definitions/ResponsePageMsg«List«PatrolTaskInput»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task/query": {
+      "post": {
+        "tags": [
+          "patrol-task-controller"
+        ],
+        "summary": "查询巡视任务内容",
+        "operationId": "queryUsingPOST_7",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTask",
+            "description": "patrolTask",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTask对象",
+              "$ref": "#/definitions/PatrolTask对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolTask对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolTask对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrol-task/update": {
+      "post": {
+        "tags": [
+          "patrol-task-controller"
+        ],
+        "summary": "修改巡视任务内容",
+        "operationId": "updateUsingPOST_6",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolTaskInput",
+            "description": "patrolTaskInput",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolTaskInput",
+              "$ref": "#/definitions/PatrolTaskInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/patrolPlan/run": {
+      "post": {
+        "tags": [
+          "test-contronller"
+        ],
+        "summary": "触发计划执行",
+        "operationId": "runPatrolPlanUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "planId",
+            "in": "query",
+            "description": "planId",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/queryAlarmDevice": {
+      "post": {
+        "tags": [
+          "history-controller"
+        ],
+        "summary": "根据设备列表查询存在告警的设备",
+        "operationId": "queryAlarmDeviceUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "json",
+            "description": "json",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/redis/send": {
+      "post": {
+        "tags": [
+          "test-contronller"
+        ],
+        "summary": "触发计划执行发送redis",
+        "operationId": "sendMessageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "planId",
+            "in": "query",
+            "description": "planId",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/subsystemFunpoint/addFunpoints": {
+      "post": {
+        "tags": [
+          "subsystem-funpoint-controller"
+        ],
+        "summary": "新增子系统功能点",
+        "operationId": "createFunpointUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "funpoints",
+            "description": "funpoints",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "SubsystemFunpoint",
+                "$ref": "#/definitions/SubsystemFunpoint"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/subsystemFunpoint/deleteFunpoints": {
+      "post": {
+        "tags": [
+          "subsystem-funpoint-controller"
+        ],
+        "summary": "删除子系统功能点",
+        "operationId": "deleteFunpointUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "funpointIds",
+            "description": "funpointIds",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/subsystemFunpoint/getAll": {
+      "get": {
+        "tags": [
+          "subsystem-funpoint-controller"
+        ],
+        "summary": "获取子系统功能点",
+        "operationId": "getAllUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/subsystemFunpoint/pagequery": {
+      "post": {
+        "tags": [
+          "subsystem-funpoint-controller"
+        ],
+        "summary": "分页查询子系统功能点",
+        "operationId": "pagequeryUsingPOST_7",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "pageData",
+            "description": "pageData",
+            "required": true,
+            "schema": {
+              "originalRef": "PageData«SubsystemFunpoint»",
+              "$ref": "#/definitions/PageData«SubsystemFunpoint»"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«Page«SubsystemFunpoint»»",
+              "$ref": "#/definitions/ResponseMsg«Page«SubsystemFunpoint»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/subsystemFunpoint/query": {
+      "post": {
+        "tags": [
+          "subsystem-funpoint-controller"
+        ],
+        "summary": "查询子系统功能点",
+        "operationId": "queryUsingPOST_9",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "funpoint",
+            "description": "funpoint",
+            "required": true,
+            "schema": {
+              "originalRef": "SubsystemFunpoint",
+              "$ref": "#/definitions/SubsystemFunpoint"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«SubsystemFunpoint»»",
+              "$ref": "#/definitions/ResponseMsg«List«SubsystemFunpoint»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/subsystemFunpoint/updateFunpoints": {
+      "post": {
+        "tags": [
+          "subsystem-funpoint-controller"
+        ],
+        "summary": "修改子系统功能点",
+        "operationId": "updateFunpointUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "funpoints",
+            "description": "funpoints",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "originalRef": "SubsystemFunpoint",
+                "$ref": "#/definitions/SubsystemFunpoint"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg",
+              "$ref": "#/definitions/ResponseMsg"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system/config/add": {
+      "post": {
+        "tags": [
+          "system-config-controller"
+        ],
+        "summary": "createConfig",
+        "operationId": "createConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "config",
+            "description": "config",
+            "required": true,
+            "schema": {
+              "originalRef": "SystemConfig",
+              "$ref": "#/definitions/SystemConfig"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseEntity",
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system/config/get": {
+      "post": {
+        "tags": [
+          "system-config-controller"
+        ],
+        "summary": "getSystemConfig",
+        "operationId": "getSystemConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseEntity",
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system/config/key": {
+      "post": {
+        "tags": [
+          "system-config-controller"
+        ],
+        "summary": "getSystemConfigByKey",
+        "operationId": "getSystemConfigByKeyUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "key",
+            "description": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseEntity",
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system/config/update": {
+      "post": {
+        "tags": [
+          "system-config-controller"
+        ],
+        "summary": "updateConfig",
+        "operationId": "updateConfigUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "config",
+            "description": "config",
+            "required": true,
+            "schema": {
+              "originalRef": "SystemConfig",
+              "$ref": "#/definitions/SystemConfig"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseEntity",
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system/map/get": {
+      "post": {
+        "tags": [
+          "system-config-controller"
+        ],
+        "summary": "getMap",
+        "operationId": "getMapUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseEntity",
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system/map/getcontent": {
+      "post": {
+        "tags": [
+          "system-config-controller"
+        ],
+        "summary": "getContent",
+        "operationId": "getContentUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "code",
+            "description": "code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseEntity",
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/taskManager/addJob": {
+      "post": {
+        "tags": [
+          "quartz-manager-controller"
+        ],
+        "summary": "添加巡视任务",
+        "operationId": "addJobUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/taskManager/deleteJob": {
+      "post": {
+        "tags": [
+          "quartz-manager-controller"
+        ],
+        "summary": "删除一个job",
+        "operationId": "deleteJobUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/taskManager/getAllJob": {
+      "post": {
+        "tags": [
+          "quartz-manager-controller"
+        ],
+        "summary": "获取所有计划中的任务列表",
+        "operationId": "getAllJobUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolPlan对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolPlan对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/taskManager/getRunningJob": {
+      "post": {
+        "tags": [
+          "quartz-manager-controller"
+        ],
+        "summary": "获取所有正在运行的job",
+        "operationId": "getRunningJobUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«List«PatrolPlan对象»»",
+              "$ref": "#/definitions/ResponseMsg«List«PatrolPlan对象»»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/taskManager/pauseJob": {
+      "post": {
+        "tags": [
+          "quartz-manager-controller"
+        ],
+        "summary": "暂停一个job",
+        "operationId": "pauseJobUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/taskManager/resumeJob": {
+      "post": {
+        "tags": [
+          "quartz-manager-controller"
+        ],
+        "summary": "恢复一个job",
+        "operationId": "resumeJobUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/taskManager/runJobNow": {
+      "post": {
+        "tags": [
+          "quartz-manager-controller"
+        ],
+        "summary": "立即执行job",
+        "operationId": "runJobNowUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/taskManager/updateJobCron": {
+      "post": {
+        "tags": [
+          "quartz-manager-controller"
+        ],
+        "summary": "更新job时间表达式",
+        "operationId": "updateJobCronUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "patrolPlan",
+            "description": "patrolPlan",
+            "required": true,
+            "schema": {
+              "originalRef": "PatrolPlan对象",
+              "$ref": "#/definitions/PatrolPlan对象"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseMsg«string»",
+              "$ref": "#/definitions/ResponseMsg«string»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "DefectRule对象": {
+      "type": "object",
+      "properties": {
+        "defectLevel": {
+          "type": "string"
+        },
+        "defectRule": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "pointType": {
+          "type": "string"
+        }
+      },
+      "title": "DefectRule对象"
+    },
+    "Defect对象": {
+      "type": "object",
+      "properties": {
+        "bayId": {
+          "type": "string"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "defectLevel": {
+          "type": "string"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "pointType": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "substationId": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "Defect对象"
+    },
+    "DevstatCmsMainDevwrn对象": {
+      "type": "object",
+      "properties": {
+        "devWrnType": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "wrnNum": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DevstatCmsMainDevwrn对象"
+    },
+    "OrderItem": {
+      "type": "object",
+      "properties": {
+        "asc": {
+          "type": "boolean"
+        },
+        "column": {
+          "type": "string"
+        }
+      },
+      "title": "OrderItem"
+    },
+    "PageData«Defect对象»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "Defect对象",
+          "$ref": "#/definitions/Defect对象"
+        }
+      },
+      "title": "PageData«Defect对象»"
+    },
+    "PageData«PanoramaModelInstanceDevice对象»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "PanoramaModelInstanceDevice对象",
+          "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+        }
+      },
+      "title": "PageData«PanoramaModelInstanceDevice对象»"
+    },
+    "PageData«PanoramaModelInstance对象»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "PanoramaModelInstance对象",
+          "$ref": "#/definitions/PanoramaModelInstance对象"
+        }
+      },
+      "title": "PageData«PanoramaModelInstance对象»"
+    },
+    "PageData«PanoramaScene对象»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "PanoramaScene对象",
+          "$ref": "#/definitions/PanoramaScene对象"
+        }
+      },
+      "title": "PageData«PanoramaScene对象»"
+    },
+    "PageData«PatrolPlan对象»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "PatrolPlan对象",
+          "$ref": "#/definitions/PatrolPlan对象"
+        }
+      },
+      "title": "PageData«PatrolPlan对象»"
+    },
+    "PageData«PatrolTaskContent对象»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "PatrolTaskContent对象",
+          "$ref": "#/definitions/PatrolTaskContent对象"
+        }
+      },
+      "title": "PageData«PatrolTaskContent对象»"
+    },
+    "PageData«PatrolTaskInstance对象»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "PatrolTaskInstance对象",
+          "$ref": "#/definitions/PatrolTaskInstance对象"
+        }
+      },
+      "title": "PageData«PatrolTaskInstance对象»"
+    },
+    "PageData«PatrolTask对象»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "PatrolTask对象",
+          "$ref": "#/definitions/PatrolTask对象"
+        }
+      },
+      "title": "PageData«PatrolTask对象»"
+    },
+    "PageData«SubsystemFunpoint»": {
+      "type": "object",
+      "properties": {
+        "pageNo": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页码"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "页记录数"
+        },
+        "queryObject": {
+          "description": "数据（查询条件）",
+          "originalRef": "SubsystemFunpoint",
+          "$ref": "#/definitions/SubsystemFunpoint"
+        }
+      },
+      "title": "PageData«SubsystemFunpoint»"
+    },
+    "Page«Defect对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "originalRef": "OrderItem",
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "Defect对象",
+            "$ref": "#/definitions/Defect对象"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«Defect对象»"
+    },
+    "Page«PanoramaModelInstanceDevice对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "originalRef": "OrderItem",
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "PanoramaModelInstanceDevice对象",
+            "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«PanoramaModelInstanceDevice对象»"
+    },
+    "Page«PanoramaModelInstance对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "originalRef": "OrderItem",
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "PanoramaModelInstance对象",
+            "$ref": "#/definitions/PanoramaModelInstance对象"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«PanoramaModelInstance对象»"
+    },
+    "Page«PanoramaScene对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "originalRef": "OrderItem",
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "PanoramaScene对象",
+            "$ref": "#/definitions/PanoramaScene对象"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«PanoramaScene对象»"
+    },
+    "Page«PatrolPlan对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "originalRef": "OrderItem",
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolPlan对象",
+            "$ref": "#/definitions/PatrolPlan对象"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«PatrolPlan对象»"
+    },
+    "Page«PatrolTaskContent对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "originalRef": "OrderItem",
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolTaskContent对象",
+            "$ref": "#/definitions/PatrolTaskContent对象"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«PatrolTaskContent对象»"
+    },
+    "Page«PatrolTaskInstance对象»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "originalRef": "OrderItem",
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolTaskInstance对象",
+            "$ref": "#/definitions/PatrolTaskInstance对象"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«PatrolTaskInstance对象»"
+    },
+    "Page«SubsystemFunpoint»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "orders": {
+          "type": "array",
+          "items": {
+            "originalRef": "OrderItem",
+            "$ref": "#/definitions/OrderItem"
+          }
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "originalRef": "SubsystemFunpoint",
+            "$ref": "#/definitions/SubsystemFunpoint"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "Page«SubsystemFunpoint»"
+    },
+    "PanoramaModelInstanceDevice对象": {
+      "type": "object",
+      "properties": {
+        "deviceCode": {
+          "type": "string",
+          "description": "由模型内动点命名决定，标准格式为deviceType+三位数字序号,如： Disconnector-001"
+        },
+        "id": {
+          "type": "string"
+        },
+        "instanceId": {
+          "type": "string",
+          "description": "所属模型实例的ID"
+        },
+        "mdeviceId": {
+          "type": "string"
+        },
+        "remark": {
+          "type": "string"
+        }
+      },
+      "title": "PanoramaModelInstanceDevice对象"
+    },
+    "PanoramaModelInstance对象": {
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "type": "string",
+          "description": "0-变电站 1-间隔 2-区域 3-设备 4-背景环境实体 5-摄像机（用于定位初始视角）"
+        },
+        "id": {
+          "type": "string"
+        },
+        "modelFilePath": {
+          "type": "string",
+          "description": "对应模型文件的路径，含扩展名 只记录最高精细度对应的模型文件路径即可，若entityType为5，则此字段为空，示例：/static/models/110201151/110kvdaozha1.fbx"
+        },
+        "positionX": {
+          "type": "number",
+          "format": "double",
+          "description": "模型沿X轴的偏移量"
+        },
+        "positionY": {
+          "type": "number",
+          "format": "double",
+          "description": "模型沿Y轴的偏移量"
+        },
+        "positionZ": {
+          "type": "number",
+          "format": "double",
+          "description": "模型沿Z轴的偏移量"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "rotationX": {
+          "type": "number",
+          "format": "double",
+          "description": "模型沿X轴的偏移量"
+        },
+        "rotationY": {
+          "type": "number",
+          "format": "double",
+          "description": "模型绕Y轴旋转量"
+        },
+        "rotationZ": {
+          "type": "number",
+          "format": "double",
+          "description": "模型绕Z轴旋转量"
+        },
+        "sceneId": {
+          "type": "string",
+          "description": "所属场景的ID"
+        }
+      },
+      "title": "PanoramaModelInstance对象"
+    },
+    "PanoramaRegionPlan": {
+      "type": "object",
+      "properties": {
+        "backgroundHeight": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "backgroundPositionX": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "backgroundPositionY": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "backgroundUrl": {
+          "type": "string"
+        },
+        "backgroundWidth": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "height": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "id": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "regionId": {
+          "type": "string"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "substation": {
+          "type": "string"
+        },
+        "substationId": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PanoramaRegionPlan"
+    },
+    "PanoramaRegionPlanDevice": {
+      "type": "object",
+      "properties": {
+        "deviceName": {
+          "type": "string"
+        },
+        "deviceType": {
+          "type": "string"
+        },
+        "iconHeight": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "iconWidth": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "id": {
+          "type": "string"
+        },
+        "mdeviceId": {
+          "type": "string"
+        },
+        "planId": {
+          "type": "string"
+        },
+        "positionX": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "positionY": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "subsystemType": {
+          "type": "string"
+        },
+        "zindex": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PanoramaRegionPlanDevice"
+    },
+    "PanoramaScene对象": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "monitorType": {
+          "type": "string",
+          "description": "当sceneType为2时才存在意义，表示场景主要关注的监控设备类型 0-一次设备 1-二次设备 2-气体监视 3-环境监视 4-管廊水浸 5-火灾消防 6-安全防范 7-照明设施 8-动环设施"
+        },
+        "mrid": {
+          "type": "string",
+          "description": "对应实体指对应的变电站、间隔、区域等"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "sceneName": {
+          "type": "string",
+          "description": "场景名称"
+        },
+        "sceneType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "对应场景类型0-变电站全景 1-间隔 2-区域 3-其他"
+        },
+        "stationId": {
+          "type": "string",
+          "description": "所属变电站的mrid"
+        }
+      },
+      "title": "PanoramaScene对象"
+    },
+    "PatrolPlanTaskInput": {
+      "type": "object",
+      "properties": {
+        "patrolPlanId": {
+          "type": "string"
+        },
+        "patrolTaskIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "PatrolPlanTaskInput"
+    },
+    "PatrolPlan对象": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "计划创建时间"
+        },
+        "cron": {
+          "type": "string",
+          "description": "时间方案"
+        },
+        "currentPatrolInstance": {
+          "type": "string",
+          "description": "当前巡视计划任务实例"
+        },
+        "id": {
+          "type": "string",
+          "description": "巡视计划ID"
+        },
+        "operator": {
+          "type": "string",
+          "description": "操作员"
+        },
+        "planEndTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "计划任务结束时间"
+        },
+        "planName": {
+          "type": "string",
+          "description": "巡视计划名称"
+        },
+        "planStartTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "计划任务开始时间"
+        },
+        "planTimeType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "巡视周期类型（定期 0、周期 1、间隔 2）"
+        },
+        "planType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "巡视计划类型：自定义巡视 0、例行巡视 1、特殊巡视 2、专项巡视 3"
+        },
+        "priority": {
+          "type": "integer",
+          "format": "int32",
+          "description": "优先级1-10"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "计划状态（激活、未激活） 0表示未启用 1表示启用、4暂停、5已完成、6终止"
+        },
+        "substationId": {
+          "type": "string",
+          "description": "变电站id"
+        },
+        "substationName": {
+          "type": "string",
+          "description": "变电站名称"
+        },
+        "userId": {
+          "type": "string",
+          "description": "操作员id"
+        }
+      },
+      "title": "PatrolPlan对象"
+    },
+    "PatrolTaskContent对象": {
+      "type": "object",
+      "properties": {
+        "areaId": {
+          "type": "string",
+          "description": "室外/主控室1/消防室"
+        },
+        "bayId": {
+          "type": "string"
+        },
+        "bayName": {
+          "type": "string"
+        },
+        "componentId": {
+          "type": "string"
+        },
+        "componentName": {
+          "type": "string",
+          "description": "部件"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "deviceName": {
+          "type": "string"
+        },
+        "devicePathName": {
+          "type": "string",
+          "description": "设备路径名称"
+        },
+        "id": {
+          "type": "string",
+          "description": "任务ID  主键"
+        },
+        "isCallCamera": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否调用摄像头 0表示false 1表示true"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "新增还是删除 0表示新增  1表示删除"
+        },
+        "subsystem": {
+          "type": "string",
+          "description": "子系统"
+        },
+        "taskId": {
+          "type": "string",
+          "description": "变电站id"
+        },
+        "taskName": {
+          "type": "string",
+          "description": "任务名称"
+        }
+      },
+      "title": "PatrolTaskContent对象"
+    },
+    "PatrolTaskInput": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "任务ID  主键"
+        },
+        "substationId": {
+          "type": "string",
+          "description": "变电站id"
+        },
+        "substationName": {
+          "type": "string",
+          "description": "变电站name"
+        },
+        "taskContentList": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolTaskContent对象",
+            "$ref": "#/definitions/PatrolTaskContent对象"
+          }
+        },
+        "taskName": {
+          "type": "string",
+          "description": "任务名称"
+        },
+        "taskType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "巡视类型：在线巡视（0）、主设备巡视（1）、二次设备巡视（2）、辅助设备巡视（3）"
+        }
+      },
+      "title": "PatrolTaskInput"
+    },
+    "PatrolTaskInstance对象": {
+      "type": "object",
+      "properties": {
+        "cron": {
+          "type": "string",
+          "description": "时间方案"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "任务结束时间"
+        },
+        "id": {
+          "type": "string"
+        },
+        "planId": {
+          "type": "string",
+          "description": "计划id"
+        },
+        "planName": {
+          "type": "string",
+          "description": "计划名称"
+        },
+        "planTimeType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "巡视周期类型（定期 0、周期 1、间隔 2）"
+        },
+        "planType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "巡视计划类型：自定义巡视 0、例行巡视 1、特殊巡视 2、专项巡视 3"
+        },
+        "result": {
+          "type": "string",
+          "description": "任务结果"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "任务开始执行时间"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "任务状态：未执行2、正在执行3、暂停4、已完成5、异常7"
+        },
+        "substationName": {
+          "type": "string"
+        }
+      },
+      "title": "PatrolTaskInstance对象"
+    },
+    "PatrolTask对象": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "任务ID  主键"
+        },
+        "substationId": {
+          "type": "string",
+          "description": "变电站id"
+        },
+        "substationName": {
+          "type": "string",
+          "description": "变电站name"
+        },
+        "taskName": {
+          "type": "string",
+          "description": "任务名称"
+        },
+        "taskType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "巡视类型：在线巡视（0）、主设备巡视（1）、二次设备巡视（2）、辅助设备巡视（3）"
+        }
+      },
+      "title": "PatrolTask对象"
+    },
+    "RequestConfirmAlarm": {
+      "type": "object",
+      "properties": {
+        "confirmPeople": {
+          "type": "string"
+        },
+        "confirmStatus": {
+          "type": "string"
+        },
+        "confirmTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "isConvertDefect": {
+          "type": "string"
+        },
+        "remark": {
+          "type": "string"
+        }
+      },
+      "title": "RequestConfirmAlarm"
+    },
+    "RequestDefectBody": {
+      "type": "object",
+      "properties": {
+        "confirmPeople": {
+          "type": "string"
+        },
+        "confirmStatus": {
+          "type": "string"
+        },
+        "confirmTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "defectinfo": {
+          "type": "string"
+        },
+        "defectlevel": {
+          "type": "string"
+        },
+        "defectstatus": {
+          "type": "string"
+        },
+        "devicename": {
+          "type": "string"
+        },
+        "devicetype": {
+          "type": "string"
+        },
+        "extensionfield": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "isConvertDefect": {
+          "type": "string"
+        },
+        "mrid": {
+          "type": "string"
+        },
+        "partname": {
+          "type": "string"
+        },
+        "parttype": {
+          "type": "string"
+        },
+        "proceserecord": {
+          "type": "string"
+        },
+        "processetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "processor": {
+          "type": "string"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "stationname": {
+          "type": "string"
+        },
+        "subsystemid": {
+          "type": "string"
+        }
+      },
+      "title": "RequestDefectBody"
+    },
+    "RequestDeletePlanDeviceBody": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "planId": {
+          "type": "string"
+        },
+        "subsystemType": {
+          "type": "string"
+        }
+      },
+      "title": "RequestDeletePlanDeviceBody"
+    },
+    "RequestHistoryDataBody": {
+      "type": "object",
+      "properties": {
+        "catalog": {
+          "type": "string"
+        },
+        "confirmStatus": {
+          "type": "string"
+        },
+        "deviceid": {
+          "type": "string"
+        },
+        "endDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "instanceMRID": {
+          "type": "string"
+        },
+        "isConvertDefect": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "pageNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pointKeyName": {
+          "type": "string"
+        },
+        "regionid": {
+          "type": "string"
+        },
+        "startDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "stationid": {
+          "type": "string"
+        },
+        "subsystemid": {
+          "type": "string"
+        }
+      },
+      "title": "RequestHistoryDataBody"
+    },
+    "RequestHistoryLimitDataBody": {
+      "type": "object",
+      "properties": {
+        "endDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "instanceMRID": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pointKeyName": {
+          "type": "string"
+        },
+        "proportion": {
+          "type": "number",
+          "format": "double"
+        },
+        "startDateTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "RequestHistoryLimitDataBody"
+    },
+    "ResponseEntity": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "object"
+        },
+        "statusCode": {
+          "type": "string",
+          "enum": [
+            "CONTINUE",
+            "SWITCHING_PROTOCOLS",
+            "PROCESSING",
+            "CHECKPOINT",
+            "OK",
+            "CREATED",
+            "ACCEPTED",
+            "NON_AUTHORITATIVE_INFORMATION",
+            "NO_CONTENT",
+            "RESET_CONTENT",
+            "PARTIAL_CONTENT",
+            "MULTI_STATUS",
+            "ALREADY_REPORTED",
+            "IM_USED",
+            "MULTIPLE_CHOICES",
+            "MOVED_PERMANENTLY",
+            "FOUND",
+            "MOVED_TEMPORARILY",
+            "SEE_OTHER",
+            "NOT_MODIFIED",
+            "USE_PROXY",
+            "TEMPORARY_REDIRECT",
+            "PERMANENT_REDIRECT",
+            "BAD_REQUEST",
+            "UNAUTHORIZED",
+            "PAYMENT_REQUIRED",
+            "FORBIDDEN",
+            "NOT_FOUND",
+            "METHOD_NOT_ALLOWED",
+            "NOT_ACCEPTABLE",
+            "PROXY_AUTHENTICATION_REQUIRED",
+            "REQUEST_TIMEOUT",
+            "CONFLICT",
+            "GONE",
+            "LENGTH_REQUIRED",
+            "PRECONDITION_FAILED",
+            "PAYLOAD_TOO_LARGE",
+            "REQUEST_ENTITY_TOO_LARGE",
+            "URI_TOO_LONG",
+            "REQUEST_URI_TOO_LONG",
+            "UNSUPPORTED_MEDIA_TYPE",
+            "REQUESTED_RANGE_NOT_SATISFIABLE",
+            "EXPECTATION_FAILED",
+            "I_AM_A_TEAPOT",
+            "INSUFFICIENT_SPACE_ON_RESOURCE",
+            "METHOD_FAILURE",
+            "DESTINATION_LOCKED",
+            "UNPROCESSABLE_ENTITY",
+            "LOCKED",
+            "FAILED_DEPENDENCY",
+            "UPGRADE_REQUIRED",
+            "PRECONDITION_REQUIRED",
+            "TOO_MANY_REQUESTS",
+            "REQUEST_HEADER_FIELDS_TOO_LARGE",
+            "UNAVAILABLE_FOR_LEGAL_REASONS",
+            "INTERNAL_SERVER_ERROR",
+            "NOT_IMPLEMENTED",
+            "BAD_GATEWAY",
+            "SERVICE_UNAVAILABLE",
+            "GATEWAY_TIMEOUT",
+            "HTTP_VERSION_NOT_SUPPORTED",
+            "VARIANT_ALSO_NEGOTIATES",
+            "INSUFFICIENT_STORAGE",
+            "LOOP_DETECTED",
+            "BANDWIDTH_LIMIT_EXCEEDED",
+            "NOT_EXTENDED",
+            "NETWORK_AUTHENTICATION_REQUIRED"
+          ]
+        },
+        "statusCodeValue": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "ResponseEntity"
+    },
+    "ResponseMsg": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg"
+    },
+    "ResponseMsg«List«DefectRule对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "DefectRule对象",
+            "$ref": "#/definitions/DefectRule对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«DefectRule对象»»"
+    },
+    "ResponseMsg«List«DevstatCmsMainDevwrn对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "DevstatCmsMainDevwrn对象",
+            "$ref": "#/definitions/DevstatCmsMainDevwrn对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«DevstatCmsMainDevwrn对象»»"
+    },
+    "ResponseMsg«List«PanoramaModelInstanceDevice对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PanoramaModelInstanceDevice对象",
+            "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PanoramaModelInstanceDevice对象»»"
+    },
+    "ResponseMsg«List«PanoramaModelInstance对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PanoramaModelInstance对象",
+            "$ref": "#/definitions/PanoramaModelInstance对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PanoramaModelInstance对象»»"
+    },
+    "ResponseMsg«List«PanoramaRegionPlanDevice»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PanoramaRegionPlanDevice",
+            "$ref": "#/definitions/PanoramaRegionPlanDevice"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PanoramaRegionPlanDevice»»"
+    },
+    "ResponseMsg«List«PanoramaRegionPlan»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PanoramaRegionPlan",
+            "$ref": "#/definitions/PanoramaRegionPlan"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PanoramaRegionPlan»»"
+    },
+    "ResponseMsg«List«PanoramaScene对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PanoramaScene对象",
+            "$ref": "#/definitions/PanoramaScene对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PanoramaScene对象»»"
+    },
+    "ResponseMsg«List«PatrolPlan对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolPlan对象",
+            "$ref": "#/definitions/PatrolPlan对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PatrolPlan对象»»"
+    },
+    "ResponseMsg«List«PatrolTaskInput»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolTaskInput",
+            "$ref": "#/definitions/PatrolTaskInput"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PatrolTaskInput»»"
+    },
+    "ResponseMsg«List«PatrolTaskInstance对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolTaskInstance对象",
+            "$ref": "#/definitions/PatrolTaskInstance对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PatrolTaskInstance对象»»"
+    },
+    "ResponseMsg«List«PatrolTask对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolTask对象",
+            "$ref": "#/definitions/PatrolTask对象"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«PatrolTask对象»»"
+    },
+    "ResponseMsg«List«SubsystemFunpoint»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "SubsystemFunpoint",
+            "$ref": "#/definitions/SubsystemFunpoint"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List«SubsystemFunpoint»»"
+    },
+    "ResponseMsg«List»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«List»"
+    },
+    "ResponseMsg«Page«Defect对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "Page«Defect对象»",
+          "$ref": "#/definitions/Page«Defect对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«Page«Defect对象»»"
+    },
+    "ResponseMsg«Page«PanoramaModelInstanceDevice对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "Page«PanoramaModelInstanceDevice对象»",
+          "$ref": "#/definitions/Page«PanoramaModelInstanceDevice对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«Page«PanoramaModelInstanceDevice对象»»"
+    },
+    "ResponseMsg«Page«PanoramaModelInstance对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "Page«PanoramaModelInstance对象»",
+          "$ref": "#/definitions/Page«PanoramaModelInstance对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«Page«PanoramaModelInstance对象»»"
+    },
+    "ResponseMsg«Page«PanoramaScene对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "Page«PanoramaScene对象»",
+          "$ref": "#/definitions/Page«PanoramaScene对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«Page«PanoramaScene对象»»"
+    },
+    "ResponseMsg«Page«PatrolPlan对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "Page«PatrolPlan对象»",
+          "$ref": "#/definitions/Page«PatrolPlan对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«Page«PatrolPlan对象»»"
+    },
+    "ResponseMsg«Page«PatrolTaskContent对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "Page«PatrolTaskContent对象»",
+          "$ref": "#/definitions/Page«PatrolTaskContent对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«Page«PatrolTaskContent对象»»"
+    },
+    "ResponseMsg«Page«PatrolTaskInstance对象»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "Page«PatrolTaskInstance对象»",
+          "$ref": "#/definitions/Page«PatrolTaskInstance对象»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«Page«PatrolTaskInstance对象»»"
+    },
+    "ResponseMsg«Page«SubsystemFunpoint»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "Page«SubsystemFunpoint»",
+          "$ref": "#/definitions/Page«SubsystemFunpoint»"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«Page«SubsystemFunpoint»»"
+    },
+    "ResponseMsg«PanoramaModelInstanceDevice对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "PanoramaModelInstanceDevice对象",
+          "$ref": "#/definitions/PanoramaModelInstanceDevice对象"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«PanoramaModelInstanceDevice对象»"
+    },
+    "ResponseMsg«PanoramaModelInstance对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "PanoramaModelInstance对象",
+          "$ref": "#/definitions/PanoramaModelInstance对象"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«PanoramaModelInstance对象»"
+    },
+    "ResponseMsg«PanoramaScene对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "PanoramaScene对象",
+          "$ref": "#/definitions/PanoramaScene对象"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«PanoramaScene对象»"
+    },
+    "ResponseMsg«PatrolPlan对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "PatrolPlan对象",
+          "$ref": "#/definitions/PatrolPlan对象"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«PatrolPlan对象»"
+    },
+    "ResponseMsg«PatrolTaskInstance对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "PatrolTaskInstance对象",
+          "$ref": "#/definitions/PatrolTaskInstance对象"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«PatrolTaskInstance对象»"
+    },
+    "ResponseMsg«PatrolTask对象»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "originalRef": "PatrolTask对象",
+          "$ref": "#/definitions/PatrolTask对象"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«PatrolTask对象»"
+    },
+    "ResponseMsg«string»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "string"
+        },
+        "msg": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseMsg«string»"
+    },
+    "ResponsePageMsg": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object"
+        },
+        "msg": {
+          "type": "string"
+        },
+        "pageNum": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "ResponsePageMsg"
+    },
+    "ResponsePageMsg«List«PatrolTaskInput»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "PatrolTaskInput",
+            "$ref": "#/definitions/PatrolTaskInput"
+          }
+        },
+        "msg": {
+          "type": "string"
+        },
+        "pageNum": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "ResponsePageMsg«List«PatrolTaskInput»»"
+    },
+    "SubsystemFunpoint": {
+      "type": "object",
+      "properties": {
+        "funPointKeyname": {
+          "type": "string"
+        },
+        "funPointMrid": {
+          "type": "string"
+        },
+        "funPointTag": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "subsystemId": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "title": "SubsystemFunpoint"
+    },
+    "SystemConfig": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "title": "SystemConfig"
+    }
+  }
+}

@@ -1,0 +1,6298 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "市环卫监管平台",
+    "termsOfService": "''",
+    "version": "2.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:36041",
+      "description": "Inferred Url"
+    }
+  ],
+  "tags": [
+    {
+      "name": "ODS 人员数据",
+      "description": "Ods Person Controller"
+    },
+    {
+      "name": "ODS 标段信息",
+      "description": "Ods Section Controller"
+    },
+    {
+      "name": "ODS 标段合同信息",
+      "description": "Ods Section Contract Controller"
+    },
+    {
+      "name": "ODS 设备信息",
+      "description": "Ods Device Info Controller"
+    },
+    {
+      "name": "ODS 车辆数据",
+      "description": "Ods Car Controller"
+    },
+    {
+      "name": "人员类型数据映射",
+      "description": "Ods Person Type Mapping Controller"
+    },
+    {
+      "name": "企业名称数据映射",
+      "description": "Ods Company Mapping Controller"
+    },
+    {
+      "name": "车辆类型数据映射",
+      "description": "Ods Car Type Mapping Controller"
+    },
+    {
+      "name": "部门名称数据映射",
+      "description": "Ods Dept Mapping Controller"
+    }
+  ],
+  "paths": {
+    "/odsCar/deleteBatchByGuid": {
+      "post": {
+        "tags": [
+          "ODS 车辆数据"
+        ],
+        "summary": "根据guid批量删除",
+        "operationId": "deleteBatchByGuidUsingPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCar/deleteBatchById": {
+      "post": {
+        "tags": [
+          "ODS 车辆数据"
+        ],
+        "summary": "根据自增ID批量删除",
+        "operationId": "deleteBatchByIdUsingPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCar/export": {
+      "get": {
+        "tags": [
+          "ODS 车辆数据"
+        ],
+        "summary": "导出车辆数据信息",
+        "operationId": "exportUsingGET",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "carType",
+            "in": "query",
+            "description": "车辆类型",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCar/getByGuid": {
+      "get": {
+        "tags": [
+          "ODS 车辆数据"
+        ],
+        "summary": "根据guid获取详情",
+        "operationId": "getByGuidUsingGET",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "query",
+            "description": "guid",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«OdsCar 视图»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCar/listPage": {
+      "get": {
+        "tags": [
+          "ODS 车辆数据"
+        ],
+        "summary": "获取车辆数据页列表",
+        "operationId": "listPageUsingGET",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "carType",
+            "in": "query",
+            "description": "车辆类型",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«DataPager«OdsCar 视图»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCar/saveOrUpdate": {
+      "post": {
+        "tags": [
+          "ODS 车辆数据"
+        ],
+        "summary": "新增/编辑 车辆数据信息",
+        "operationId": "saveOrUpdateUsingPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsCarDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCarTypeMapping/class/tree": {
+      "get": {
+        "tags": [
+          "车辆类型数据映射"
+        ],
+        "summary": "获取类型树形",
+        "operationId": "getClassTreeUsingGET",
+        "parameters": [
+          {
+            "name": "parentId",
+            "in": "query",
+            "description": "parentId",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«List«类型树»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCarTypeMapping/deleteClassBatchByGuid": {
+      "post": {
+        "tags": [
+          "车辆类型数据映射"
+        ],
+        "summary": "根据guid批量删除类型",
+        "operationId": "deleteClassBatchByGuidUsingPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCarTypeMapping/listPage": {
+      "get": {
+        "tags": [
+          "车辆类型数据映射"
+        ],
+        "summary": "获取车辆类型数据映射页列表",
+        "operationId": "listPageUsingGET_1",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "数据源ID",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«Map«string,OdsCarTypeChildVO»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCarTypeMapping/saveOrUpdate": {
+      "post": {
+        "tags": [
+          "车辆类型数据映射"
+        ],
+        "summary": "新增/编辑 车辆类型数据映射信息",
+        "operationId": "saveOrUpdateUsingPOST_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsCarTypeMappingDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCarTypeMapping/saveOrUpdate/carType": {
+      "post": {
+        "tags": [
+          "车辆类型数据映射"
+        ],
+        "summary": "新增/编辑 类型树",
+        "operationId": "saveOrUpdateClassUsingPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/系统类型"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCompanyMapping/listPage": {
+      "get": {
+        "tags": [
+          "企业名称数据映射"
+        ],
+        "summary": "获取企业名称数据映射页列表",
+        "operationId": "listPageUsingGET_2",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cityCompanyName",
+            "in": "query",
+            "description": "市企业名称",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "distCompanyName",
+            "in": "query",
+            "description": "区企业名称",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "数据源ID",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«DataPager«OdsCompanyMapping 视图»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCompanyMapping/listPart": {
+      "get": {
+        "tags": [
+          "企业名称数据映射"
+        ],
+        "summary": "获取企业名称映射页统计",
+        "operationId": "listPartUsingGET",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cityCompanyName",
+            "in": "query",
+            "description": "市企业名称",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "distCompanyName",
+            "in": "query",
+            "description": "区企业名称",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "数据源ID",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«Map«string,object»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsCompanyMapping/saveOrUpdate": {
+      "post": {
+        "tags": [
+          "企业名称数据映射"
+        ],
+        "summary": "新增/编辑 企业名称数据映射信息",
+        "operationId": "saveOrUpdateUsingPOST_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsCompanyMappingDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsDeptMapping/listPage": {
+      "get": {
+        "tags": [
+          "部门名称数据映射"
+        ],
+        "summary": "获取部门名称数据映射页列表",
+        "operationId": "listPageUsingGET_3",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "distName",
+            "in": "query",
+            "description": "区",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«Map«string,object»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsDeptMapping/saveOrUpdate": {
+      "post": {
+        "tags": [
+          "部门名称数据映射"
+        ],
+        "summary": "新增/编辑 部门名称数据映射信息",
+        "operationId": "saveOrUpdateUsingPOST_3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsDeptMappingDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsDeviceInfo/deleteBatchByGuid": {
+      "post": {
+        "tags": [
+          "ODS 设备信息"
+        ],
+        "summary": "根据guid批量删除",
+        "operationId": "deleteBatchByGuidUsingPOST_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsDeviceInfo/deleteBatchById": {
+      "post": {
+        "tags": [
+          "ODS 设备信息"
+        ],
+        "summary": "根据自增ID批量删除",
+        "operationId": "deleteBatchByIdUsingPOST_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsDeviceInfo/export": {
+      "get": {
+        "tags": [
+          "ODS 设备信息"
+        ],
+        "summary": "导出设备信息信息",
+        "operationId": "exportUsingGET_1",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsDeviceInfo/getByGuid": {
+      "get": {
+        "tags": [
+          "ODS 设备信息"
+        ],
+        "summary": "根据guid获取详情",
+        "operationId": "getByGuidUsingGET_1",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "query",
+            "description": "guid",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«OdsDeviceInfo 视图»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsDeviceInfo/listPage": {
+      "get": {
+        "tags": [
+          "ODS 设备信息"
+        ],
+        "summary": "获取设备信息页列表",
+        "operationId": "listPageUsingGET_4",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«DataPager«OdsDeviceInfo 视图»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsDeviceInfo/saveOrUpdate": {
+      "post": {
+        "tags": [
+          "ODS 设备信息"
+        ],
+        "summary": "新增/编辑 设备信息信息",
+        "operationId": "saveOrUpdateUsingPOST_4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsDeviceInfoDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsPerson/deleteBatchByGuid": {
+      "post": {
+        "tags": [
+          "ODS 人员数据"
+        ],
+        "summary": "根据guid批量删除",
+        "operationId": "deleteBatchByGuidUsingPOST_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsPerson/deleteBatchById": {
+      "post": {
+        "tags": [
+          "ODS 人员数据"
+        ],
+        "summary": "根据自增ID批量删除",
+        "operationId": "deleteBatchByIdUsingPOST_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsPerson/export": {
+      "get": {
+        "tags": [
+          "ODS 人员数据"
+        ],
+        "summary": "导出人员数据信息",
+        "operationId": "exportUsingGET_2",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsPerson/getByGuid": {
+      "get": {
+        "tags": [
+          "ODS 人员数据"
+        ],
+        "summary": "根据guid获取详情",
+        "operationId": "getByGuidUsingGET_2",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "query",
+            "description": "guid",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«OdsPerson 视图»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsPerson/listPage": {
+      "get": {
+        "tags": [
+          "ODS 人员数据"
+        ],
+        "summary": "获取人员数据页列表",
+        "operationId": "listPageUsingGET_5",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«DataPager«OdsPerson 视图»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsPerson/saveOrUpdate": {
+      "post": {
+        "tags": [
+          "ODS 人员数据"
+        ],
+        "summary": "新增/编辑 人员数据信息",
+        "operationId": "saveOrUpdateUsingPOST_5",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsPersonDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsPersonTypeMapping/list": {
+      "get": {
+        "tags": [
+          "人员类型数据映射"
+        ],
+        "summary": "获取人员类型数据映射页列表",
+        "operationId": "listPageUsingGET_6",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "distName",
+            "in": "query",
+            "description": "区",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«Map«string,object»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsPersonTypeMapping/update": {
+      "post": {
+        "tags": [
+          "人员类型数据映射"
+        ],
+        "summary": "编辑 人员类型数据映射信息",
+        "operationId": "saveOrUpdateUsingPOST_6",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsPersonTypeMappingDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSectionContract/deleteBatchByGuid": {
+      "post": {
+        "tags": [
+          "ODS 标段合同信息"
+        ],
+        "summary": "根据guid批量删除",
+        "operationId": "deleteBatchByGuidUsingPOST_3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSectionContract/deleteBatchById": {
+      "post": {
+        "tags": [
+          "ODS 标段合同信息"
+        ],
+        "summary": "根据自增ID批量删除",
+        "operationId": "deleteBatchByIdUsingPOST_3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSectionContract/export": {
+      "get": {
+        "tags": [
+          "ODS 标段合同信息"
+        ],
+        "summary": "导出标段合同信息信息",
+        "operationId": "exportUsingGET_3",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSectionContract/getByGuid": {
+      "get": {
+        "tags": [
+          "ODS 标段合同信息"
+        ],
+        "summary": "根据guid获取详情",
+        "operationId": "getByGuidUsingGET_3",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "query",
+            "description": "guid",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«OdsSectionContract 视图»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSectionContract/listPage": {
+      "get": {
+        "tags": [
+          "ODS 标段合同信息"
+        ],
+        "summary": "获取标段合同信息页列表",
+        "operationId": "listPageUsingGET_7",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«DataPager«OdsSectionContract 视图»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSectionContract/saveOrUpdate": {
+      "post": {
+        "tags": [
+          "ODS 标段合同信息"
+        ],
+        "summary": "新增/编辑 标段合同信息信息",
+        "operationId": "saveOrUpdateUsingPOST_7",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsSectionContractDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSection/deleteBatchByGuid": {
+      "post": {
+        "tags": [
+          "ODS 标段信息"
+        ],
+        "summary": "根据guid批量删除",
+        "operationId": "deleteBatchByGuidUsingPOST_4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSection/deleteBatchById": {
+      "post": {
+        "tags": [
+          "ODS 标段信息"
+        ],
+        "summary": "根据自增ID批量删除",
+        "operationId": "deleteBatchByIdUsingPOST_4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSection/export": {
+      "get": {
+        "tags": [
+          "ODS 标段信息"
+        ],
+        "summary": "导出标段信息信息",
+        "operationId": "exportUsingGET_4",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSection/getByGuid": {
+      "get": {
+        "tags": [
+          "ODS 标段信息"
+        ],
+        "summary": "根据guid获取详情",
+        "operationId": "getByGuidUsingGET_4",
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "query",
+            "description": "guid",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«OdsSection 视图»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSection/listPage": {
+      "get": {
+        "tags": [
+          "ODS 标段信息"
+        ],
+        "summary": "获取标段信息页列表",
+        "operationId": "listPageUsingGET_8",
+        "parameters": [
+          {
+            "name": "beginDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contextId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outDataCount",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].key",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "whereMap[0].value",
+            "in": "query",
+            "required": false,
+            "style": "form",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«DataPager«OdsSection 视图»»"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    },
+    "/odsSection/saveOrUpdate": {
+      "post": {
+        "tags": [
+          "ODS 标段信息"
+        ],
+        "summary": "新增/编辑 标段信息信息",
+        "operationId": "saveOrUpdateUsingPOST_8",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OdsSectionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonResult«boolean»"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Authorization": [
+              "global"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Coordinate": {
+        "title": "Coordinate",
+        "type": "object",
+        "properties": {
+          "m": {
+            "type": "number",
+            "format": "double"
+          },
+          "valid": {
+            "type": "boolean"
+          },
+          "x": {
+            "type": "number",
+            "format": "double"
+          },
+          "y": {
+            "type": "number",
+            "format": "double"
+          },
+          "z": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "CoordinateSequence": {
+        "title": "CoordinateSequence",
+        "type": "object",
+        "properties": {
+          "dimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "measures": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CoordinateSequenceFactory": {
+        "title": "CoordinateSequenceFactory",
+        "type": "object"
+      },
+      "DataPager«OdsCar 视图»": {
+        "title": "DataPager«OdsCar 视图»",
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OdsCar 视图"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DataPager«OdsCompanyMapping 视图»": {
+        "title": "DataPager«OdsCompanyMapping 视图»",
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OdsCompanyMapping 视图"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DataPager«OdsDeviceInfo 视图»": {
+        "title": "DataPager«OdsDeviceInfo 视图»",
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OdsDeviceInfo 视图"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DataPager«OdsPerson 视图»": {
+        "title": "DataPager«OdsPerson 视图»",
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OdsPerson 视图"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DataPager«OdsSection 视图»": {
+        "title": "DataPager«OdsSection 视图»",
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OdsSection 视图"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DataPager«OdsSectionContract 视图»": {
+        "title": "DataPager«OdsSectionContract 视图»",
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OdsSectionContract 视图"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "EnvelopeReq": {
+        "title": "EnvelopeReq",
+        "type": "object"
+      },
+      "EnvelopeRes": {
+        "title": "EnvelopeRes",
+        "type": "object",
+        "properties": {
+          "area": {
+            "type": "number",
+            "format": "double"
+          },
+          "diameter": {
+            "type": "number",
+            "format": "double"
+          },
+          "height": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxX": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxY": {
+            "type": "number",
+            "format": "double"
+          },
+          "minX": {
+            "type": "number",
+            "format": "double"
+          },
+          "minY": {
+            "type": "number",
+            "format": "double"
+          },
+          "null": {
+            "type": "boolean"
+          },
+          "width": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "GeometryFactoryReq": {
+        "title": "GeometryFactoryReq",
+        "type": "object",
+        "properties": {
+          "coordinateSequenceFactory": {
+            "$ref": "#/components/schemas/CoordinateSequenceFactory"
+          },
+          "precisionModel": {
+            "$ref": "#/components/schemas/PrecisionModelReq"
+          }
+        }
+      },
+      "GeometryFactoryRes": {
+        "title": "GeometryFactoryRes",
+        "type": "object",
+        "properties": {
+          "coordinateSequenceFactory": {
+            "$ref": "#/components/schemas/CoordinateSequenceFactory"
+          },
+          "precisionModel": {
+            "$ref": "#/components/schemas/PrecisionModelRes"
+          },
+          "srid": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "GeometryReq": {
+        "title": "GeometryReq",
+        "type": "object",
+        "properties": {
+          "envelope": {
+            "$ref": "#/components/schemas/EnvelopeReq"
+          },
+          "factory": {
+            "$ref": "#/components/schemas/GeometryFactoryReq"
+          },
+          "srid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userData": {
+            "type": "object"
+          }
+        }
+      },
+      "GeometryRes": {
+        "title": "GeometryRes",
+        "type": "object",
+        "properties": {
+          "area": {
+            "type": "number",
+            "format": "double"
+          },
+          "boundary": {
+            "$ref": "#/components/schemas/GeometryRes"
+          },
+          "boundaryDimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "centroid": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "coordinate": {
+            "$ref": "#/components/schemas/Coordinate"
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Coordinate"
+            }
+          },
+          "dimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "empty": {
+            "type": "boolean"
+          },
+          "envelope": {
+            "$ref": "#/components/schemas/GeometryRes"
+          },
+          "envelopeInternal": {
+            "$ref": "#/components/schemas/EnvelopeRes"
+          },
+          "factory": {
+            "$ref": "#/components/schemas/GeometryFactoryRes"
+          },
+          "geometryType": {
+            "type": "string"
+          },
+          "interiorPoint": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "length": {
+            "type": "number",
+            "format": "double"
+          },
+          "numGeometries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numPoints": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precisionModel": {
+            "$ref": "#/components/schemas/PrecisionModelRes"
+          },
+          "rectangle": {
+            "type": "boolean"
+          },
+          "simple": {
+            "type": "boolean"
+          },
+          "srid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userData": {
+            "type": "object"
+          },
+          "valid": {
+            "type": "boolean"
+          }
+        }
+      },
+      "JsonResult«DataPager«OdsCar 视图»»": {
+        "title": "JsonResult«DataPager«OdsCar 视图»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataPager«OdsCar 视图»"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«DataPager«OdsCompanyMapping 视图»»": {
+        "title": "JsonResult«DataPager«OdsCompanyMapping 视图»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataPager«OdsCompanyMapping 视图»"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«DataPager«OdsDeviceInfo 视图»»": {
+        "title": "JsonResult«DataPager«OdsDeviceInfo 视图»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataPager«OdsDeviceInfo 视图»"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«DataPager«OdsPerson 视图»»": {
+        "title": "JsonResult«DataPager«OdsPerson 视图»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataPager«OdsPerson 视图»"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«DataPager«OdsSection 视图»»": {
+        "title": "JsonResult«DataPager«OdsSection 视图»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataPager«OdsSection 视图»"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«DataPager«OdsSectionContract 视图»»": {
+        "title": "JsonResult«DataPager«OdsSectionContract 视图»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DataPager«OdsSectionContract 视图»"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«List«类型树»»": {
+        "title": "JsonResult«List«类型树»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/类型树"
+            }
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«Map«string,OdsCarTypeChildVO»»": {
+        "title": "JsonResult«Map«string,OdsCarTypeChildVO»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/OdsCarTypeChildVO"
+            }
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«Map«string,object»»": {
+        "title": "JsonResult«Map«string,object»»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "object"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«OdsCar 视图»": {
+        "title": "JsonResult«OdsCar 视图»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/OdsCar 视图"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«OdsDeviceInfo 视图»": {
+        "title": "JsonResult«OdsDeviceInfo 视图»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/OdsDeviceInfo 视图"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«OdsPerson 视图»": {
+        "title": "JsonResult«OdsPerson 视图»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/OdsPerson 视图"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«OdsSection 视图»": {
+        "title": "JsonResult«OdsSection 视图»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/OdsSection 视图"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«OdsSectionContract 视图»": {
+        "title": "JsonResult«OdsSectionContract 视图»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/OdsSectionContract 视图"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "JsonResult«boolean»": {
+        "title": "JsonResult«boolean»",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OdsCar 视图": {
+        "title": "OdsCar 视图",
+        "type": "object",
+        "properties": {
+          "approvedWeight": {
+            "type": "number",
+            "description": "核定载质量",
+            "format": "float"
+          },
+          "auditDate": {
+            "type": "string",
+            "description": "审核日期",
+            "format": "date-time"
+          },
+          "auditOptions": {
+            "type": "string",
+            "description": "审核意见"
+          },
+          "auditResult": {
+            "type": "integer",
+            "description": "审核结果：0：待审核，1：通过， 2：不通过",
+            "format": "int32"
+          },
+          "auditUserId": {
+            "type": "string",
+            "description": "审核人员ID"
+          },
+          "auditUserName": {
+            "type": "string",
+            "description": "审核人员名称"
+          },
+          "buyDate": {
+            "type": "string",
+            "description": "采购日期",
+            "format": "date"
+          },
+          "carBrand": {
+            "type": "string",
+            "description": "车辆品牌"
+          },
+          "carId": {
+            "type": "string",
+            "description": "车辆标识ID"
+          },
+          "carModel": {
+            "type": "string",
+            "description": "车辆型号"
+          },
+          "carNo": {
+            "type": "string",
+            "description": "车牌号"
+          },
+          "carType": {
+            "type": "string",
+            "description": "车辆类型ID"
+          },
+          "carTypeName": {
+            "type": "string",
+            "description": "车辆类型"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "所属企业"
+          },
+          "deviceCode": {
+            "type": "string",
+            "description": "设备号"
+          },
+          "drivingLicenseExpireDate": {
+            "type": "string",
+            "description": "行驶证检验有效期",
+            "format": "date-time"
+          },
+          "engineNo": {
+            "type": "string",
+            "description": "发动机号"
+          },
+          "frameNo": {
+            "type": "string",
+            "description": "车架号"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ownerType": {
+            "type": "string",
+            "description": "权属类型：0：自有，1：租赁",
+            "format": "byte"
+          },
+          "powerType": {
+            "type": "string",
+            "description": "动力类型"
+          },
+          "scrapDate": {
+            "type": "string",
+            "description": "强制报废日期",
+            "format": "date"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "所属标段ID"
+          },
+          "sectionName": {
+            "type": "string",
+            "description": "所属标段"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "启用日期",
+            "format": "date"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "totalWeight": {
+            "type": "number",
+            "description": "总质量",
+            "format": "float"
+          },
+          "vehicleHeight": {
+            "type": "number",
+            "description": "车辆高度",
+            "format": "float"
+          },
+          "vehicleLength": {
+            "type": "number",
+            "description": "车辆长度",
+            "format": "float"
+          },
+          "vehicleWeight": {
+            "type": "number",
+            "description": "整备质量",
+            "format": "float"
+          },
+          "vehicleWidth": {
+            "type": "number",
+            "description": "车辆宽度",
+            "format": "float"
+          },
+          "workState": {
+            "type": "string",
+            "description": "工作状态：0：在用；1：停用",
+            "format": "byte"
+          },
+          "yearExamineDate": {
+            "type": "string",
+            "description": "年检日期",
+            "format": "date"
+          }
+        },
+        "description": "车辆数据 视图"
+      },
+      "OdsCarDTO": {
+        "title": "OdsCarDTO",
+        "type": "object",
+        "properties": {
+          "approvedWeight": {
+            "type": "number",
+            "description": "核定载质量",
+            "format": "float"
+          },
+          "auditDate": {
+            "type": "string",
+            "description": "审核日期",
+            "format": "date-time"
+          },
+          "auditOptions": {
+            "type": "string",
+            "description": "审核意见"
+          },
+          "auditResult": {
+            "type": "integer",
+            "description": "审核结果：0：待审核，1：通过， 2：不通过",
+            "format": "int32"
+          },
+          "auditUserId": {
+            "type": "string",
+            "description": "审核人员ID"
+          },
+          "auditUserName": {
+            "type": "string",
+            "description": "审核人员名称"
+          },
+          "buyDate": {
+            "type": "string",
+            "description": "采购日期",
+            "format": "date"
+          },
+          "carBrand": {
+            "type": "string",
+            "description": "车辆品牌"
+          },
+          "carId": {
+            "type": "string",
+            "description": "车辆标识ID"
+          },
+          "carModel": {
+            "type": "string",
+            "description": "车辆型号"
+          },
+          "carNo": {
+            "type": "string",
+            "description": "车牌号"
+          },
+          "carType": {
+            "type": "string",
+            "description": "车辆类型ID"
+          },
+          "carTypeName": {
+            "type": "string",
+            "description": "车辆类型"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "所属企业"
+          },
+          "deviceCode": {
+            "type": "string",
+            "description": "设备号"
+          },
+          "drivingLicenseExpireDate": {
+            "type": "string",
+            "description": "行驶证检验有效期",
+            "format": "date-time"
+          },
+          "engineNo": {
+            "type": "string",
+            "description": "发动机号"
+          },
+          "frameNo": {
+            "type": "string",
+            "description": "车架号"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ownerType": {
+            "type": "string",
+            "description": "权属类型：0：自有，1：租赁",
+            "format": "byte"
+          },
+          "powerType": {
+            "type": "string",
+            "description": "动力类型"
+          },
+          "scrapDate": {
+            "type": "string",
+            "description": "强制报废日期",
+            "format": "date"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "所属标段ID"
+          },
+          "sectionName": {
+            "type": "string",
+            "description": "所属标段"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "启用日期",
+            "format": "date"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "totalWeight": {
+            "type": "number",
+            "description": "总质量",
+            "format": "float"
+          },
+          "vehicleHeight": {
+            "type": "number",
+            "description": "车辆高度",
+            "format": "float"
+          },
+          "vehicleLength": {
+            "type": "number",
+            "description": "车辆长度",
+            "format": "float"
+          },
+          "vehicleWeight": {
+            "type": "number",
+            "description": "整备质量",
+            "format": "float"
+          },
+          "vehicleWidth": {
+            "type": "number",
+            "description": "车辆宽度",
+            "format": "float"
+          },
+          "workState": {
+            "type": "string",
+            "description": "工作状态：0：在用；1：停用",
+            "format": "byte"
+          },
+          "yearExamineDate": {
+            "type": "string",
+            "description": "年检日期",
+            "format": "date"
+          }
+        },
+        "description": "车辆数据 DTO"
+      },
+      "OdsCarTypeChildVO": {
+        "title": "OdsCarTypeChildVO",
+        "type": "object",
+        "properties": {
+          "matchCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "noMatchCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "odsCarTypeList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OdsCarTypeMapping 视图"
+            }
+          }
+        }
+      },
+      "OdsCarTypeMapping 视图": {
+        "title": "OdsCarTypeMapping 视图",
+        "type": "object",
+        "properties": {
+          "child": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OdsCarTypeMapping 视图"
+            }
+          },
+          "cityCarType": {
+            "type": "string",
+            "description": "市车辆类型ID"
+          },
+          "cityCarTypeName": {
+            "type": "string",
+            "description": "市车辆类型名称"
+          },
+          "cityPersonTypePathName": {
+            "type": "string",
+            "description": "市人员类型名称全路径"
+          },
+          "distCarType": {
+            "type": "string",
+            "description": "区车辆类型ID"
+          },
+          "distCarTypeCount": {
+            "type": "integer",
+            "description": "车辆数",
+            "format": "int32"
+          },
+          "distCarTypeName": {
+            "type": "string",
+            "description": "区车辆类型"
+          },
+          "distCarTypePid": {
+            "type": "string",
+            "description": "区车辆类型父ID"
+          },
+          "distName": {
+            "type": "string",
+            "description": "区"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          }
+        },
+        "description": "车辆类型数据映射 视图"
+      },
+      "OdsCarTypeMappingDTO": {
+        "title": "OdsCarTypeMappingDTO",
+        "type": "object",
+        "properties": {
+          "cityCarType": {
+            "type": "string",
+            "description": "市车辆类型ID"
+          },
+          "cityCarTypeName": {
+            "type": "string",
+            "description": "市车辆类型名称"
+          },
+          "cityPersonTypePathName": {
+            "type": "string",
+            "description": "市人员类型名称全路径"
+          },
+          "distCarType": {
+            "type": "string",
+            "description": "区车辆类型ID"
+          },
+          "distCarTypeCount": {
+            "type": "integer",
+            "description": "车辆数",
+            "format": "int32"
+          },
+          "distCarTypeName": {
+            "type": "string",
+            "description": "区车辆类型"
+          },
+          "distCarTypePid": {
+            "type": "string",
+            "description": "区车辆类型父ID"
+          },
+          "distName": {
+            "type": "string",
+            "description": "区"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          }
+        },
+        "description": "车辆类型数据映射 DTO"
+      },
+      "OdsCompanyMapping 视图": {
+        "title": "OdsCompanyMapping 视图",
+        "type": "object",
+        "properties": {
+          "cityCompanyId": {
+            "type": "string",
+            "description": "市企业ID"
+          },
+          "cityCompanyName": {
+            "type": "string",
+            "description": "市企业名称"
+          },
+          "distCompanyId": {
+            "type": "string",
+            "description": "区企业ID"
+          },
+          "distCompanyName": {
+            "type": "string",
+            "description": "区企业名称"
+          },
+          "distCompanyStatus": {
+            "type": "string",
+            "description": "区企业状态：0：在履约，1：停止履约",
+            "format": "byte"
+          },
+          "distName": {
+            "type": "string",
+            "description": "区名称"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          }
+        },
+        "description": "企业名称数据映射 视图"
+      },
+      "OdsCompanyMappingDTO": {
+        "title": "OdsCompanyMappingDTO",
+        "type": "object",
+        "properties": {
+          "cityCompanyId": {
+            "type": "string",
+            "description": "市企业ID"
+          },
+          "cityCompanyName": {
+            "type": "string",
+            "description": "市企业名称"
+          },
+          "distCompanyId": {
+            "type": "string",
+            "description": "区企业ID"
+          },
+          "distCompanyName": {
+            "type": "string",
+            "description": "区企业名称"
+          },
+          "distCompanyStatus": {
+            "type": "string",
+            "description": "区企业状态：0：在履约，1：停止履约",
+            "format": "byte"
+          },
+          "distName": {
+            "type": "string",
+            "description": "区名称"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          }
+        },
+        "description": "企业名称数据映射 DTO"
+      },
+      "OdsDeptMappingDTO": {
+        "title": "OdsDeptMappingDTO",
+        "type": "object",
+        "properties": {
+          "cityDeptId": {
+            "type": "string",
+            "description": "市部门ID"
+          },
+          "cityDeptName": {
+            "type": "string",
+            "description": "市部门名称"
+          },
+          "distDeptId": {
+            "type": "string",
+            "description": "区企业ID"
+          },
+          "distDeptName": {
+            "type": "string",
+            "description": "区企业名称"
+          },
+          "distDeptStatus": {
+            "type": "string",
+            "description": "区企业状态：0：在用，1：未用",
+            "format": "byte"
+          },
+          "distName": {
+            "type": "string",
+            "description": "区名称"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          }
+        },
+        "description": "部门名称数据映射 DTO"
+      },
+      "OdsDeviceInfo 视图": {
+        "title": "OdsDeviceInfo 视图",
+        "type": "object",
+        "properties": {
+          "brand": {
+            "type": "string",
+            "description": "设备品牌"
+          },
+          "buyDate": {
+            "type": "string",
+            "description": "采购日期",
+            "format": "date"
+          },
+          "companyId": {
+            "type": "string",
+            "description": "所属企业ID"
+          },
+          "deviceCode": {
+            "type": "string",
+            "description": "设备编号"
+          },
+          "deviceCompany": {
+            "type": "string",
+            "description": "设备供应商"
+          },
+          "deviceExpireDate": {
+            "type": "string",
+            "description": "设备服务截止日期",
+            "format": "date"
+          },
+          "deviceId": {
+            "type": "string",
+            "description": "设备ID"
+          },
+          "deviceName": {
+            "type": "string",
+            "description": "设备名称"
+          },
+          "deviceStatus": {
+            "type": "string",
+            "description": "设备状态(0：正常，1：故障，2：维修中，3：丢失)",
+            "format": "byte"
+          },
+          "deviceType": {
+            "type": "string",
+            "description": "设备类型（0:人员智能工牌，1:车载定位设备，2：压缩箱定位设备，3：视频监控终端，4：公厕智能终端，5：地磅）",
+            "format": "byte"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastCommunicationTime": {
+            "type": "string",
+            "description": "最后通讯时间",
+            "format": "date-time"
+          },
+          "model": {
+            "type": "string",
+            "description": "设备型号"
+          },
+          "objectId": {
+            "type": "string",
+            "description": "绑定对象ID"
+          },
+          "objectType": {
+            "type": "string",
+            "description": "绑定对象类型(0：人员，1：车辆,3：压缩箱,4：公厕)",
+            "format": "byte"
+          },
+          "ownerType": {
+            "type": "integer",
+            "description": "权属类型：1：自采，2：租赁，3：接收，4：借调，5：借用",
+            "format": "int32"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "标段ID"
+          },
+          "simCode": {
+            "type": "string",
+            "description": "物联网卡号"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "useState": {
+            "type": "string",
+            "description": "使用状态(0：在用、1：空闲)",
+            "format": "byte"
+          }
+        },
+        "description": "设备信息 视图"
+      },
+      "OdsDeviceInfoDTO": {
+        "title": "OdsDeviceInfoDTO",
+        "type": "object",
+        "properties": {
+          "brand": {
+            "type": "string",
+            "description": "设备品牌"
+          },
+          "buyDate": {
+            "type": "string",
+            "description": "采购日期",
+            "format": "date"
+          },
+          "companyId": {
+            "type": "string",
+            "description": "所属企业ID"
+          },
+          "deviceCode": {
+            "type": "string",
+            "description": "设备编号"
+          },
+          "deviceCompany": {
+            "type": "string",
+            "description": "设备供应商"
+          },
+          "deviceExpireDate": {
+            "type": "string",
+            "description": "设备服务截止日期",
+            "format": "date"
+          },
+          "deviceId": {
+            "type": "string",
+            "description": "设备ID"
+          },
+          "deviceName": {
+            "type": "string",
+            "description": "设备名称"
+          },
+          "deviceStatus": {
+            "type": "string",
+            "description": "设备状态(0：正常，1：故障，2：维修中，3：丢失)",
+            "format": "byte"
+          },
+          "deviceType": {
+            "type": "string",
+            "description": "设备类型（0:人员智能工牌，1:车载定位设备，2：压缩箱定位设备，3：视频监控终端，4：公厕智能终端，5：地磅）",
+            "format": "byte"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastCommunicationTime": {
+            "type": "string",
+            "description": "最后通讯时间",
+            "format": "date-time"
+          },
+          "model": {
+            "type": "string",
+            "description": "设备型号"
+          },
+          "objectId": {
+            "type": "string",
+            "description": "绑定对象ID"
+          },
+          "objectType": {
+            "type": "string",
+            "description": "绑定对象类型(0：人员，1：车辆,3：压缩箱,4：公厕)",
+            "format": "byte"
+          },
+          "ownerType": {
+            "type": "integer",
+            "description": "权属类型：1：自采，2：租赁，3：接收，4：借调，5：借用",
+            "format": "int32"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "标段ID"
+          },
+          "simCode": {
+            "type": "string",
+            "description": "物联网卡号"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "useState": {
+            "type": "string",
+            "description": "使用状态(0：在用、1：空闲)",
+            "format": "byte"
+          }
+        },
+        "description": "设备信息 DTO"
+      },
+      "OdsPerson 视图": {
+        "title": "OdsPerson 视图",
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "居住地址"
+          },
+          "auditDate": {
+            "type": "string",
+            "description": "审核日期",
+            "format": "date-time"
+          },
+          "auditOptions": {
+            "type": "string",
+            "description": "审核意见"
+          },
+          "auditResult": {
+            "type": "integer",
+            "description": "审核结果：0：待审核，1：通过， 2：不通过",
+            "format": "int32"
+          },
+          "auditUserId": {
+            "type": "string",
+            "description": "审核人员ID"
+          },
+          "auditUserName": {
+            "type": "string",
+            "description": "审核人员名称"
+          },
+          "birthday": {
+            "type": "string",
+            "description": "出生日期",
+            "format": "date"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "所属企业名称"
+          },
+          "deviceCode": {
+            "type": "string",
+            "description": "设备号"
+          },
+          "drawNum": {
+            "type": "string",
+            "description": "联系电话"
+          },
+          "education": {
+            "type": "string",
+            "description": "文化程度"
+          },
+          "emergencyContact": {
+            "type": "string",
+            "description": "紧急联系人"
+          },
+          "emergencyContactTel": {
+            "type": "string",
+            "description": "紧急联系人电话"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idcard": {
+            "type": "string",
+            "description": "身份证号码"
+          },
+          "nativePlace": {
+            "type": "string",
+            "description": "籍贯"
+          },
+          "permanentAddress": {
+            "type": "string",
+            "description": "户籍地址"
+          },
+          "personId": {
+            "type": "string",
+            "description": "人员标识ID"
+          },
+          "personName": {
+            "type": "string",
+            "description": "姓名"
+          },
+          "personType": {
+            "type": "string",
+            "description": "人员类型ID"
+          },
+          "personTypeName": {
+            "type": "string",
+            "description": "人员类型"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "所属标段标识ID"
+          },
+          "sectionName": {
+            "type": "string",
+            "description": "所属标段名称"
+          },
+          "sex": {
+            "type": "string",
+            "description": "性别"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "workState": {
+            "type": "string",
+            "description": "工作状态：0：在职；1：离职",
+            "format": "byte"
+          }
+        },
+        "description": "人员数据 视图"
+      },
+      "OdsPersonDTO": {
+        "title": "OdsPersonDTO",
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "居住地址"
+          },
+          "auditDate": {
+            "type": "string",
+            "description": "审核日期",
+            "format": "date-time"
+          },
+          "auditOptions": {
+            "type": "string",
+            "description": "审核意见"
+          },
+          "auditResult": {
+            "type": "integer",
+            "description": "审核结果：0：待审核，1：通过， 2：不通过",
+            "format": "int32"
+          },
+          "auditUserId": {
+            "type": "string",
+            "description": "审核人员ID"
+          },
+          "auditUserName": {
+            "type": "string",
+            "description": "审核人员名称"
+          },
+          "birthday": {
+            "type": "string",
+            "description": "出生日期",
+            "format": "date"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "所属企业名称"
+          },
+          "deviceCode": {
+            "type": "string",
+            "description": "设备号"
+          },
+          "drawNum": {
+            "type": "string",
+            "description": "联系电话"
+          },
+          "education": {
+            "type": "string",
+            "description": "文化程度"
+          },
+          "emergencyContact": {
+            "type": "string",
+            "description": "紧急联系人"
+          },
+          "emergencyContactTel": {
+            "type": "string",
+            "description": "紧急联系人电话"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idcard": {
+            "type": "string",
+            "description": "身份证号码"
+          },
+          "nativePlace": {
+            "type": "string",
+            "description": "籍贯"
+          },
+          "permanentAddress": {
+            "type": "string",
+            "description": "户籍地址"
+          },
+          "personId": {
+            "type": "string",
+            "description": "人员标识ID"
+          },
+          "personName": {
+            "type": "string",
+            "description": "姓名"
+          },
+          "personType": {
+            "type": "string",
+            "description": "人员类型ID"
+          },
+          "personTypeName": {
+            "type": "string",
+            "description": "人员类型"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "所属标段标识ID"
+          },
+          "sectionName": {
+            "type": "string",
+            "description": "所属标段名称"
+          },
+          "sex": {
+            "type": "string",
+            "description": "性别"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "workState": {
+            "type": "string",
+            "description": "工作状态：0：在职；1：离职",
+            "format": "byte"
+          }
+        },
+        "description": "人员数据 DTO"
+      },
+      "OdsPersonTypeMappingDTO": {
+        "title": "OdsPersonTypeMappingDTO",
+        "type": "object",
+        "properties": {
+          "cityPersonType": {
+            "type": "string",
+            "description": "市人员类型ID"
+          },
+          "cityPersonTypeName": {
+            "type": "string",
+            "description": "市车辆类型名称"
+          },
+          "cityPersonTypePathName": {
+            "type": "string",
+            "description": "市人员类型名称全路径"
+          },
+          "distName": {
+            "type": "string",
+            "description": "区"
+          },
+          "distPersonType": {
+            "type": "string",
+            "description": "区人员类型ID"
+          },
+          "distPersonTypeCount": {
+            "type": "integer",
+            "description": "区人员数量",
+            "format": "int32"
+          },
+          "distPersonTypeName": {
+            "type": "string",
+            "description": "区人员类型"
+          },
+          "distPersonTypePid": {
+            "type": "string",
+            "description": "区人员类型父ID"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          }
+        },
+        "description": "人员类型数据映射 DTO"
+      },
+      "OdsSection 视图": {
+        "title": "OdsSection 视图",
+        "type": "object",
+        "properties": {
+          "anotherName": {
+            "type": "string",
+            "description": "标段别名"
+          },
+          "auditDate": {
+            "type": "string",
+            "description": "审核日期",
+            "format": "date-time"
+          },
+          "auditOptions": {
+            "type": "string",
+            "description": "审核意见"
+          },
+          "auditResult": {
+            "type": "integer",
+            "description": "审核结果：0：待审核，1：通过， 2：不通过",
+            "format": "int32"
+          },
+          "auditUserId": {
+            "type": "string",
+            "description": "审核人员ID"
+          },
+          "auditUserName": {
+            "type": "string",
+            "description": "审核人员名称"
+          },
+          "calculatedArea": {
+            "type": "number",
+            "description": "实际多边形面积",
+            "format": "bigdecimal"
+          },
+          "code": {
+            "type": "string",
+            "description": "标段编码"
+          },
+          "companyId": {
+            "type": "string",
+            "description": "企业标识ID"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "企业名称"
+          },
+          "conCarNum": {
+            "type": "integer",
+            "description": "合同要求车辆数",
+            "format": "int32"
+          },
+          "conPerNum": {
+            "type": "integer",
+            "description": "合同要求人员数",
+            "format": "int32"
+          },
+          "districtName": {
+            "type": "string",
+            "description": "所属区"
+          },
+          "geoMercator": {
+            "description": "墨卡托多边形",
+            "$ref": "#/components/schemas/GeometryRes"
+          },
+          "geomCol": {
+            "description": "经纬度多边形",
+            "$ref": "#/components/schemas/GeometryRes"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "manageDeptId": {
+            "type": "string",
+            "description": "主管单位ID"
+          },
+          "manageDeptName": {
+            "type": "string",
+            "description": "主管单位"
+          },
+          "measure": {
+            "type": "number",
+            "description": "合同面积(平方米)",
+            "format": "bigdecimal"
+          },
+          "name": {
+            "type": "string",
+            "description": "标段名称"
+          },
+          "projectServiceEnd": {
+            "type": "string",
+            "description": "项目服务结束时间",
+            "format": "date"
+          },
+          "projectServiceStart": {
+            "type": "string",
+            "description": "项目服务开始时间",
+            "format": "date"
+          },
+          "requireCar": {
+            "type": "integer",
+            "description": "要求配置车辆数",
+            "format": "int32"
+          },
+          "requirePerson": {
+            "type": "integer",
+            "description": "要求配置人员数",
+            "format": "int32"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "标段标识ID"
+          },
+          "sectionStopTime": {
+            "type": "string",
+            "description": "标段停用时间",
+            "format": "date-time"
+          },
+          "sectionType": {
+            "type": "integer",
+            "description": "标段类型：1：一体化，2：清扫保洁，3：垃圾清运，4：垃圾分类，5：末端处置，6：公厕管养",
+            "format": "int32"
+          },
+          "streetName": {
+            "type": "string",
+            "description": "所属街道"
+          },
+          "superviseDeptId": {
+            "type": "string",
+            "description": "监管单位ID"
+          },
+          "superviseDeptName": {
+            "type": "string",
+            "description": "监管单位"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "项目组ID"
+          },
+          "teamName": {
+            "type": "string",
+            "description": "项目组名称"
+          },
+          "workState": {
+            "type": "integer",
+            "description": "标段状态：0：在用  1：停用",
+            "format": "int32"
+          }
+        },
+        "description": "标段信息 视图"
+      },
+      "OdsSectionContract 视图": {
+        "title": "OdsSectionContract 视图",
+        "type": "object",
+        "properties": {
+          "auditDate": {
+            "type": "string",
+            "description": "审核日期",
+            "format": "date-time"
+          },
+          "auditOptions": {
+            "type": "string",
+            "description": "审核意见"
+          },
+          "auditResult": {
+            "type": "integer",
+            "description": "审核结果：0：待审核，1：通过， 2：不通过",
+            "format": "int32"
+          },
+          "auditUserId": {
+            "type": "string",
+            "description": "审核人员ID"
+          },
+          "auditUserName": {
+            "type": "string",
+            "description": "审核人员名称"
+          },
+          "biddingDate": {
+            "type": "string",
+            "description": "中标日期",
+            "format": "date-time"
+          },
+          "biddingMoney": {
+            "type": "number",
+            "description": "中标金额(万元)",
+            "format": "bigdecimal"
+          },
+          "companyId": {
+            "type": "string",
+            "description": "公司ID"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "企业名称"
+          },
+          "contactsA": {
+            "type": "string",
+            "description": "甲方联系人"
+          },
+          "contactsAPhone": {
+            "type": "string",
+            "description": "甲方联系人电话"
+          },
+          "contactsB": {
+            "type": "string",
+            "description": "乙方联系人"
+          },
+          "contactsBPhone": {
+            "type": "string",
+            "description": "乙方联系人电话"
+          },
+          "contactsC": {
+            "type": "string",
+            "description": "监理方"
+          },
+          "contactsCPhone": {
+            "type": "string",
+            "description": "监理方电话"
+          },
+          "contractCode": {
+            "type": "string",
+            "description": "合同编码"
+          },
+          "contractId": {
+            "type": "string",
+            "description": "合同ID"
+          },
+          "contractName": {
+            "type": "string",
+            "description": "合同名称"
+          },
+          "contractType": {
+            "type": "integer",
+            "description": "1：一年一签 1；2：三年一签",
+            "format": "int32"
+          },
+          "contractYear": {
+            "type": "integer",
+            "description": "1：一年 2：二年，3：三年",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "标段ID"
+          },
+          "serviceEndDate": {
+            "type": "string",
+            "description": "服务终止日期",
+            "format": "date"
+          },
+          "serviceStartDate": {
+            "type": "string",
+            "description": "服务开始日期",
+            "format": "date"
+          },
+          "state": {
+            "type": "integer",
+            "description": "合同状态：0：在用，1：停用",
+            "format": "int32"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "workContent": {
+            "type": "string",
+            "description": "工作内容"
+          },
+          "workRange": {
+            "type": "string",
+            "description": "工作范围"
+          }
+        },
+        "description": "标段合同信息 视图"
+      },
+      "OdsSectionContractDTO": {
+        "title": "OdsSectionContractDTO",
+        "type": "object",
+        "properties": {
+          "auditDate": {
+            "type": "string",
+            "description": "审核日期",
+            "format": "date-time"
+          },
+          "auditOptions": {
+            "type": "string",
+            "description": "审核意见"
+          },
+          "auditResult": {
+            "type": "integer",
+            "description": "审核结果：0：待审核，1：通过， 2：不通过",
+            "format": "int32"
+          },
+          "auditUserId": {
+            "type": "string",
+            "description": "审核人员ID"
+          },
+          "auditUserName": {
+            "type": "string",
+            "description": "审核人员名称"
+          },
+          "biddingDate": {
+            "type": "string",
+            "description": "中标日期",
+            "format": "date-time"
+          },
+          "biddingMoney": {
+            "type": "number",
+            "description": "中标金额(万元)",
+            "format": "bigdecimal"
+          },
+          "companyId": {
+            "type": "string",
+            "description": "公司ID"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "企业名称"
+          },
+          "contactsA": {
+            "type": "string",
+            "description": "甲方联系人"
+          },
+          "contactsAPhone": {
+            "type": "string",
+            "description": "甲方联系人电话"
+          },
+          "contactsB": {
+            "type": "string",
+            "description": "乙方联系人"
+          },
+          "contactsBPhone": {
+            "type": "string",
+            "description": "乙方联系人电话"
+          },
+          "contactsC": {
+            "type": "string",
+            "description": "监理方"
+          },
+          "contactsCPhone": {
+            "type": "string",
+            "description": "监理方电话"
+          },
+          "contractCode": {
+            "type": "string",
+            "description": "合同编码"
+          },
+          "contractId": {
+            "type": "string",
+            "description": "合同ID"
+          },
+          "contractName": {
+            "type": "string",
+            "description": "合同名称"
+          },
+          "contractType": {
+            "type": "integer",
+            "description": "1：一年一签 1；2：三年一签",
+            "format": "int32"
+          },
+          "contractYear": {
+            "type": "integer",
+            "description": "1：一年 2：二年，3：三年",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "标段ID"
+          },
+          "serviceEndDate": {
+            "type": "string",
+            "description": "服务终止日期",
+            "format": "date"
+          },
+          "serviceStartDate": {
+            "type": "string",
+            "description": "服务开始日期",
+            "format": "date"
+          },
+          "state": {
+            "type": "integer",
+            "description": "合同状态：0：在用，1：停用",
+            "format": "int32"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "workContent": {
+            "type": "string",
+            "description": "工作内容"
+          },
+          "workRange": {
+            "type": "string",
+            "description": "工作范围"
+          }
+        },
+        "description": "标段合同信息 DTO"
+      },
+      "OdsSectionDTO": {
+        "title": "OdsSectionDTO",
+        "type": "object",
+        "properties": {
+          "anotherName": {
+            "type": "string",
+            "description": "标段别名"
+          },
+          "auditDate": {
+            "type": "string",
+            "description": "审核日期",
+            "format": "date-time"
+          },
+          "auditOptions": {
+            "type": "string",
+            "description": "审核意见"
+          },
+          "auditResult": {
+            "type": "integer",
+            "description": "审核结果：0：待审核，1：通过， 2：不通过",
+            "format": "int32"
+          },
+          "auditUserId": {
+            "type": "string",
+            "description": "审核人员ID"
+          },
+          "auditUserName": {
+            "type": "string",
+            "description": "审核人员名称"
+          },
+          "calculatedArea": {
+            "type": "number",
+            "description": "实际多边形面积",
+            "format": "bigdecimal"
+          },
+          "code": {
+            "type": "string",
+            "description": "标段编码"
+          },
+          "companyId": {
+            "type": "string",
+            "description": "企业标识ID"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "企业名称"
+          },
+          "conCarNum": {
+            "type": "integer",
+            "description": "合同要求车辆数",
+            "format": "int32"
+          },
+          "conPerNum": {
+            "type": "integer",
+            "description": "合同要求人员数",
+            "format": "int32"
+          },
+          "districtName": {
+            "type": "string",
+            "description": "所属区"
+          },
+          "geoMercator": {
+            "description": "墨卡托多边形",
+            "$ref": "#/components/schemas/GeometryReq"
+          },
+          "geomCol": {
+            "description": "经纬度多边形",
+            "$ref": "#/components/schemas/GeometryReq"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "manageDeptId": {
+            "type": "string",
+            "description": "主管单位ID"
+          },
+          "manageDeptName": {
+            "type": "string",
+            "description": "主管单位"
+          },
+          "measure": {
+            "type": "number",
+            "description": "合同面积(平方米)",
+            "format": "bigdecimal"
+          },
+          "name": {
+            "type": "string",
+            "description": "标段名称"
+          },
+          "projectServiceEnd": {
+            "type": "string",
+            "description": "项目服务结束时间",
+            "format": "date"
+          },
+          "projectServiceStart": {
+            "type": "string",
+            "description": "项目服务开始时间",
+            "format": "date"
+          },
+          "requireCar": {
+            "type": "integer",
+            "description": "要求配置车辆数",
+            "format": "int32"
+          },
+          "requirePerson": {
+            "type": "integer",
+            "description": "要求配置人员数",
+            "format": "int32"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "标段标识ID"
+          },
+          "sectionStopTime": {
+            "type": "string",
+            "description": "标段停用时间",
+            "format": "date-time"
+          },
+          "sectionType": {
+            "type": "integer",
+            "description": "标段类型：1：一体化，2：清扫保洁，3：垃圾清运，4：垃圾分类，5：末端处置，6：公厕管养",
+            "format": "int32"
+          },
+          "streetName": {
+            "type": "string",
+            "description": "所属街道"
+          },
+          "superviseDeptId": {
+            "type": "string",
+            "description": "监管单位ID"
+          },
+          "superviseDeptName": {
+            "type": "string",
+            "description": "监管单位"
+          },
+          "sysId": {
+            "type": "string",
+            "description": "数据源ID"
+          },
+          "teamId": {
+            "type": "string",
+            "description": "项目组ID"
+          },
+          "teamName": {
+            "type": "string",
+            "description": "项目组名称"
+          },
+          "workState": {
+            "type": "integer",
+            "description": "标段状态：0：在用  1：停用",
+            "format": "int32"
+          }
+        },
+        "description": "标段信息 DTO"
+      },
+      "Point": {
+        "title": "Point",
+        "type": "object",
+        "properties": {
+          "area": {
+            "type": "number",
+            "format": "double"
+          },
+          "boundary": {
+            "$ref": "#/components/schemas/GeometryRes"
+          },
+          "boundaryDimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "centroid": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "coordinate": {
+            "$ref": "#/components/schemas/Coordinate"
+          },
+          "coordinateSequence": {
+            "$ref": "#/components/schemas/CoordinateSequence"
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Coordinate"
+            }
+          },
+          "dimension": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "empty": {
+            "type": "boolean"
+          },
+          "envelope": {
+            "$ref": "#/components/schemas/GeometryRes"
+          },
+          "envelopeInternal": {
+            "$ref": "#/components/schemas/EnvelopeRes"
+          },
+          "factory": {
+            "$ref": "#/components/schemas/GeometryFactoryRes"
+          },
+          "geometryType": {
+            "type": "string"
+          },
+          "interiorPoint": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "length": {
+            "type": "number",
+            "format": "double"
+          },
+          "numGeometries": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numPoints": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precisionModel": {
+            "$ref": "#/components/schemas/PrecisionModelRes"
+          },
+          "rectangle": {
+            "type": "boolean"
+          },
+          "simple": {
+            "type": "boolean"
+          },
+          "srid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userData": {
+            "type": "object"
+          },
+          "valid": {
+            "type": "boolean"
+          },
+          "x": {
+            "type": "number",
+            "format": "double"
+          },
+          "y": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "PrecisionModelReq": {
+        "title": "PrecisionModelReq",
+        "type": "object",
+        "properties": {
+          "scale": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "PrecisionModelRes": {
+        "title": "PrecisionModelRes",
+        "type": "object",
+        "properties": {
+          "floating": {
+            "type": "boolean"
+          },
+          "maximumSignificantDigits": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "offsetX": {
+            "type": "number",
+            "format": "double"
+          },
+          "offsetY": {
+            "type": "number",
+            "format": "double"
+          },
+          "scale": {
+            "type": "number",
+            "format": "double"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Type"
+          }
+        }
+      },
+      "TreeNode": {
+        "title": "TreeNode",
+        "type": "object",
+        "properties": {
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TreeNode"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string"
+          },
+          "parentId": {
+            "type": "string"
+          },
+          "sortCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Type": {
+        "title": "Type",
+        "type": "object"
+      },
+      "类型树": {
+        "title": "类型树",
+        "type": "object",
+        "properties": {
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TreeNode"
+            }
+          },
+          "classType": {
+            "type": "integer",
+            "description": "类别 14001:类型 14002:大类 14003:小类",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "时限(秒)",
+            "format": "int32"
+          },
+          "parentId": {
+            "type": "string"
+          },
+          "parentName": {
+            "type": "string",
+            "description": "父节点名称"
+          },
+          "score": {
+            "type": "number",
+            "description": "扣分",
+            "format": "float"
+          },
+          "sortCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "系统类型": {
+        "title": "系统类型",
+        "type": "object",
+        "properties": {
+          "classId": {
+            "type": "string",
+            "description": "类型ID"
+          },
+          "classPid": {
+            "type": "string",
+            "description": "类型父ID"
+          },
+          "code": {
+            "type": "string",
+            "description": "类型编码"
+          },
+          "createId": {
+            "type": "string"
+          },
+          "createTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dbStatus": {
+            "type": "boolean"
+          },
+          "deductMoney": {
+            "type": "number",
+            "description": "扣款",
+            "format": "float"
+          },
+          "deductScore": {
+            "type": "number",
+            "description": "扣分",
+            "format": "float"
+          },
+          "devCode": {
+            "type": "string",
+            "description": "类型层级编码"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "处理时限（秒）",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "description": "类型名称"
+          },
+          "orderNum": {
+            "type": "integer",
+            "description": "排序号",
+            "format": "int32"
+          },
+          "parentName": {
+            "type": "string",
+            "description": "父节点名称"
+          },
+          "remark": {
+            "type": "string",
+            "description": "备注"
+          },
+          "type": {
+            "type": "integer",
+            "description": "类别",
+            "format": "int32"
+          },
+          "unit": {
+            "type": "string",
+            "description": "单位"
+          },
+          "updateId": {
+            "type": "string"
+          },
+          "updateTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Authorization": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

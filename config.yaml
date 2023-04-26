@@ -5,6 +5,7 @@ app:
   start_time: "2023-03-23"
   machine_id: 1
   jwt_secret: "23347$040412"
+  resources: "resources/"
 
 http_server:
   port: 8000

@@ -22,6 +22,8 @@ func Init() *gin.Engine {
 
 	apiV1 := r.Group("/api")
 	{
+		apiV1.GET("/swagger/:t/:f", hendler.Swagger) //t: json yaml
+
 		//登录
 		apiV1.POST("/login", hendler.Login)
 
@@ -51,6 +53,7 @@ func Init() *gin.Engine {
 			//支付
 			apiV1.POST("/pay", hendler.Pay)
 		}
+
 	}
 	return r
 }

@@ -26,6 +26,7 @@ type AppConfig struct {
 	StartTime string `mapstructure:"start_time"`
 	MachineID int64  `mapstructure:"machine_id"`
 	JwtSecret string `mapstructure:"jwt_secret"`
+	Resources string `mapstructure:"resources"`
 }
 
 type HttpServer struct {

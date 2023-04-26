@@ -1,0 +1,4277 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "商城订单项目",
+    "description": "商城的订单",
+    "contact": {
+      "name": "ykq",
+      "url": "https://www.lenovo.com",
+      "email": "yukq2@lenovo.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "//172.16.2.143:8080/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "CartInternal",
+      "description": "Cart Internal"
+    },
+    {
+      "name": "GoodsCommentInternal",
+      "description": "Goods Comment Internal"
+    },
+    {
+      "name": "InvoiceInternal",
+      "description": "Invoice Internal"
+    },
+    {
+      "name": "OrderGoodsInternal",
+      "description": "Order Goods Internal"
+    },
+    {
+      "name": "OrderInternal",
+      "description": "Order Internal"
+    },
+    {
+      "name": "RegionInternal",
+      "description": "Region Internal"
+    },
+    {
+      "name": "address-internal",
+      "description": "Address Internal"
+    }
+  ],
+  "paths": {
+    "/internal/order/checkNeedSendBtcpExcelData": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "上传需要抛单的excel，成功的抛单，失败的返回信息",
+        "description": "上传需要抛单的excel，成功的抛单，失败的返回信息",
+        "operationId": "checkNeedSendBtcpExcelData",
+        "requestBody": {
+          "description": "checkNeedSendBtcpExcelDataQos",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/OrderExcelVoReq"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderExcelVoRes"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "checkNeedSendBtcpExcelDataQos"
+      }
+    },
+    "/internal/order/comment/getCommentListByOrderId/{orderId}": {
+      "get": {
+        "tags": [
+          "GoodsCommentInternal"
+        ],
+        "summary": "根据订单id获取评论列表",
+        "description": "根据订单id获取评论列表",
+        "operationId": "getCommentListByOrderId",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "orderId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GoodsCommentVo"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/order/comment/getGoodsCommentCount/{goodsId}": {
+      "get": {
+        "tags": [
+          "GoodsCommentInternal"
+        ],
+        "summary": "根据商品id获取商品评价次数",
+        "description": "根据商品id获取商品评价次数",
+        "operationId": "getGoodsCommentCount",
+        "parameters": [
+          {
+            "name": "goodsId",
+            "in": "path",
+            "description": "goodsId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/order/determineIsNewUserInRu": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "判断用户在店内是否新用户",
+        "description": "判断用户在店内是否新用户",
+        "operationId": "determineIsNewUserInRu",
+        "requestBody": {
+          "description": "determineIsNewUserInRuQo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetermineIsNewUserInRuQo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DetermineIsNewUserInRuVo"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "determineIsNewUserInRuQo"
+      }
+    },
+    "/internal/order/getOrderInfoByOrderSn/{orderSn}": {
+      "get": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "根据订单sn获取订单信息",
+        "description": "根据订单sn获取订单信息",
+        "operationId": "getOrderInfoByOrderSn",
+        "parameters": [
+          {
+            "name": "orderSn",
+            "in": "path",
+            "description": "orderSn",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderInfoVo"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/order/getOrderInvoice": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "根据订单id获取订单发票信息",
+        "description": "根据订单id获取发票信息",
+        "operationId": "getOrderInvoice",
+        "requestBody": {
+          "description": "getOrderInvoiceQo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetOrderInvoiceQo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoiceVo"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "getOrderInvoiceQo"
+      }
+    },
+    "/internal/order/getSellerTotalSalesVolume/{ruId}": {
+      "get": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "根据商家id获取销量",
+        "description": "根据商家id获取销量",
+        "operationId": "getSellerTotalSalesVolume",
+        "parameters": [
+          {
+            "name": "ruId",
+            "in": "path",
+            "description": "ruId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/order/selectByPrimaryKey/{orderId}": {
+      "get": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "根据订单id获取订单信息",
+        "description": "根据订单id获取订单信息",
+        "operationId": "selectByPrimaryKey",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "orderId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderInfoEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/order/sendPushOrderStatus": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "回调抛单状态",
+        "description": "回调抛单状态",
+        "operationId": "sendPushOrderStatus",
+        "requestBody": {
+          "description": "btcpPushOrderResultQo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BtcpPushOrderResultQo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "btcpPushOrderResultQo"
+      }
+    },
+    "/internal/order/statisticSellerOrderCount": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "统计购买商家订单数据",
+        "description": "post请求-统计购买商家订单数据",
+        "operationId": "statisticSellerOrderCount",
+        "requestBody": {
+          "description": "statisticSellerOrderCountQo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StatisticSellerCartCountQo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatisticSellerOrderCountVo"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "statisticSellerOrderCountQo"
+      }
+    },
+    "/internal/order/synShopOrderExtend/{mainOrderSn}": {
+      "get": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "同步商城订单扩展信息",
+        "description": "同步商城订单扩展信息",
+        "operationId": "synShopOrderExtend",
+        "parameters": [
+          {
+            "name": "mainOrderSn",
+            "in": "path",
+            "description": "mainOrderSn",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/order/syncCrmOrder": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "同步crm订单",
+        "description": "同步crm订单",
+        "operationId": "syncCrmOrder",
+        "requestBody": {
+          "description": "crmOrderQo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CrmOrderQo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "crmOrderQo"
+      }
+    },
+    "/internal/order/syncEccSo": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "回传eccso",
+        "description": "回传eccso",
+        "operationId": "syncEccSo",
+        "requestBody": {
+          "description": "eccsoQoList",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SyncEccsoQo"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "eccsoQoList"
+      }
+    },
+    "/internal/order/syncOrderShippingToCrm": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "商城子订单发货物流同步crm",
+        "description": "发货物流同步crm",
+        "operationId": "syncOrderShippingToCrm",
+        "parameters": [
+          {
+            "name": "expressNo",
+            "in": "query",
+            "description": "expressNo",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderSn",
+            "in": "query",
+            "description": "orderSn",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/order/userHasOrder": {
+      "post": {
+        "tags": [
+          "OrderInternal"
+        ],
+        "summary": "获取该用户是否在该店下过单",
+        "description": "获取该用户是否在该店下过单",
+        "operationId": "userHasOrder",
+        "requestBody": {
+          "description": "userHasOrderQo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserHasOrderQo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "userHasOrderQo"
+      }
+    },
+    "/internal/orderGoods/checkOrderGoodsActivitySsd/{orderId}": {
+      "get": {
+        "tags": [
+          "OrderGoodsInternal"
+        ],
+        "summary": "根据订单id获取订单下商品信息是否是硬件加装",
+        "description": "根据订单id获取订单下商品信息是否是硬件加装",
+        "operationId": "checkOrderGoodsActivitySsd",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "orderId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/orderGoods/getOrderGoodsListByOrderId/{orderId}": {
+      "get": {
+        "tags": [
+          "OrderGoodsInternal"
+        ],
+        "summary": "根据订单id获取订单下商品信息",
+        "description": "根据订单id获取订单下商品信息",
+        "operationId": "getOrderGoodsListByOrderId",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "orderId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderGoodsVo"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/orderGoods/getOrderGoodsSaleCount": {
+      "post": {
+        "tags": [
+          "OrderGoodsInternal"
+        ],
+        "summary": "根据用户id和-商品列表获取销售量",
+        "description": "根据用户id和-商品列表获取销售量",
+        "operationId": "getOrderGoodsSaleCount",
+        "requestBody": {
+          "description": "orderGoodsSaleCountQo",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderGoodsSaleCountQo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrderGoodsVo"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "orderGoodsSaleCountQo"
+      }
+    },
+    "/internal/orderGoods/getSalesVolumeBySkuIdList": {
+      "post": {
+        "tags": [
+          "OrderGoodsInternal"
+        ],
+        "summary": "根据sku goods_id list 获取销量",
+        "description": "根据spu goods_id 获取销量",
+        "operationId": "getSalesVolumeBySkuIdList",
+        "parameters": [
+          {
+            "name": "skuIds",
+            "in": "query",
+            "description": "skuIds",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/internal/orderGoods/getSecKillOrderSaleList": {
+      "post": {
+        "tags": [
+          "OrderGoodsInternal"
+        ],
+        "summary": "获取秒杀活动下商品销量信息",
+        "description": "获取秒杀活动下商品销量信息",
+        "operationId": "getSecKillOrderSaleList",
+        "requestBody": {
+          "description": "secKillOrderSaleQoList",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SecKillOrderSaleQo"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SecKillOrderSaleVo"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "secKillOrderSaleQoList"
+      }
+    },
+    "/internal/region/getByParentId/{id}": {
+      "get": {
+        "tags": [
+          "RegionInternal"
+        ],
+        "summary": "获取级联子级区域",
+        "operationId": "getByParentId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RegionEntity"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/region/getByRegionId": {
+      "get": {
+        "tags": [
+          "RegionInternal"
+        ],
+        "summary": "根据地址id获取地址信息",
+        "operationId": "getByRegionId",
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "query",
+            "description": "regionId",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/internal/region/getRegionAll": {
+      "get": {
+        "tags": [
+          "RegionInternal"
+        ],
+        "summary": "获取全量地址数据",
+        "operationId": "getRegionAll",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RegionEntity"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {}
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddAddressQo": {
+        "title": "AddAddressQo",
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "收货人地址"
+          },
+          "city": {
+            "type": "string",
+            "description": "所在城市"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "收货公司名称"
+          },
+          "consignee": {
+            "type": "string",
+            "description": "收货人名称"
+          },
+          "district": {
+            "type": "string",
+            "description": "所在地区"
+          },
+          "mobile": {
+            "type": "string",
+            "description": "手机号"
+          },
+          "orderSn": {
+            "type": "string",
+            "description": "订单编号"
+          },
+          "province": {
+            "type": "string",
+            "description": "所在省份"
+          },
+          "street": {
+            "type": "string",
+            "description": "所在街道"
+          },
+          "tel": {
+            "type": "string",
+            "description": "联系电话"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "会员ID",
+            "format": "int32"
+          }
+        },
+        "description": "增加会员收货地址"
+      },
+      "AddInvoiceQo": {
+        "title": "AddInvoiceQo",
+        "type": "object",
+        "properties": {
+          "bankAccount": {
+            "type": "string",
+            "description": "开户行银行卡号"
+          },
+          "bankOfDeposit": {
+            "type": "string",
+            "description": "开户行名称"
+          },
+          "billingType": {
+            "type": "integer",
+            "description": "开票类型：1-公司（企业）；2-个人",
+            "format": "int32"
+          },
+          "city": {
+            "type": "integer",
+            "description": "联动城市",
+            "format": "int32"
+          },
+          "companyAddress": {
+            "type": "string",
+            "description": "公司地址"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "发票抬头公司名称"
+          },
+          "companyTelephone": {
+            "type": "string",
+            "description": "公司电话"
+          },
+          "district": {
+            "type": "integer",
+            "description": "联动城市",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "description": "自增ID",
+            "format": "int32"
+          },
+          "invoiceType": {
+            "type": "integer",
+            "description": "发票类型：1-增专发票；2-增普发票",
+            "format": "int32"
+          },
+          "province": {
+            "type": "integer",
+            "description": "联动省份",
+            "format": "int32"
+          },
+          "street": {
+            "type": "integer",
+            "description": "街道码",
+            "format": "int32"
+          },
+          "taxId": {
+            "type": "string",
+            "description": "税号"
+          },
+          "taxType": {
+            "type": "integer",
+            "description": "税号类型：1-税务登记(15或20位)；2-统一社会信用代码(18位)；3-非企业单位",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户ID",
+            "format": "int32"
+          },
+          "zipCode": {
+            "type": "string",
+            "description": "邮编"
+          }
+        },
+        "description": "新增发票"
+      },
+      "AddressEntity": {
+        "title": "AddressEntity",
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "收货人地址"
+          },
+          "addressId": {
+            "type": "integer",
+            "description": "自增ID",
+            "format": "int32"
+          },
+          "addressName": {
+            "type": "string",
+            "description": "此字段暂时无用"
+          },
+          "audit": {
+            "type": "integer",
+            "description": "状态",
+            "format": "int32"
+          },
+          "bestTime": {
+            "type": "string",
+            "description": "希望配送时间"
+          },
+          "city": {
+            "type": "string",
+            "description": "所在城市编号"
+          },
+          "cityName": {
+            "type": "string",
+            "description": "所在城市名称"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "企业名称"
+          },
+          "consignee": {
+            "type": "string",
+            "description": "收货人名称"
+          },
+          "country": {
+            "type": "string",
+            "description": "所在国家编号"
+          },
+          "countryName": {
+            "type": "string",
+            "description": "所在国家名称"
+          },
+          "district": {
+            "type": "string",
+            "description": "所在地区编号"
+          },
+          "districtName": {
+            "type": "string",
+            "description": "所在地区名称"
+          },
+          "email": {
+            "type": "string",
+            "description": "收货邮箱"
+          },
+          "mobile": {
+            "type": "string",
+            "description": "手机号"
+          },
+          "province": {
+            "type": "string",
+            "description": "所在省份编号"
+          },
+          "provinceName": {
+            "type": "string",
+            "description": "所在省份名称"
+          },
+          "signBuilding": {
+            "type": "string",
+            "description": "建筑物"
+          },
+          "street": {
+            "type": "string",
+            "description": "所在街道"
+          },
+          "streetName": {
+            "type": "string",
+            "description": "街道名称"
+          },
+          "tel": {
+            "type": "string",
+            "description": "联系电话"
+          },
+          "updateTime": {
+            "type": "string",
+            "description": "修改时间"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "会员ID",
+            "format": "int32"
+          },
+          "zipcode": {
+            "type": "string",
+            "description": "收货人邮政编码"
+          }
+        },
+        "description": "会员收货地址"
+      },
+      "AddressVo": {
+        "title": "AddressVo",
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "收货人地址"
+          },
+          "addressId": {
+            "type": "integer",
+            "description": "自增ID",
+            "format": "int32"
+          },
+          "city": {
+            "type": "string",
+            "description": "所在城市编号"
+          },
+          "cityName": {
+            "type": "string",
+            "description": "所在城市名称"
+          },
+          "consignee": {
+            "type": "string",
+            "description": "收货人名称"
+          },
+          "country": {
+            "type": "string",
+            "description": "所在国家编号"
+          },
+          "countryName": {
+            "type": "string",
+            "description": "所在国家名称"
+          },
+          "district": {
+            "type": "string",
+            "description": "所在地区编号"
+          },
+          "districtName": {
+            "type": "string",
+            "description": "所在地区名称"
+          },
+          "email": {
+            "type": "string",
+            "description": "收货邮箱"
+          },
+          "mobile": {
+            "type": "string",
+            "description": "手机号"
+          },
+          "province": {
+            "type": "string",
+            "description": "所在省份编号"
+          },
+          "provinceName": {
+            "type": "string",
+            "description": "所在省份名称"
+          },
+          "street": {
+            "type": "string",
+            "description": "所在街道"
+          },
+          "streetName": {
+            "type": "string",
+            "description": "街道名称"
+          },
+          "tel": {
+            "type": "string",
+            "description": "联系电话"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "会员ID",
+            "format": "int32"
+          },
+          "zipcode": {
+            "type": "string",
+            "description": "收货人邮政编码"
+          }
+        },
+        "description": "会员收货地址"
+      },
+      "BtcpPushOrderResultQo": {
+        "title": "BtcpPushOrderResultQo",
+        "type": "object",
+        "properties": {
+          "desc": {
+            "type": "string",
+            "description": "描述"
+          },
+          "pushOrderNo": {
+            "type": "string",
+            "description": "抛单编号"
+          },
+          "pushStatus": {
+            "type": "integer",
+            "description": "抛单状态：0 未抛单 1 抛单成功  2 抛单失败",
+            "format": "int32"
+          }
+        },
+        "description": "btcp抛单结果回调"
+      },
+      "BtcpSendOrderInvoiceQo": {
+        "title": "BtcpSendOrderInvoiceQo",
+        "type": "object",
+        "properties": {
+          "invoiceAmount": {
+            "type": "string",
+            "description": "发票金额"
+          },
+          "invoiceType": {
+            "type": "string",
+            "description": "发票类型：Z-增专发票；D-增普发票"
+          },
+          "pdfUrl": {
+            "type": "string",
+            "description": "普票下载地址"
+          },
+          "shipmentsNo": {
+            "type": "string",
+            "description": "商城主订单号"
+          },
+          "shippingCompany": {
+            "type": "string",
+            "description": "发票邮寄快递公司"
+          },
+          "shippingNumber": {
+            "type": "string",
+            "description": "发票邮寄快递编号"
+          },
+          "title": {
+            "type": "string",
+            "description": "发票抬头"
+          }
+        },
+        "description": "btcp回传订单发票信息"
+      },
+      "CellStyleReq": {
+        "title": "CellStyleReq",
+        "type": "object",
+        "properties": {
+          "alignment": {
+            "type": "string",
+            "enum": [
+              "CENTER",
+              "CENTER_SELECTION",
+              "DISTRIBUTED",
+              "FILL",
+              "GENERAL",
+              "JUSTIFY",
+              "LEFT",
+              "RIGHT"
+            ]
+          },
+          "borderBottom": {
+            "type": "string",
+            "enum": [
+              "DASHED",
+              "DASH_DOT",
+              "DASH_DOT_DOT",
+              "DOTTED",
+              "DOUBLE",
+              "HAIR",
+              "MEDIUM",
+              "MEDIUM_DASHED",
+              "MEDIUM_DASH_DOT",
+              "MEDIUM_DASH_DOT_DOT",
+              "NONE",
+              "SLANTED_DASH_DOT",
+              "THICK",
+              "THIN"
+            ]
+          },
+          "borderLeft": {
+            "type": "string",
+            "enum": [
+              "DASHED",
+              "DASH_DOT",
+              "DASH_DOT_DOT",
+              "DOTTED",
+              "DOUBLE",
+              "HAIR",
+              "MEDIUM",
+              "MEDIUM_DASHED",
+              "MEDIUM_DASH_DOT",
+              "MEDIUM_DASH_DOT_DOT",
+              "NONE",
+              "SLANTED_DASH_DOT",
+              "THICK",
+              "THIN"
+            ]
+          },
+          "borderRight": {
+            "type": "string",
+            "enum": [
+              "DASHED",
+              "DASH_DOT",
+              "DASH_DOT_DOT",
+              "DOTTED",
+              "DOUBLE",
+              "HAIR",
+              "MEDIUM",
+              "MEDIUM_DASHED",
+              "MEDIUM_DASH_DOT",
+              "MEDIUM_DASH_DOT_DOT",
+              "NONE",
+              "SLANTED_DASH_DOT",
+              "THICK",
+              "THIN"
+            ]
+          },
+          "borderTop": {
+            "type": "string",
+            "enum": [
+              "DASHED",
+              "DASH_DOT",
+              "DASH_DOT_DOT",
+              "DOTTED",
+              "DOUBLE",
+              "HAIR",
+              "MEDIUM",
+              "MEDIUM_DASHED",
+              "MEDIUM_DASH_DOT",
+              "MEDIUM_DASH_DOT_DOT",
+              "NONE",
+              "SLANTED_DASH_DOT",
+              "THICK",
+              "THIN"
+            ]
+          },
+          "bottomBorderColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataFormat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fillBackgroundColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fillForegroundColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fillPattern": {
+            "type": "string",
+            "enum": [
+              "ALT_BARS",
+              "BIG_SPOTS",
+              "BRICKS",
+              "DIAMONDS",
+              "FINE_DOTS",
+              "LEAST_DOTS",
+              "LESS_DOTS",
+              "NO_FILL",
+              "SOLID_FOREGROUND",
+              "SPARSE_DOTS",
+              "SQUARES",
+              "THICK_BACKWARD_DIAG",
+              "THICK_FORWARD_DIAG",
+              "THICK_HORZ_BANDS",
+              "THICK_VERT_BANDS",
+              "THIN_BACKWARD_DIAG",
+              "THIN_FORWARD_DIAG",
+              "THIN_HORZ_BANDS",
+              "THIN_VERT_BANDS"
+            ]
+          },
+          "font": {
+            "$ref": "#/components/schemas/Font"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "indention": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "leftBorderColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locked": {
+            "type": "boolean"
+          },
+          "quotePrefixed": {
+            "type": "boolean"
+          },
+          "rightBorderColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rotation": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shrinkToFit": {
+            "type": "boolean"
+          },
+          "topBorderColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "verticalAlignment": {
+            "type": "string",
+            "enum": [
+              "BOTTOM",
+              "CENTER",
+              "DISTRIBUTED",
+              "JUSTIFY",
+              "TOP"
+            ]
+          },
+          "wrapText": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CellStyleRes": {
+        "title": "CellStyleRes",
+        "type": "object",
+        "properties": {
+          "alignment": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "alignmentEnum": {
+            "type": "string",
+            "enum": [
+              "CENTER",
+              "CENTER_SELECTION",
+              "DISTRIBUTED",
+              "FILL",
+              "GENERAL",
+              "JUSTIFY",
+              "LEFT",
+              "RIGHT"
+            ]
+          },
+          "borderBottom": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borderBottomEnum": {
+            "type": "string",
+            "enum": [
+              "DASHED",
+              "DASH_DOT",
+              "DASH_DOT_DOT",
+              "DOTTED",
+              "DOUBLE",
+              "HAIR",
+              "MEDIUM",
+              "MEDIUM_DASHED",
+              "MEDIUM_DASH_DOT",
+              "MEDIUM_DASH_DOT_DOT",
+              "NONE",
+              "SLANTED_DASH_DOT",
+              "THICK",
+              "THIN"
+            ]
+          },
+          "borderLeft": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borderLeftEnum": {
+            "type": "string",
+            "enum": [
+              "DASHED",
+              "DASH_DOT",
+              "DASH_DOT_DOT",
+              "DOTTED",
+              "DOUBLE",
+              "HAIR",
+              "MEDIUM",
+              "MEDIUM_DASHED",
+              "MEDIUM_DASH_DOT",
+              "MEDIUM_DASH_DOT_DOT",
+              "NONE",
+              "SLANTED_DASH_DOT",
+              "THICK",
+              "THIN"
+            ]
+          },
+          "borderRight": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borderRightEnum": {
+            "type": "string",
+            "enum": [
+              "DASHED",
+              "DASH_DOT",
+              "DASH_DOT_DOT",
+              "DOTTED",
+              "DOUBLE",
+              "HAIR",
+              "MEDIUM",
+              "MEDIUM_DASHED",
+              "MEDIUM_DASH_DOT",
+              "MEDIUM_DASH_DOT_DOT",
+              "NONE",
+              "SLANTED_DASH_DOT",
+              "THICK",
+              "THIN"
+            ]
+          },
+          "borderTop": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borderTopEnum": {
+            "type": "string",
+            "enum": [
+              "DASHED",
+              "DASH_DOT",
+              "DASH_DOT_DOT",
+              "DOTTED",
+              "DOUBLE",
+              "HAIR",
+              "MEDIUM",
+              "MEDIUM_DASHED",
+              "MEDIUM_DASH_DOT",
+              "MEDIUM_DASH_DOT_DOT",
+              "NONE",
+              "SLANTED_DASH_DOT",
+              "THICK",
+              "THIN"
+            ]
+          },
+          "bottomBorderColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataFormat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataFormatString": {
+            "type": "string"
+          },
+          "fillBackgroundColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fillBackgroundColorColor": {
+            "$ref": "#/components/schemas/Color"
+          },
+          "fillForegroundColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fillForegroundColorColor": {
+            "$ref": "#/components/schemas/Color"
+          },
+          "fillPattern": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fillPatternEnum": {
+            "type": "string",
+            "enum": [
+              "ALT_BARS",
+              "BIG_SPOTS",
+              "BRICKS",
+              "DIAMONDS",
+              "FINE_DOTS",
+              "LEAST_DOTS",
+              "LESS_DOTS",
+              "NO_FILL",
+              "SOLID_FOREGROUND",
+              "SPARSE_DOTS",
+              "SQUARES",
+              "THICK_BACKWARD_DIAG",
+              "THICK_FORWARD_DIAG",
+              "THICK_HORZ_BANDS",
+              "THICK_VERT_BANDS",
+              "THIN_BACKWARD_DIAG",
+              "THIN_FORWARD_DIAG",
+              "THIN_HORZ_BANDS",
+              "THIN_VERT_BANDS"
+            ]
+          },
+          "fontIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "indention": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "leftBorderColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locked": {
+            "type": "boolean"
+          },
+          "quotePrefixed": {
+            "type": "boolean"
+          },
+          "rightBorderColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rotation": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shrinkToFit": {
+            "type": "boolean"
+          },
+          "topBorderColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "verticalAlignment": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "verticalAlignmentEnum": {
+            "type": "string",
+            "enum": [
+              "BOTTOM",
+              "CENTER",
+              "DISTRIBUTED",
+              "JUSTIFY",
+              "TOP"
+            ]
+          },
+          "wrapText": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Color": {
+        "title": "Color",
+        "type": "object"
+      },
+      "CrmOrderGoodsQo": {
+        "title": "CrmOrderGoodsQo",
+        "type": "object",
+        "properties": {
+          "billGoodsName": {
+            "type": "string",
+            "description": "商品开票名称",
+            "example": "商品开票名称"
+          },
+          "goodsName": {
+            "type": "string",
+            "description": "商品的名称",
+            "example": "测试商品111"
+          },
+          "goodsNumber": {
+            "type": "integer",
+            "description": "商品数量",
+            "format": "int32",
+            "example": 3
+          },
+          "goodsPrice": {
+            "type": "integer",
+            "description": "商品价格 单位 分",
+            "format": "int64",
+            "example": 23430
+          },
+          "machineNoList": {
+            "type": "array",
+            "description": "主机编号(SN码)",
+            "example": "SN-00300987665",
+            "items": {
+              "type": "string"
+            }
+          },
+          "materialCode": {
+            "type": "string",
+            "description": "商品的物料号",
+            "example": "00300987665"
+          },
+          "purchaseWay": {
+            "type": "integer",
+            "description": "采购方式：1-内采-标品；2-内采-Bidding；3-外采",
+            "format": "int32"
+          },
+          "shippingPrice": {
+            "type": "integer",
+            "description": "商品运费 单位 分",
+            "format": "int64",
+            "example": 1000
+          }
+        },
+        "description": "crm订单商品信息"
+      },
+      "CrmOrderInfoQo": {
+        "title": "CrmOrderInfoQo",
+        "type": "object",
+        "properties": {
+          "addressId": {
+            "type": "integer",
+            "description": "用户选择的地址id",
+            "format": "int32",
+            "example": 6
+          },
+          "crmOrderGoodsQoList": {
+            "type": "array",
+            "description": "订单商品信息 单位分",
+            "example": 110,
+            "items": {
+              "$ref": "#/components/schemas/CrmOrderGoodsQo"
+            }
+          },
+          "goodsPrice": {
+            "type": "integer",
+            "description": "商品总价 单位分",
+            "format": "int64",
+            "example": 100
+          },
+          "invoiceId": {
+            "type": "integer",
+            "description": "用户选择的发票id",
+            "format": "int32",
+            "example": 5
+          },
+          "orderPrice": {
+            "type": "integer",
+            "description": "应付款总价 单位分",
+            "format": "int64",
+            "example": 110
+          },
+          "shippingPrice": {
+            "type": "integer",
+            "description": "运费总价 单位分",
+            "format": "int64",
+            "example": 10
+          },
+          "subcontractOrder": {
+            "type": "string",
+            "description": "234234234,2,342,34,234,234,2,4"
+          }
+        },
+        "description": "crm订单信息"
+      },
+      "CrmOrderQo": {
+        "title": "CrmOrderQo",
+        "type": "object",
+        "properties": {
+          "contactMobile": {
+            "type": "string",
+            "description": "15656565656"
+          },
+          "contactName": {
+            "type": "string",
+            "description": "3456"
+          },
+          "contractAddressId": {
+            "type": "integer",
+            "description": "5l",
+            "format": "int64"
+          },
+          "crmMainOrderSn": {
+            "type": "string",
+            "description": "crm主订单sn"
+          },
+          "crmOrderInfoQoList": {
+            "type": "array",
+            "description": "crm订单信息结构",
+            "items": {
+              "$ref": "#/components/schemas/CrmOrderInfoQo"
+            }
+          },
+          "customerCode": {
+            "type": "string",
+            "description": "wsxcde3455"
+          },
+          "customerName": {
+            "type": "string",
+            "description": "ddddd"
+          },
+          "froms": {
+            "type": "string",
+            "description": "订单来源平台",
+            "example": "pc:电脑,mobile:手机,app:应用 pc"
+          },
+          "goodsTotalPrice": {
+            "type": "integer",
+            "description": "商品总价 单位分",
+            "format": "int64",
+            "example": 100
+          },
+          "invoiceAddressId": {
+            "type": "integer",
+            "description": "3l",
+            "format": "int64"
+          },
+          "invoiceId": {
+            "type": "integer",
+            "description": "3l",
+            "format": "int64"
+          },
+          "invoiceRemark": {
+            "type": "string",
+            "description": "发票备注"
+          },
+          "orderTotalPrice": {
+            "type": "integer",
+            "description": "应付款总价 单位分",
+            "format": "int64",
+            "example": 110
+          },
+          "quotationCode": {
+            "type": "string",
+            "description": "报价单号"
+          },
+          "quotationId": {
+            "type": "integer",
+            "description": "报价单id",
+            "format": "int64"
+          },
+          "referer": {
+            "type": "string",
+            "description": "订单来源平台",
+            "example": "订单的来源页面 lixiangjiashen"
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "卖家信息",
+            "format": "int32"
+          },
+          "salesItCode": {
+            "type": "string",
+            "description": "15656565656"
+          },
+          "shippingTotalPrice": {
+            "type": "integer",
+            "description": "运费总价 单位分",
+            "format": "int64",
+            "example": 10
+          },
+          "specialInvoiceRemark": {
+            "type": "string",
+            "description": "特殊开票标识（备注）"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "买家信息",
+            "format": "int32"
+          }
+        },
+        "description": "crm生成订单请求数据"
+      },
+      "DetermineIsNewUserInRuQo": {
+        "title": "DetermineIsNewUserInRuQo",
+        "type": "object",
+        "properties": {
+          "ruIdList": {
+            "type": "array",
+            "description": "商家idList",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32"
+          }
+        },
+        "description": "判断用户是否店内新用户请求体"
+      },
+      "DetermineIsNewUserInRuVo": {
+        "title": "DetermineIsNewUserInRuVo",
+        "type": "object",
+        "properties": {
+          "newUser": {
+            "type": "boolean",
+            "description": "是否新用户",
+            "example": true
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "商家id",
+            "format": "int32",
+            "example": 10
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32",
+            "example": 101
+          }
+        },
+        "description": "判断用户是否店内新用户响应体"
+      },
+      "Font": {
+        "title": "Font",
+        "type": "object",
+        "properties": {
+          "bold": {
+            "type": "boolean"
+          },
+          "color": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fontHeight": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fontHeightInPoints": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fontName": {
+            "type": "string"
+          },
+          "italic": {
+            "type": "boolean"
+          },
+          "strikeout": {
+            "type": "boolean"
+          },
+          "typeOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "underline": {
+            "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      },
+      "GetOrderInvoiceQo": {
+        "title": "GetOrderInvoiceQo",
+        "type": "object",
+        "properties": {
+          "invoiceAddressId": {
+            "type": "integer",
+            "description": "发票地址id",
+            "format": "int32",
+            "example": 123
+          },
+          "invoiceId": {
+            "type": "integer",
+            "description": "发票id",
+            "format": "int32",
+            "example": 123
+          },
+          "shopOrderId": {
+            "type": "integer",
+            "description": "商城订单id",
+            "format": "int32",
+            "example": 123
+          }
+        },
+        "description": "获取订单发票"
+      },
+      "GoodsCommentVo": {
+        "title": "GoodsCommentVo",
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string",
+            "description": "评论内容",
+            "example": "服务到位"
+          },
+          "commentDetailList": {
+            "type": "array",
+            "description": "评论项目列表",
+            "items": {
+              "$ref": "#/components/schemas/ServiceModuleTypeVo"
+            }
+          },
+          "commentImgList": {
+            "type": "array",
+            "description": "评论的商品图",
+            "items": {
+              "type": "string"
+            }
+          },
+          "commentUserVo": {
+            "$ref": "#/components/schemas/UserVo"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "创建时间",
+            "example": "2021-10-01T09:09:09.000Z"
+          },
+          "id": {
+            "type": "integer",
+            "description": "主键id",
+            "format": "int64"
+          },
+          "orderId": {
+            "type": "integer",
+            "description": "订单id",
+            "format": "int32",
+            "example": 609
+          },
+          "parentId": {
+            "type": "integer",
+            "description": "父评论id",
+            "format": "int32"
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "商家id",
+            "format": "int32",
+            "example": 7
+          },
+          "score": {
+            "type": "number",
+            "description": "评分",
+            "example": 45
+          },
+          "skuId": {
+            "type": "integer",
+            "description": "skuId",
+            "format": "int32",
+            "example": 65
+          },
+          "spuId": {
+            "type": "integer",
+            "description": "spuId",
+            "format": "int32",
+            "example": 63
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "更新时间",
+            "example": "2021-10-01T09:09:19.000Z"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32",
+            "example": 60
+          }
+        },
+        "description": "商品评论返回结构体"
+      },
+      "GoodsSearchVo": {
+        "title": "GoodsSearchVo",
+        "type": "object",
+        "properties": {
+          "actGoodsCooperationNum": {
+            "type": "integer",
+            "description": "秒杀协同人数",
+            "format": "int32",
+            "example": 100
+          },
+          "actGoodsPrice": {
+            "type": "number",
+            "description": "秒杀活动价格",
+            "example": 0
+          },
+          "actGoodsWholesalePrice": {
+            "type": "number",
+            "description": "秒杀活动批发价格价格",
+            "example": 0
+          },
+          "actInfoStatus": {
+            "type": "integer",
+            "description": "秒杀活动状态",
+            "format": "int32"
+          },
+          "channelPrice": {
+            "type": "number",
+            "description": "商品渠道价 - APP展示",
+            "example": 3.45
+          },
+          "dataSource": {
+            "type": "string",
+            "description": "数据源",
+            "example": "1"
+          },
+          "encouragePrice": {
+            "type": "number",
+            "description": "鼓励金金额",
+            "example": 34.45
+          },
+          "goodsId": {
+            "type": "integer",
+            "description": "商品skuId",
+            "format": "int32",
+            "example": 2
+          },
+          "goodsName": {
+            "type": "string",
+            "description": "商品名字",
+            "example": "3"
+          },
+          "goodsThumb": {
+            "type": "string",
+            "description": "商品图地址",
+            "example": "https://lenovo-test-xianniu.oss-cn-beijing.aliyuncs.com/demand/files/20211014/163417935449938.gif"
+          },
+          "hasStock": {
+            "type": "boolean",
+            "description": "是否有库存 true有库存 false无库存",
+            "example": true
+          },
+          "isReal": {
+            "type": "integer",
+            "description": "是否实物",
+            "format": "int64",
+            "example": 1
+          },
+          "isShowQi": {
+            "type": "integer",
+            "description": "是否显示xx元起",
+            "format": "int32"
+          },
+          "sellerShopInfoVo": {
+            "$ref": "#/components/schemas/SellerShopInfoSearchVo"
+          },
+          "shopPrice": {
+            "type": "number",
+            "description": "商品零售价",
+            "example": 3.45
+          }
+        },
+        "description": "商品搜索的返回值"
+      },
+      "InformationExtendVo": {
+        "title": "InformationExtendVo",
+        "type": "object",
+        "properties": {
+          "bossIdentityCode": {
+            "type": "string",
+            "description": "技服经理身份证号",
+            "example": "130627xxxxxxxxxxx"
+          },
+          "bossMobilePhone": {
+            "type": "string",
+            "description": "技服经理手机号",
+            "example": "17777777777"
+          },
+          "bossName": {
+            "type": "string",
+            "description": "技服经理",
+            "example": "xxx"
+          },
+          "companyId": {
+            "type": "integer",
+            "description": "stepsFields.fid",
+            "format": "int32",
+            "example": 6
+          },
+          "emergencyPhone": {
+            "type": "string",
+            "description": "应急联系电话",
+            "example": "17777777777"
+          },
+          "id": {
+            "type": "integer",
+            "description": "主键",
+            "format": "int32",
+            "example": 6
+          },
+          "isMain": {
+            "type": "integer",
+            "description": "是否主站",
+            "format": "int32",
+            "example": 1
+          },
+          "newStationCode": {
+            "type": "string",
+            "description": "新服务站编号",
+            "example": "53245677"
+          },
+          "servicePhone": {
+            "type": "string",
+            "description": "服务咨询电话",
+            "example": "17777777777"
+          },
+          "shopId": {
+            "type": "integer",
+            "description": "information.shop_id",
+            "format": "int32",
+            "example": 6
+          },
+          "stationName": {
+            "type": "string",
+            "description": "服务站名称",
+            "example": "xxxxx"
+          },
+          "stationType": {
+            "type": "integer",
+            "description": "服务站类型 1=内部 2=三方",
+            "format": "int32",
+            "example": 1
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32",
+            "example": 6
+          }
+        },
+        "description": "服务站扩展信息"
+      },
+      "InvoiceVo": {
+        "title": "InvoiceVo",
+        "type": "object",
+        "properties": {
+          "bankAccount": {
+            "type": "string",
+            "description": "银行卡号"
+          },
+          "bankOfDeposit": {
+            "type": "string",
+            "description": "开户行"
+          },
+          "billingType": {
+            "type": "integer",
+            "description": "开票类型：1-公司（企业）；2-个人",
+            "format": "int32"
+          },
+          "billingTypeName": {
+            "type": "string",
+            "description": "公司（企业）；个人"
+          },
+          "city": {
+            "type": "integer",
+            "description": "联动城市",
+            "format": "int32"
+          },
+          "cityName": {
+            "type": "string",
+            "description": "联动城市"
+          },
+          "companyAddress": {
+            "type": "string",
+            "description": "公司地址"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "公司名称"
+          },
+          "companyTelephone": {
+            "type": "string",
+            "description": "公司电话"
+          },
+          "consigneeAddress": {
+            "type": "string",
+            "description": "收票地址"
+          },
+          "consigneeMobilePhone": {
+            "type": "string",
+            "description": "收票人手机号"
+          },
+          "consigneeName": {
+            "type": "string",
+            "description": "收票人姓名"
+          },
+          "country": {
+            "type": "integer",
+            "description": "联动国家",
+            "format": "int32"
+          },
+          "district": {
+            "type": "integer",
+            "description": "联动城市",
+            "format": "int32"
+          },
+          "districtName": {
+            "type": "string",
+            "description": "联动城市"
+          },
+          "id": {
+            "type": "integer",
+            "description": "自增ID",
+            "format": "int32"
+          },
+          "invoiceType": {
+            "type": "integer",
+            "description": "发票类型：1-增专发票；2-增普发票",
+            "format": "int32"
+          },
+          "invoiceTypeName": {
+            "type": "string",
+            "description": "发票类型：增专发票；增普发票"
+          },
+          "province": {
+            "type": "integer",
+            "description": "联动省份",
+            "format": "int32"
+          },
+          "provinceName": {
+            "type": "string",
+            "description": "联动省份"
+          },
+          "street": {
+            "type": "integer",
+            "description": "街道码",
+            "format": "int32"
+          },
+          "streetName": {
+            "type": "string",
+            "description": "街道码"
+          },
+          "taxId": {
+            "type": "string",
+            "description": "税号"
+          },
+          "taxType": {
+            "type": "integer",
+            "description": "税号类型：1-税务登记(15或20位)；2-统一社会信用代码(18位)；3-非企业单位",
+            "format": "int32"
+          },
+          "taxTypeName": {
+            "type": "string",
+            "description": "税号类型：1-税务登记(15或20位)；2-统一社会信用代码(18位)；3-非企业单位"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户ID",
+            "format": "int32"
+          },
+          "zipCode": {
+            "type": "string",
+            "description": "邮编"
+          }
+        },
+        "description": "发票"
+      },
+      "OrderExcelVoReq": {
+        "title": "OrderExcelVoReq",
+        "type": "object",
+        "properties": {
+          "cellStyleMap": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CellStyleReq"
+            }
+          },
+          "eccCode": {
+            "type": "string"
+          },
+          "errDesc": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderCode": {
+            "type": "string"
+          },
+          "subOrderCode": {
+            "type": "string"
+          }
+        }
+      },
+      "OrderExcelVoRes": {
+        "title": "OrderExcelVoRes",
+        "type": "object",
+        "properties": {
+          "cellStyleMap": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CellStyleRes"
+            }
+          },
+          "eccCode": {
+            "type": "string"
+          },
+          "errDesc": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderCode": {
+            "type": "string"
+          },
+          "subOrderCode": {
+            "type": "string"
+          }
+        }
+      },
+      "OrderGoodsSaleCountQo": {
+        "title": "OrderGoodsSaleCountQo",
+        "type": "object",
+        "properties": {
+          "skuIdList": {
+            "type": "array",
+            "description": "商品id列表",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32"
+          }
+        },
+        "description": "根据用户id和商品列表获取销售量请求体"
+      },
+      "OrderGoodsVo": {
+        "title": "OrderGoodsVo",
+        "type": "object",
+        "properties": {
+          "billGoodsName": {
+            "type": "string",
+            "description": "订单商品开票名称",
+            "example": "6"
+          },
+          "goodsConfiguration": {
+            "type": "string",
+            "description": "商品配置",
+            "example": "4核32G"
+          },
+          "goodsId": {
+            "type": "integer",
+            "description": "商品id",
+            "format": "int32",
+            "example": 165
+          },
+          "goodsImage": {
+            "type": "string",
+            "description": "商品主图",
+            "example": "http://www.123.com/a.png"
+          },
+          "goodsName": {
+            "type": "string",
+            "description": "商品名称",
+            "example": "Office 365高级商业版"
+          },
+          "goodsNumber": {
+            "type": "integer",
+            "description": "商品数量",
+            "format": "int32",
+            "example": 1
+          },
+          "goodsPrice": {
+            "type": "number",
+            "description": "商品价格",
+            "example": 0.01
+          },
+          "goodsSn": {
+            "type": "string",
+            "description": "商品货号",
+            "example": "XN000169"
+          },
+          "invoiceDetail": {
+            "type": "string",
+            "description": "发票详情",
+            "example": "6"
+          },
+          "isReal": {
+            "type": "integer",
+            "description": "isReal",
+            "format": "int32",
+            "example": 6
+          },
+          "mainOrderId": {
+            "type": "integer",
+            "description": "主订单id",
+            "format": "int32",
+            "example": 6
+          },
+          "marketPrice": {
+            "type": "number",
+            "description": "市场价",
+            "example": 0.01
+          },
+          "materialCode": {
+            "type": "string",
+            "description": "商品物料编号",
+            "example": "XN000169"
+          },
+          "orderId": {
+            "type": "integer",
+            "description": "订单id",
+            "format": "int32",
+            "example": 6
+          },
+          "orderIdList": {
+            "type": "array",
+            "description": "订单id",
+            "example": 6,
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "orderNo": {
+            "type": "string",
+            "description": "子订单编号",
+            "example": "6"
+          },
+          "originGoodsNumber": {
+            "type": "integer",
+            "description": "原商品数量",
+            "format": "int32",
+            "example": 1
+          },
+          "purchaseWay": {
+            "type": "integer",
+            "description": "采购方式：1-内采-标品；2-内采-Bidding；3-外采",
+            "format": "int32"
+          },
+          "recId": {
+            "type": "integer",
+            "description": "订单商品表id",
+            "format": "int32",
+            "example": 6
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "商家id",
+            "format": "int32",
+            "example": 0
+          },
+          "shoppingFee": {
+            "type": "number",
+            "description": "运费",
+            "example": 6.01
+          },
+          "skuGoodsVoList": {
+            "type": "array",
+            "description": "sku商品列表",
+            "items": {
+              "$ref": "#/components/schemas/OrderGoodsVo"
+            }
+          },
+          "skuName": {
+            "type": "string",
+            "description": "商品sku名称",
+            "example": "Office 365高级商业版 xxx"
+          },
+          "spuId": {
+            "type": "integer",
+            "description": "商品spu id",
+            "format": "int32",
+            "example": 165
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32",
+            "example": 498
+          }
+        },
+        "description": "订单下商品结构体"
+      },
+      "OrderInfoEntity": {
+        "title": "OrderInfoEntity",
+        "type": "object",
+        "properties": {
+          "addTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "type": "string"
+          },
+          "agencyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "autoDeliveryTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bestTime": {
+            "type": "string"
+          },
+          "bonus": {
+            "type": "number"
+          },
+          "bonusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cardFee": {
+            "type": "number"
+          },
+          "cardId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cardMessage": {
+            "type": "string"
+          },
+          "cardName": {
+            "type": "string"
+          },
+          "chargeoffStatus": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "city": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "confirmTakeTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "confirmTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "consignee": {
+            "type": "string"
+          },
+          "contractAddressId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "costAmount": {
+            "type": "number"
+          },
+          "country": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "coupons": {
+            "type": "number"
+          },
+          "demandBaseId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "discount": {
+            "type": "number"
+          },
+          "discountAll": {
+            "type": "number"
+          },
+          "district": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "drpIsSeparate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string"
+          },
+          "engineerNo": {
+            "type": "string"
+          },
+          "enterpriseId": {
+            "type": "string"
+          },
+          "extensionCode": {
+            "type": "string"
+          },
+          "extensionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fromAd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "froms": {
+            "type": "string"
+          },
+          "goodsAmount": {
+            "type": "number"
+          },
+          "howOos": {
+            "type": "string"
+          },
+          "howSurplus": {
+            "type": "string"
+          },
+          "idNum": {
+            "type": "string"
+          },
+          "insureFee": {
+            "type": "number"
+          },
+          "integral": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "integralMoney": {
+            "type": "number"
+          },
+          "invAddressId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invContent": {
+            "type": "string"
+          },
+          "invPayee": {
+            "type": "string"
+          },
+          "invType": {
+            "type": "string"
+          },
+          "invoiceNo": {
+            "type": "string"
+          },
+          "invoiceType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isDelete": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isFrozen": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isReal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSeparate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSettlement": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSingle": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isSparateaccount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isTying": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isUpdateSale": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isZcOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "levelType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mainCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mainOrderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mainPay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mobile": {
+            "type": "string"
+          },
+          "moneyPaid": {
+            "type": "number"
+          },
+          "needContract": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "needInv": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderAmount": {
+            "type": "number"
+          },
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderSn": {
+            "type": "string"
+          },
+          "orderStatus": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "packFee": {
+            "type": "number"
+          },
+          "packId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "packName": {
+            "type": "string"
+          },
+          "parentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "payFee": {
+            "type": "number"
+          },
+          "payId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "payName": {
+            "type": "string"
+          },
+          "payNote": {
+            "type": "string"
+          },
+          "payStatus": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "payTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pointId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "postscript": {
+            "type": "string"
+          },
+          "promotersId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "province": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rateFee": {
+            "type": "number"
+          },
+          "recommendCode": {
+            "type": "string"
+          },
+          "referer": {
+            "type": "string"
+          },
+          "relName": {
+            "type": "string"
+          },
+          "returnAmount": {
+            "type": "number"
+          },
+          "ruId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shippingCode": {
+            "type": "string"
+          },
+          "shippingDatestr": {
+            "type": "string"
+          },
+          "shippingFee": {
+            "type": "number"
+          },
+          "shippingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shippingName": {
+            "type": "string"
+          },
+          "shippingStatus": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shippingTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shippingType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "signBuilding": {
+            "type": "string"
+          },
+          "signTime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "street": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "surplus": {
+            "type": "number"
+          },
+          "tax": {
+            "type": "number"
+          },
+          "taxId": {
+            "type": "string"
+          },
+          "teamId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "teamParentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "teamPrice": {
+            "type": "number"
+          },
+          "teamUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tel": {
+            "type": "string"
+          },
+          "toBuyer": {
+            "type": "string"
+          },
+          "txSn": {
+            "type": "string"
+          },
+          "ucId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vatId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "zcGoodsId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "zipcode": {
+            "type": "string"
+          }
+        }
+      },
+      "OrderInfoVo": {
+        "title": "OrderInfoVo",
+        "type": "object",
+        "properties": {
+          "addTimeStr": {
+            "type": "string",
+            "description": "下单时间"
+          },
+          "address": {
+            "type": "string",
+            "description": "收货详细地址",
+            "example": "海淀区先锋大厦"
+          },
+          "businessPayUrl": {
+            "type": "string",
+            "description": "支付方式跳转地址，企业网银跳转地址",
+            "example": "http://xxxx"
+          },
+          "city": {
+            "type": "integer",
+            "description": "收货城市",
+            "format": "int32",
+            "example": 659009502
+          },
+          "consignee": {
+            "type": "string",
+            "description": "收货人",
+            "example": "xx"
+          },
+          "country": {
+            "type": "integer",
+            "description": "收货国家",
+            "format": "int32",
+            "example": 1
+          },
+          "coupons": {
+            "type": "number",
+            "description": "优惠券金额",
+            "example": 60.98
+          },
+          "discount": {
+            "type": "number",
+            "description": "商家改价-折扣金额",
+            "example": 60.98
+          },
+          "discountAll": {
+            "type": "number",
+            "description": "订单满减金额",
+            "example": 60.98
+          },
+          "district": {
+            "type": "integer",
+            "description": "收货区县",
+            "format": "int32",
+            "example": 110101
+          },
+          "goodsAmount": {
+            "type": "number",
+            "description": "商品总价（包括物流费、折扣费、优惠券等）",
+            "example": 60.99
+          },
+          "invAddressId": {
+            "type": "integer",
+            "description": "收票地址id",
+            "format": "int32"
+          },
+          "invoiceVo": {
+            "$ref": "#/components/schemas/InvoiceVo"
+          },
+          "issueInvoice": {
+            "type": "string",
+            "description": "是否能开发票"
+          },
+          "mainOrderId": {
+            "type": "integer",
+            "description": "主订单id",
+            "format": "int32",
+            "example": 5
+          },
+          "mainOrderSn": {
+            "type": "string",
+            "description": "主订单编码",
+            "example": "5"
+          },
+          "mobile": {
+            "type": "string",
+            "description": "收货人电话",
+            "example": "16666666666"
+          },
+          "moneyPaid": {
+            "type": "number",
+            "description": "支付金额",
+            "example": 60.98
+          },
+          "newOrderStatus": {
+            "type": "integer",
+            "description": "新的订单状态",
+            "format": "int32"
+          },
+          "orderAmount": {
+            "type": "number",
+            "description": "商品总金额",
+            "example": 60.98
+          },
+          "orderDetailOrderList": {
+            "type": "array",
+            "description": "订单详情页 子订单的商家+spu列表",
+            "items": {
+              "$ref": "#/components/schemas/OrderInfoVo"
+            }
+          },
+          "orderGoodsVoList": {
+            "type": "array",
+            "description": "订单下商品信息",
+            "items": {
+              "$ref": "#/components/schemas/OrderGoodsVo"
+            }
+          },
+          "orderId": {
+            "type": "integer",
+            "description": "订单id",
+            "format": "int32",
+            "example": 6
+          },
+          "orderShippingVo": {
+            "$ref": "#/components/schemas/OrderShippingVo"
+          },
+          "orderSn": {
+            "type": "string",
+            "description": "订单编号sn",
+            "example": "2020110518363527400"
+          },
+          "orderSpuGoodsInfoList": {
+            "type": "array",
+            "description": "订单下spu商品信息",
+            "items": {
+              "$ref": "#/components/schemas/OrderPageVo"
+            }
+          },
+          "orderStatus": {
+            "type": "integer",
+            "description": "订单状态",
+            "format": "int32",
+            "example": 1
+          },
+          "orderStatusName": {
+            "type": "string",
+            "description": "订单状态名称",
+            "example": "已完成"
+          },
+          "orderUseBonusVo": {
+            "$ref": "#/components/schemas/OrderUseBonusVo"
+          },
+          "orderVoucherVo": {
+            "$ref": "#/components/schemas/OrderVoucherVo"
+          },
+          "payId": {
+            "type": "integer",
+            "description": "支付方式id",
+            "format": "int32",
+            "example": 18
+          },
+          "payName": {
+            "type": "string",
+            "description": "支付方式名称",
+            "example": "支付宝"
+          },
+          "payStatus": {
+            "type": "integer",
+            "description": "支付状态",
+            "format": "int32",
+            "example": 1
+          },
+          "payStatusName": {
+            "type": "string",
+            "description": "支付状态名称",
+            "example": "已支付"
+          },
+          "payTime": {
+            "type": "integer",
+            "description": "支付时间",
+            "format": "int32"
+          },
+          "province": {
+            "type": "integer",
+            "description": "收货省",
+            "format": "int32",
+            "example": 110000
+          },
+          "referer": {
+            "type": "string",
+            "description": "订单来源"
+          },
+          "refundType": {
+            "type": "integer",
+            "description": "退款类型：1:子单退款,2:子单退票退款",
+            "format": "int32"
+          },
+          "sellerShopInfoVo": {
+            "$ref": "#/components/schemas/SellerShopInfoVo"
+          },
+          "shippingCode": {
+            "type": "string",
+            "description": "物流号",
+            "example": "6"
+          },
+          "shippingFee": {
+            "type": "number",
+            "description": "运费",
+            "example": 60
+          },
+          "shippingId": {
+            "type": "integer",
+            "description": "物流id",
+            "format": "int32",
+            "example": 6
+          },
+          "shippingName": {
+            "type": "string",
+            "description": "物流名称",
+            "example": "6"
+          },
+          "shippingStatus": {
+            "type": "integer",
+            "description": "物流状态",
+            "format": "int32",
+            "example": 1
+          },
+          "shippingStatusName": {
+            "type": "string",
+            "description": "物流状态名称",
+            "example": "已发货"
+          },
+          "showTuiKuanBtn": {
+            "type": "boolean",
+            "description": "订单使用的鼓励金信息"
+          },
+          "street": {
+            "type": "integer",
+            "description": "收货街道",
+            "format": "int32",
+            "example": 110101001
+          },
+          "subcontractOrder": {
+            "type": "string",
+            "description": "234234234,2,342,34,234,234,2,4"
+          },
+          "toBuyer": {
+            "type": "string",
+            "description": "给买家留言"
+          },
+          "toSeller": {
+            "type": "string",
+            "description": "给卖家留言"
+          },
+          "userAddressVo": {
+            "$ref": "#/components/schemas/AddressVo"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "买家id",
+            "format": "int32",
+            "example": 6
+          },
+          "vatId": {
+            "type": "integer",
+            "description": "发票id",
+            "format": "int32",
+            "example": 5
+          }
+        },
+        "description": "订单结构体"
+      },
+      "OrderPageVo": {
+        "title": "OrderPageVo",
+        "type": "object",
+        "properties": {
+          "goodsImage": {
+            "type": "string",
+            "description": "商品主图",
+            "example": "http://www.123.com/a.png"
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "商家id",
+            "format": "int32"
+          },
+          "skuGoodsNumber": {
+            "type": "integer",
+            "description": "spu下商品数量",
+            "format": "int32"
+          },
+          "skuGoodsVoList": {
+            "type": "array",
+            "description": "sku商品列表",
+            "items": {
+              "$ref": "#/components/schemas/OrderGoodsVo"
+            }
+          },
+          "spuId": {
+            "type": "integer",
+            "description": "spuId",
+            "format": "int32"
+          },
+          "spuMoney": {
+            "type": "number",
+            "description": "spu商品价格",
+            "example": 6.09
+          },
+          "spuName": {
+            "type": "string",
+            "description": "spu商品名",
+            "example": "xxx"
+          }
+        },
+        "description": "订单分页结构体"
+      },
+      "OrderShippingVo": {
+        "title": "OrderShippingVo",
+        "type": "object",
+        "properties": {
+          "invoiceNo": {
+            "type": "string",
+            "description": "物流号",
+            "example": "ZT487569845845145"
+          },
+          "shippingCode": {
+            "type": "string",
+            "description": "物流code",
+            "example": "zhongtong"
+          },
+          "shippingName": {
+            "type": "string",
+            "description": "物流名称",
+            "example": "中通"
+          }
+        },
+        "description": "订单物流信息"
+      },
+      "OrderUseBonusVo": {
+        "title": "OrderUseBonusVo",
+        "type": "object",
+        "properties": {
+          "activateIncentiveFundAmount": {
+            "type": "number",
+            "description": "激活鼓励金 单位分",
+            "example": 6
+          },
+          "couponValue": {
+            "type": "number",
+            "description": "奖励金面值 单位分",
+            "example": 6
+          }
+        },
+        "description": "订单使用鼓励金信息"
+      },
+      "OrderVoucherVo": {
+        "title": "OrderVoucherVo",
+        "type": "object",
+        "properties": {
+          "voucherAudit": {
+            "type": "integer",
+            "description": "审核状态 -1：待审核，2：审核通过",
+            "format": "int32"
+          },
+          "voucherCode": {
+            "type": "integer",
+            "description": "附件的code",
+            "format": "int32"
+          },
+          "voucherFile": {
+            "type": "string",
+            "description": "支付信息附件地址"
+          }
+        },
+        "description": "订单线下支付凭证信息"
+      },
+      "RegionEntity": {
+        "title": "RegionEntity",
+        "type": "object",
+        "properties": {
+          "agencyId": {
+            "type": "integer",
+            "description": "办事处的id,这里有一个bug,同一个省不能有多个办事处,该字段只记录最新的那个办事处的id",
+            "format": "int32"
+          },
+          "gaodeRegionId": {
+            "type": "integer",
+            "description": "对应高德id",
+            "format": "int32"
+          },
+          "parentId": {
+            "type": "integer",
+            "description": "该地区的上一个节点的地区id",
+            "format": "int32"
+          },
+          "regionId": {
+            "type": "integer",
+            "description": "自增ID号",
+            "format": "int32"
+          },
+          "regionName": {
+            "type": "string",
+            "description": "地区名称"
+          },
+          "regionType": {
+            "type": "integer",
+            "description": "地区级别",
+            "format": "int32"
+          }
+        },
+        "description": "地区"
+      },
+      "SecKillOrderSaleQo": {
+        "title": "SecKillOrderSaleQo",
+        "type": "object",
+        "properties": {
+          "actId": {
+            "type": "integer",
+            "description": "活动id",
+            "format": "int64",
+            "example": 10
+          },
+          "goodsId": {
+            "type": "integer",
+            "description": "商品skuid",
+            "format": "int32",
+            "example": 10001
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32",
+            "example": 6
+          }
+        },
+        "description": "秒杀订单销量请求参"
+      },
+      "SecKillOrderSaleVo": {
+        "title": "SecKillOrderSaleVo",
+        "type": "object",
+        "properties": {
+          "actId": {
+            "type": "integer",
+            "description": "活动id",
+            "format": "int64",
+            "example": 10
+          },
+          "goodsId": {
+            "type": "integer",
+            "description": "商品skuid",
+            "format": "int32",
+            "example": 10001
+          },
+          "saleCount": {
+            "type": "integer",
+            "description": "销量",
+            "format": "int32",
+            "example": 3
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32",
+            "example": 6
+          }
+        },
+        "description": "秒杀订单销量返回值"
+      },
+      "SellerShopInfoSearchVo": {
+        "title": "SellerShopInfoSearchVo",
+        "type": "object",
+        "properties": {
+          "distance": {
+            "type": "string",
+            "description": "距离",
+            "example": "1Km"
+          },
+          "featureNames": {
+            "type": "string",
+            "description": "经营范围",
+            "example": "xxx,eeed"
+          },
+          "goodsList": {
+            "type": "array",
+            "description": "店内商品数据",
+            "items": {
+              "$ref": "#/components/schemas/GoodsSearchVo"
+            }
+          },
+          "isCollect": {
+            "type": "integer",
+            "description": "关注状态 1：关注 0：未关注",
+            "format": "int32",
+            "example": 1
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "商家id",
+            "format": "int32",
+            "example": 1
+          },
+          "shopLogo": {
+            "type": "string",
+            "description": "商家Logo"
+          },
+          "shopName": {
+            "type": "string",
+            "description": "商家名称",
+            "example": "1"
+          },
+          "shopScore": {
+            "type": "number",
+            "description": "商家评分",
+            "example": 4.9
+          }
+        },
+        "description": "商家信息"
+      },
+      "SellerShopInfoVo": {
+        "title": "SellerShopInfoVo",
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "integer",
+            "description": "所在市id",
+            "format": "int32",
+            "example": 1
+          },
+          "creditMoney": {
+            "type": "number",
+            "description": "信用额度",
+            "example": 100
+          },
+          "district": {
+            "type": "integer",
+            "description": "所在区id",
+            "format": "int32",
+            "example": 1
+          },
+          "frozenMoney": {
+            "type": "number",
+            "description": "冻结资金",
+            "example": 1.98
+          },
+          "goodsSearchVoList": {
+            "type": "array",
+            "description": "商家的商品信息",
+            "items": {
+              "$ref": "#/components/schemas/GoodsSearchVo"
+            }
+          },
+          "informationExtendVo": {
+            "$ref": "#/components/schemas/InformationExtendVo"
+          },
+          "informationId": {
+            "type": "integer",
+            "description": "informationId",
+            "format": "int32",
+            "example": 1
+          },
+          "isCollect": {
+            "type": "integer",
+            "description": "是否关注",
+            "format": "int32",
+            "example": 1
+          },
+          "latitude": {
+            "type": "string",
+            "description": "维度",
+            "example": "1"
+          },
+          "longitude": {
+            "type": "string",
+            "description": "经度",
+            "example": "1"
+          },
+          "mobile": {
+            "type": "string",
+            "description": "联系电话",
+            "example": "16666666666"
+          },
+          "openTimeStr": {
+            "type": "string",
+            "description": "商家营业时间",
+            "example": "xxx"
+          },
+          "payBillActivity": {
+            "type": "object",
+            "properties": {},
+            "description": "买单信息"
+          },
+          "province": {
+            "type": "integer",
+            "description": "所在省id",
+            "format": "int32",
+            "example": 1
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "商家id",
+            "format": "int32",
+            "example": 1
+          },
+          "sellerMoney": {
+            "type": "number",
+            "description": "商家账户金额",
+            "example": 10.09
+          },
+          "serviceLenovoId": {
+            "type": "string",
+            "description": "客服lenovoId",
+            "example": "1"
+          },
+          "shippingTemplateVo": {
+            "$ref": "#/components/schemas/ShippingTemplateVo"
+          },
+          "shopAddress": {
+            "type": "string",
+            "description": "商家地址",
+            "example": "xxx"
+          },
+          "shopLogo": {
+            "type": "string",
+            "description": "店铺头像"
+          },
+          "shopName": {
+            "type": "string",
+            "description": "商家名称",
+            "example": "1"
+          },
+          "shopSales": {
+            "type": "integer",
+            "description": "销量",
+            "format": "int32",
+            "example": 1
+          },
+          "shopScore": {
+            "type": "number",
+            "description": "店铺评分",
+            "example": 1
+          },
+          "shopType": {
+            "type": "integer",
+            "description": "商家类型",
+            "format": "int32",
+            "example": 1
+          },
+          "street": {
+            "type": "integer",
+            "description": "所在街道id",
+            "format": "int32",
+            "example": 1
+          },
+          "supportInvoice": {
+            "type": "integer",
+            "description": "商家 是否可开发票",
+            "format": "int32"
+          }
+        },
+        "description": "商家信息"
+      },
+      "ServiceModuleTypeVo": {
+        "title": "ServiceModuleTypeVo",
+        "type": "object",
+        "properties": {
+          "createdAtStr": {
+            "type": "string",
+            "description": "创建时间",
+            "example": "2021-08-15T16:48:42.000Z"
+          },
+          "goodsCommentId": {
+            "type": "integer",
+            "description": "商品评论表id",
+            "format": "int64"
+          },
+          "id": {
+            "type": "integer",
+            "description": "主键id",
+            "format": "int64"
+          },
+          "isDelete": {
+            "type": "integer",
+            "description": "是否删除",
+            "format": "int32",
+            "example": 1
+          },
+          "moduleType": {
+            "type": "string",
+            "description": "模型类型",
+            "example": "goods-comment"
+          },
+          "score": {
+            "type": "number",
+            "description": "打分",
+            "example": 45
+          },
+          "type": {
+            "type": "integer",
+            "description": "模型下分类类型",
+            "format": "int32",
+            "example": 1
+          },
+          "typeDesc": {
+            "type": "string",
+            "description": "模型下分类类型描述",
+            "example": "服务质量"
+          },
+          "updatedAtStr": {
+            "type": "string",
+            "description": "修改时间",
+            "example": "2021-08-15T16:48:42.000Z"
+          }
+        },
+        "description": "商品评论服务打分表"
+      },
+      "ShippingTemplateVo": {
+        "title": "ShippingTemplateVo",
+        "type": "object",
+        "properties": {
+          "freeMoney": {
+            "type": "number",
+            "description": "免费额度",
+            "example": 10.09
+          },
+          "freightType": {
+            "type": "boolean",
+            "description": "运费类型：0不包含 1=包含",
+            "example": false
+          },
+          "id": {
+            "type": "integer",
+            "description": "运费模板id",
+            "format": "int32",
+            "example": 1
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "商家ID",
+            "format": "int32",
+            "example": 10
+          },
+          "shippingFee": {
+            "type": "number",
+            "description": "基础运费",
+            "example": 109
+          },
+          "shippingTitle": {
+            "type": "string",
+            "description": "运费标题",
+            "example": "xxx"
+          },
+          "status": {
+            "type": "boolean",
+            "description": "状态：0=未生效 1=生效",
+            "example": false
+          },
+          "type": {
+            "type": "integer",
+            "description": "类型：0=全国 1=地区",
+            "format": "int32",
+            "example": 0
+          }
+        },
+        "description": "运费模板"
+      },
+      "StatisticSellerCartCountQo": {
+        "title": "StatisticSellerCartCountQo",
+        "type": "object",
+        "properties": {
+          "endTime": {
+            "type": "integer",
+            "description": "统计结束时间",
+            "format": "int32",
+            "example": 1632471207
+          },
+          "ruId": {
+            "type": "integer",
+            "description": "商家ruId",
+            "format": "int32",
+            "example": 6
+          },
+          "startTime": {
+            "type": "integer",
+            "description": "统计开始时间",
+            "format": "int32",
+            "example": 1632471206
+          }
+        },
+        "description": "统计购买商家购物车数据-请求数据"
+      },
+      "StatisticSellerOrderCountVo": {
+        "title": "StatisticSellerOrderCountVo",
+        "type": "object",
+        "properties": {
+          "countDistinctUserId": {
+            "type": "integer",
+            "description": "购买人数",
+            "format": "int32",
+            "example": 5
+          },
+          "goodsCount": {
+            "type": "integer",
+            "description": "订单里商品数量",
+            "format": "int32",
+            "example": 16
+          },
+          "orderCount": {
+            "type": "integer",
+            "description": "订单数量",
+            "format": "int32",
+            "example": 6
+          },
+          "totalMoneyPaid": {
+            "type": "number",
+            "description": "支付金额",
+            "example": 100
+          },
+          "totalOrderAmount": {
+            "type": "number",
+            "description": "应付款金额",
+            "example": 100
+          },
+          "totalReturnAmount": {
+            "type": "number",
+            "description": "退款金额",
+            "example": 0
+          },
+          "totalShippingFee": {
+            "type": "number",
+            "description": "运费",
+            "example": 10
+          }
+        },
+        "description": "统计购买商家购物车数据-响应数据"
+      },
+      "SyncEccsoQo": {
+        "title": "SyncEccsoQo",
+        "type": "object",
+        "properties": {
+          "eccSo": {
+            "type": "string",
+            "description": "ECC订单号"
+          },
+          "eccbillingNumber": {
+            "type": "string",
+            "description": "ECC发票号"
+          },
+          "materialCode": {
+            "type": "string",
+            "description": "物料编号"
+          },
+          "pushOrderNo": {
+            "type": "string",
+            "description": "抛单编号"
+          }
+        },
+        "description": "btcp回传eccso"
+      },
+      "UpdateAddressQo": {
+        "title": "UpdateAddressQo",
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "收货人地址"
+          },
+          "addressId": {
+            "type": "integer",
+            "description": "地址ID",
+            "format": "int32"
+          },
+          "city": {
+            "type": "string",
+            "description": "所在城市"
+          },
+          "companyName": {
+            "type": "string",
+            "description": "收货公司名称"
+          },
+          "consignee": {
+            "type": "string",
+            "description": "收货人名称"
+          },
+          "district": {
+            "type": "string",
+            "description": "所在地区"
+          },
+          "mobile": {
+            "type": "string",
+            "description": "手机号"
+          },
+          "province": {
+            "type": "string",
+            "description": "所在省份"
+          },
+          "street": {
+            "type": "string",
+            "description": "所在街道"
+          },
+          "tel": {
+            "type": "string",
+            "description": "联系电话"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "会员ID",
+            "format": "int32"
+          }
+        },
+        "description": "编辑会员收货地址"
+      },
+      "UserHasOrderQo": {
+        "title": "UserHasOrderQo",
+        "type": "object",
+        "properties": {
+          "ruId": {
+            "type": "integer",
+            "description": "商家id",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32"
+          }
+        },
+        "description": "用户是否下过单"
+      },
+      "UserVo": {
+        "title": "UserVo",
+        "type": "object",
+        "properties": {
+          "avatar": {
+            "type": "string",
+            "description": "头像"
+          },
+          "email": {
+            "type": "string",
+            "description": "用户邮箱",
+            "example": "12345@qq.com"
+          },
+          "levelType": {
+            "type": "integer",
+            "description": "levelType",
+            "format": "int32",
+            "example": 2
+          },
+          "mobilePhone": {
+            "type": "string",
+            "description": "手机号",
+            "example": "16666666666"
+          },
+          "nickName": {
+            "type": "string",
+            "description": "昵称",
+            "example": "cde"
+          },
+          "thirdPartyId": {
+            "type": "string",
+            "description": "用户lenovoId",
+            "example": "1"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "用户id",
+            "format": "int32",
+            "example": 1
+          },
+          "userName": {
+            "type": "string",
+            "description": "用户名",
+            "example": "16666666666"
+          }
+        },
+        "description": "用户结构体"
+      }
+    }
+  }
+}

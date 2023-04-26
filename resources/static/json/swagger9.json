@@ -1,0 +1,2649 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "CMS系统",
+    "version": "0.6",
+    "title": "java-cms",
+    "termsOfService": "http://"
+  },
+  "host": "cs.zhixun.abcsolutions.cn:8447",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "新闻图片API",
+      "description": "新闻图片API"
+    },
+    {
+      "name": "新闻相关API",
+      "description": "新闻相关API"
+    },
+    {
+      "name": "系统用户登录API接口",
+      "description": "系统用户登录API接口"
+    },
+    {
+      "name": "系统资源API接口",
+      "description": "系统资源API接口"
+    },
+    {
+      "name": "系统配置信息API接口",
+      "description": "系统配置信息API接口"
+    },
+    {
+      "name": "网站栏目相关API",
+      "description": "网站栏目相关API"
+    },
+    {
+      "name": "网站相关API",
+      "description": "网站相关API"
+    }
+  ],
+  "paths": {
+    "/news-image/cover/{newsId}": {
+      "post": {
+        "tags": [
+          "新闻图片API"
+        ],
+        "summary": "上传一个封面图片到指定新闻",
+        "description": "上传一个封面图片到指定新闻，上传成功返回图片的id和图片的访问地址，失败返回系统错误。",
+        "operationId": "addCoverOnesByNewsIdUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "file",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "name": "newsId",
+            "in": "path",
+            "description": "newsId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«新闻-图片表上传返回结果»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news-image/logo/{newsId}": {
+      "post": {
+        "tags": [
+          "新闻图片API"
+        ],
+        "summary": "上传一个Logo图片到指定新闻",
+        "description": "上传一个封面图片到指定新闻，上传成功返回图片的id和图片的访问地址，失败返回系统错误。",
+        "operationId": "addLogoOnesByNewsIdUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "file",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "name": "newsId",
+            "in": "path",
+            "description": "newsId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«新闻-图片表上传返回结果»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news-image/{newsId}": {
+      "post": {
+        "tags": [
+          "新闻图片API"
+        ],
+        "summary": "上传一个新闻内容图片到指定新闻",
+        "description": "上传一个新闻图片到指定新闻，上传成功返回图片的id和图片的访问地址，失败返回系统错误。",
+        "operationId": "addContentOnesByNewsIdUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "file",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "name": "newsId",
+            "in": "path",
+            "description": "newsId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«新闻-图片表上传返回结果»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/": {
+      "post": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "新增初始新闻",
+        "description": "新增初始新闻",
+        "operationId": "addInitNewsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«int»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/cancel/{id}": {
+      "patch": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "取消待发布新闻",
+        "description": "取消待发布新闻",
+        "operationId": "cancelByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/copy/{id}": {
+      "post": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "复制新闻",
+        "description": "复制新闻",
+        "operationId": "copyNewsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«int»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/deploy/{id}": {
+      "patch": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "上线新闻",
+        "description": "上线新闻",
+        "operationId": "deployByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/offline/{id}": {
+      "patch": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "下线新闻",
+        "description": "下线新闻",
+        "operationId": "offlineByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/page/list": {
+      "get": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "新闻列表分页查询",
+        "operationId": "listForPageUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "deployDateBegin",
+            "in": "query",
+            "description": "上线日期起始",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "deployDateEnd",
+            "in": "query",
+            "description": "上线日期结束",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "关键字",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "一页显示记录数",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "x-example": 0
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "偏移量即起始记录下标",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "x-example": 0
+          },
+          {
+            "name": "searchParameterId",
+            "in": "query",
+            "description": "搜索参数id",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "x-example": 0
+          },
+          {
+            "name": "statusList",
+            "in": "query",
+            "description": "状态列表",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«分页结果对象«新闻-分页列表返回结果»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/preview/{id}": {
+      "get": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "获取指定新闻的预览信息",
+        "operationId": "getPreviewResultByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«新闻-预览返回结果»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/withdraw/{id}": {
+      "patch": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "发布撤回新闻",
+        "description": "发布撤回新闻",
+        "operationId": "withdrawByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/news/{id}": {
+      "get": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "获取指定新闻详情",
+        "description": "获取指定新闻详情",
+        "operationId": "getResultByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«新闻-返回结果»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "新闻相关API"
+        ],
+        "summary": "修改指定新闻",
+        "description": "修改指定新闻",
+        "operationId": "updateByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "form",
+            "description": "form",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/新闻-编辑表单"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system-resource/synchronize/": {
+      "patch": {
+        "tags": [
+          "系统资源API接口"
+        ],
+        "summary": "同步当前环境的资源",
+        "description": "同步当前环境的资源",
+        "operationId": "synchronizeSystemResourcesUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system/configuration/front-end/": {
+      "get": {
+        "tags": [
+          "系统配置信息API接口"
+        ],
+        "summary": "返回前端使用的所有配置信息",
+        "operationId": "listAllForFrontEndUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«Map«string,List«系统配置信息返回结果»»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/system/configuration/{code}": {
+      "get": {
+        "tags": [
+          "系统配置信息API接口"
+        ],
+        "summary": "通过code获取系统配置信息",
+        "operationId": "getConfigurationByCodeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "编码",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«系统配置信息返回结果»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user-login/login/dingding": {
+      "get": {
+        "tags": [
+          "系统用户登录API接口"
+        ],
+        "summary": "获取钉钉扫码登录后的本系统的token",
+        "description": "该API是钉钉扫码登录，前端获得扫码确认的回调后请求的URL，接收扫码确认的login code，验证通过之后返回本系统的授权token，后续API调用必须携带该Token在请求header中。",
+        "operationId": "loginByDingDingUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "description": "扫码登录code",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "扫码登录状态,防止重放",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«登录成功返回的结果»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user-login/logout": {
+      "delete": {
+        "tags": [
+          "系统用户登录API接口"
+        ],
+        "summary": "注销",
+        "description": "即系统登出操作，让当前Session Token失效",
+        "operationId": "logoutUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site-column/disable/{id}": {
+      "patch": {
+        "tags": [
+          "网站栏目相关API"
+        ],
+        "summary": "禁用指定网站栏目",
+        "description": "禁用指定网站栏目",
+        "operationId": "disableByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site-column/enable/{id}": {
+      "patch": {
+        "tags": [
+          "网站栏目相关API"
+        ],
+        "summary": "启用指定网站栏目",
+        "description": "启用指定网站栏目",
+        "operationId": "enableByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site-column/sort/down/{id}": {
+      "patch": {
+        "tags": [
+          "网站栏目相关API"
+        ],
+        "summary": "降低栏目的顺序",
+        "description": "降低栏目的顺序",
+        "operationId": "sortWithDownByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site-column/sort/up/{id}": {
+      "patch": {
+        "tags": [
+          "网站栏目相关API"
+        ],
+        "summary": "提升栏目的顺序",
+        "description": "提升栏目的顺序",
+        "operationId": "sortWithUpByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site-column/{id}": {
+      "get": {
+        "tags": [
+          "网站栏目相关API"
+        ],
+        "summary": "获取指定网站栏目的详情",
+        "description": "获取指定网站栏目的详情",
+        "operationId": "getResultByIdUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«网站-栏目信息表返回结果»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "网站栏目相关API"
+        ],
+        "summary": "删除指定网站栏目",
+        "description": "编辑指定网站栏目",
+        "operationId": "deleteByIdUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "网站栏目相关API"
+        ],
+        "summary": "编辑指定网站栏目",
+        "description": "编辑指定网站栏目",
+        "operationId": "updateByIdUsingPATCH_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "form",
+            "description": "form",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/网站-栏目信息表表单"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site/column/{id}": {
+      "get": {
+        "tags": [
+          "网站相关API"
+        ],
+        "summary": "获取指定网站的栏目列表",
+        "operationId": "listColumnResultByIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«网站-栏目信息表返回结果»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "网站相关API"
+        ],
+        "summary": "添加栏目到指定网站",
+        "operationId": "addColumnUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "form",
+            "description": "form",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/网站-栏目信息表表单"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«int»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site/list-result/activated": {
+      "get": {
+        "tags": [
+          "网站相关API"
+        ],
+        "summary": "所有有效的网站和有效的栏目列表",
+        "operationId": "listActivatedListResultUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«网站-列表简单信息返回结果»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site/list-result/all": {
+      "get": {
+        "tags": [
+          "网站相关API"
+        ],
+        "summary": "所有网站列表",
+        "operationId": "listAllListResultUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«网站-列表信息返回结果»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/web-site/refresh/{id}": {
+      "patch": {
+        "tags": [
+          "网站相关API"
+        ],
+        "summary": "刷新指定网站",
+        "operationId": "refreshByIdUsingPATCH",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "认证信息",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/响应结果对象«object»"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "InputStream": {
+      "type": "object",
+      "title": "InputStream"
+    },
+    "Map«string,List«系统配置信息返回结果»»": {
+      "type": "object",
+      "title": "Map«string,List«系统配置信息返回结果»»",
+      "additionalProperties": {
+        "$ref": "#/definitions/List"
+      }
+    },
+    "分页结果对象«新闻-分页列表返回结果»": {
+      "type": "object",
+      "properties": {
+        "additional": {
+          "type": "object",
+          "description": "额外的内容"
+        },
+        "currentPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页"
+        },
+        "items": {
+          "type": "array",
+          "description": "分页的结果",
+          "items": {
+            "$ref": "#/definitions/新闻-分页列表返回结果"
+          }
+        },
+        "millSecond": {
+          "type": "integer",
+          "format": "int64",
+          "description": "搜索耗时"
+        },
+        "more": {
+          "type": "boolean",
+          "description": "是否有下一页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页显示的总条数"
+        },
+        "searchParameterId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "搜索参数id"
+        },
+        "startIndex": {
+          "type": "integer",
+          "format": "int32",
+          "description": "开始的索引"
+        },
+        "totalNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "总条数"
+        },
+        "totalPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "总页数"
+        }
+      },
+      "title": "分页结果对象«新闻-分页列表返回结果»"
+    },
+    "响应结果对象«Map«string,List«系统配置信息返回结果»»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "type": "object",
+          "description": "单个结果对象",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/系统配置信息返回结果"
+            }
+          }
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/Map«string,List«系统配置信息返回结果»»"
+          }
+        }
+      },
+      "title": "响应结果对象«Map«string,List«系统配置信息返回结果»»»"
+    },
+    "响应结果对象«int»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "type": "integer",
+          "format": "int32",
+          "description": "单个结果对象"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "title": "响应结果对象«int»"
+    },
+    "响应结果对象«object»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "type": "object",
+          "description": "单个结果对象"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "title": "响应结果对象«object»"
+    },
+    "响应结果对象«分页结果对象«新闻-分页列表返回结果»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/分页结果对象«新闻-分页列表返回结果»"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/分页结果对象«新闻-分页列表返回结果»"
+          }
+        }
+      },
+      "title": "响应结果对象«分页结果对象«新闻-分页列表返回结果»»"
+    },
+    "响应结果对象«新闻-图片表上传返回结果»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/新闻-图片表上传返回结果"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/新闻-图片表上传返回结果"
+          }
+        }
+      },
+      "title": "响应结果对象«新闻-图片表上传返回结果»"
+    },
+    "响应结果对象«新闻-返回结果»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/新闻-返回结果"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/新闻-返回结果"
+          }
+        }
+      },
+      "title": "响应结果对象«新闻-返回结果»"
+    },
+    "响应结果对象«新闻-预览返回结果»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/新闻-预览返回结果"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/新闻-预览返回结果"
+          }
+        }
+      },
+      "title": "响应结果对象«新闻-预览返回结果»"
+    },
+    "响应结果对象«登录成功返回的结果»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/登录成功返回的结果"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/登录成功返回的结果"
+          }
+        }
+      },
+      "title": "响应结果对象«登录成功返回的结果»"
+    },
+    "响应结果对象«系统配置信息返回结果»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/系统配置信息返回结果"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/系统配置信息返回结果"
+          }
+        }
+      },
+      "title": "响应结果对象«系统配置信息返回结果»"
+    },
+    "响应结果对象«网站-列表信息返回结果»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/网站-列表信息返回结果"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/网站-列表信息返回结果"
+          }
+        }
+      },
+      "title": "响应结果对象«网站-列表信息返回结果»"
+    },
+    "响应结果对象«网站-列表简单信息返回结果»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/网站-列表简单信息返回结果"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/网站-列表简单信息返回结果"
+          }
+        }
+      },
+      "title": "响应结果对象«网站-列表简单信息返回结果»"
+    },
+    "响应结果对象«网站-栏目信息表返回结果»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "结果代码"
+        },
+        "errors": {
+          "type": "array",
+          "description": "出错信息对象",
+          "items": {
+            "$ref": "#/definitions/表单验证失败内容"
+          }
+        },
+        "message": {
+          "type": "string",
+          "description": "结果描述"
+        },
+        "result": {
+          "description": "单个结果对象",
+          "$ref": "#/definitions/网站-栏目信息表返回结果"
+        },
+        "results": {
+          "type": "array",
+          "description": "列表结果对象",
+          "items": {
+            "$ref": "#/definitions/网站-栏目信息表返回结果"
+          }
+        }
+      },
+      "title": "响应结果对象«网站-栏目信息表返回结果»"
+    },
+    "新闻-分页列表返回结果": {
+      "type": "object",
+      "properties": {
+        "author": {
+          "type": "string",
+          "description": "作者"
+        },
+        "createDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建日期"
+        },
+        "creator": {
+          "type": "string",
+          "description": "创建人"
+        },
+        "creatorId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "创建人id"
+        },
+        "deployDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "上线日期"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "issueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "发布日期"
+        },
+        "modifier": {
+          "type": "string",
+          "description": "修改人"
+        },
+        "modifierId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "修改人id"
+        },
+        "offlineDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "下线日期"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态 10待发布 20已上线 30已下线"
+        },
+        "title": {
+          "type": "string",
+          "description": "新闻标题"
+        },
+        "updateDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改日期"
+        },
+        "webSiteNameList": {
+          "type": "array",
+          "description": "网站名称列表",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "新闻-分页列表返回结果"
+    },
+    "新闻-图片表上传返回结果": {
+      "type": "object",
+      "properties": {
+        "accessUrl": {
+          "type": "string",
+          "description": "访问地址"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "name": {
+          "type": "string",
+          "description": "文件名"
+        },
+        "originalName": {
+          "type": "string",
+          "description": "原始文件名"
+        },
+        "originalType": {
+          "type": "string",
+          "description": "原始文件类型"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "description": "图片类型"
+        }
+      },
+      "title": "新闻-图片表上传返回结果"
+    },
+    "新闻-编辑表单": {
+      "type": "object",
+      "properties": {
+        "author": {
+          "type": "string",
+          "description": "作者"
+        },
+        "content": {
+          "type": "string",
+          "description": "新闻内容"
+        },
+        "coverImageId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "新闻封面图片Id"
+        },
+        "issueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "发布日期"
+        },
+        "logoImageId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "新闻Logo图片Id"
+        },
+        "title": {
+          "type": "string",
+          "description": "新闻标题"
+        },
+        "webSiteColumnRelationList": {
+          "type": "array",
+          "description": "发布平台和栏目关系列表",
+          "items": {
+            "$ref": "#/definitions/新闻-网站栏目关系表表单"
+          }
+        }
+      },
+      "title": "新闻-编辑表单"
+    },
+    "新闻-网站栏目关系表表单": {
+      "type": "object",
+      "properties": {
+        "columnId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "网站栏目id"
+        },
+        "webSiteId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "网站id"
+        }
+      },
+      "title": "新闻-网站栏目关系表表单"
+    },
+    "新闻-网站栏目关系表返回结果": {
+      "type": "object",
+      "properties": {
+        "columnId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "网站栏目id"
+        },
+        "createDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建日期"
+        },
+        "creator": {
+          "type": "string",
+          "description": "创建人"
+        },
+        "creatorId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "创建人id"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "newsId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "新闻的id"
+        },
+        "webSiteId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "网站id"
+        }
+      },
+      "title": "新闻-网站栏目关系表返回结果"
+    },
+    "新闻-返回结果": {
+      "type": "object",
+      "properties": {
+        "author": {
+          "type": "string",
+          "description": "作者"
+        },
+        "content": {
+          "type": "string",
+          "description": "新闻内容"
+        },
+        "coverImage": {
+          "description": "新闻封面图片",
+          "$ref": "#/definitions/新闻-图片表上传返回结果"
+        },
+        "createDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建日期"
+        },
+        "creator": {
+          "type": "string",
+          "description": "创建人"
+        },
+        "creatorId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "创建人id"
+        },
+        "deployDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "上线日期"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "issueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "发布日期"
+        },
+        "logoImage": {
+          "description": "新闻Logo图片",
+          "$ref": "#/definitions/新闻-图片表上传返回结果"
+        },
+        "modifier": {
+          "type": "string",
+          "description": "修改人"
+        },
+        "modifierId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "修改人id"
+        },
+        "newsWebSiteColumnRelationList": {
+          "type": "array",
+          "description": "新闻和网站栏目关系列表",
+          "items": {
+            "$ref": "#/definitions/新闻-网站栏目关系表返回结果"
+          }
+        },
+        "offlineDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "下线日期"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态 10待发布 20已上线 30已下线"
+        },
+        "title": {
+          "type": "string",
+          "description": "新闻标题"
+        },
+        "updateDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改日期"
+        }
+      },
+      "title": "新闻-返回结果"
+    },
+    "新闻-预览返回结果": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "内容"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        }
+      },
+      "title": "新闻-预览返回结果"
+    },
+    "登录成功返回的结果": {
+      "type": "object",
+      "properties": {
+        "accessToken": {
+          "type": "string",
+          "description": "令牌"
+        },
+        "user": {
+          "description": "用户信息",
+          "$ref": "#/definitions/系统用户返回结果对象"
+        }
+      },
+      "title": "登录成功返回的结果"
+    },
+    "系统用户返回结果对象": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "用户头像URL"
+        },
+        "code": {
+          "type": "string",
+          "description": "用户编号"
+        },
+        "email": {
+          "type": "string",
+          "description": "用户邮箱"
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "有效，`true`有效，`false `无效"
+        },
+        "hiredate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "入职日期"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "用户id"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "用户手机号"
+        },
+        "name": {
+          "type": "string",
+          "description": "用户名称"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态`10`在职，`20` 已离职，`30` 已转岗"
+        }
+      },
+      "title": "系统用户返回结果对象"
+    },
+    "系统配置信息返回结果": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "配置编码"
+        },
+        "description": {
+          "type": "string",
+          "description": "描述"
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "value": {
+          "type": "string",
+          "description": "配置值"
+        }
+      },
+      "title": "系统配置信息返回结果"
+    },
+    "网站-列表信息返回结果": {
+      "type": "object",
+      "properties": {
+        "columnList": {
+          "type": "array",
+          "description": "网站栏目列表 ",
+          "items": {
+            "$ref": "#/definitions/网站-栏目信息表返回结果"
+          }
+        },
+        "createDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建日期"
+        },
+        "creator": {
+          "type": "string",
+          "description": "创建人"
+        },
+        "creatorId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "创建人id"
+        },
+        "description": {
+          "type": "string",
+          "description": "网站描述"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "modifier": {
+          "type": "string",
+          "description": "修改人"
+        },
+        "modifierId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "修改人id"
+        },
+        "name": {
+          "type": "string",
+          "description": "网站名称"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态"
+        },
+        "updateDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改日期"
+        },
+        "url": {
+          "type": "string",
+          "description": "网址"
+        }
+      },
+      "title": "网站-列表信息返回结果"
+    },
+    "网站-列表简单信息返回结果": {
+      "type": "object",
+      "properties": {
+        "columnList": {
+          "type": "array",
+          "description": "网站栏目列表 ",
+          "items": {
+            "$ref": "#/definitions/网站-栏目简单信息返回结果"
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "网站描述"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "name": {
+          "type": "string",
+          "description": "网站名称"
+        },
+        "url": {
+          "type": "string",
+          "description": "网址"
+        }
+      },
+      "title": "网站-列表简单信息返回结果"
+    },
+    "网站-栏目信息表表单": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "栏目名称"
+        }
+      },
+      "title": "网站-栏目信息表表单"
+    },
+    "网站-栏目信息表返回结果": {
+      "type": "object",
+      "properties": {
+        "createDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建日期"
+        },
+        "creator": {
+          "type": "string",
+          "description": "创建人"
+        },
+        "creatorId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "创建人id"
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "是否启用 true启用，false停用"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "modifier": {
+          "type": "string",
+          "description": "修改人"
+        },
+        "modifierId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "修改人id"
+        },
+        "name": {
+          "type": "string",
+          "description": "栏目名称"
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32",
+          "description": "顺序"
+        },
+        "updateDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "修改日期"
+        },
+        "webSiteId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "网站id"
+        }
+      },
+      "title": "网站-栏目信息表返回结果"
+    },
+    "网站-栏目简单信息返回结果": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "id"
+        },
+        "name": {
+          "type": "string",
+          "description": "栏目名称"
+        },
+        "order": {
+          "type": "integer",
+          "format": "int32",
+          "description": "顺序"
+        }
+      },
+      "title": "网站-栏目简单信息返回结果"
+    },
+    "表单验证失败内容": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "string",
+          "description": "字段名"
+        },
+        "message": {
+          "type": "string",
+          "description": "表单校验结果描述"
+        }
+      },
+      "title": "表单验证失败内容"
+    }
+  }
+}

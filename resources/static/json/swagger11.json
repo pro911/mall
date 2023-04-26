@@ -1,0 +1,3183 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "商城的商品",
+    "version": "1.0.0",
+    "title": "商城商品项目",
+    "contact": {
+      "name": "ykq",
+      "url": "https://www.lenovo.com",
+      "email": "yukq2@lenovo.com"
+    }
+  },
+  "host": "172.16.2.151:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "AmapController",
+      "description": "Amap Controller"
+    },
+    {
+      "name": "AppShopController",
+      "description": "App Shop Controller"
+    },
+    {
+      "name": "DashboardController",
+      "description": "Dashboard Controller"
+    },
+    {
+      "name": "GoodsControllerV1",
+      "description": "Goods Controller"
+    },
+    {
+      "name": "ShopController",
+      "description": "Shop Controller"
+    },
+    {
+      "name": "TouchAdPubController",
+      "description": "Touch Ad Pub Controller"
+    },
+    {
+      "name": "WzGoodsControllerV1",
+      "description": "Wz Goods Controller V 1"
+    }
+  ],
+  "paths": {
+    "/api/amap/getLocation": {
+      "post": {
+        "tags": [
+          "AmapController"
+        ],
+        "summary": "获取地理位置信息",
+        "operationId": "getLocation",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getLocationQo",
+            "description": "getLocationQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetLocationQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/app/shop/getAppShopInfo/{ruId}": {
+      "get": {
+        "tags": [
+          "AppShopController"
+        ],
+        "summary": "获取商家信息",
+        "operationId": "getAppShopInfo",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "ruId",
+            "in": "path",
+            "description": "ruId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SellerShopInfoVo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/touchAd/v1/getByTyingActiveAd": {
+      "get": {
+        "tags": [
+          "TouchAdPubController"
+        ],
+        "summary": "获取百应搭售活动广告位",
+        "operationId": "getByTyingActiveAd",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "cityName",
+            "in": "header",
+            "description": "cityName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ByTyingActiveAdVo"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/touchAd/v1/getIndexCateAd": {
+      "post": {
+        "tags": [
+          "TouchAdPubController"
+        ],
+        "summary": "获取首页分类配置",
+        "operationId": "getIndexCateAd",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IndexCateAdVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/touchAd/v1/getTouchAdList": {
+      "post": {
+        "tags": [
+          "TouchAdPubController"
+        ],
+        "summary": "获取运营位列表",
+        "operationId": "getTouchAdList",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getAdListQo",
+            "description": "getAdListQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetTouchAdListQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TouchAdVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/touchAd/v1/getTouchAdListWithActiveAd": {
+      "post": {
+        "tags": [
+          "TouchAdPubController"
+        ],
+        "summary": "获取运营位列表+活动广告位",
+        "operationId": "getTouchAdListWithActiveAd",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getAdListQo",
+            "description": "getAdListQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetTouchAdListQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TouchAdVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/exportGoods": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "导出自营商品",
+        "operationId": "exportGoodsUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ZiYingGoodsQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getByTyingActiveGoods202111List/{terminal}": {
+      "get": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取百应搭售活动商品列表",
+        "operationId": "getByTyingActiveGoods202111List",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "terminal",
+            "in": "path",
+            "description": "terminal",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ByTyingActiveVo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getGoodsDetail": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取商品详情",
+        "operationId": "getGoodsDetail",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsDetailQo",
+            "description": "goodsDetailQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsDetailQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GoodsDetailVo"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getGoodsList": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取商品列表",
+        "operationId": "getGoodsList",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsSearchQo",
+            "description": "goodsSearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsSearchQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GoodsSearchVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getGoodsListWithPage": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取商品列表带分页返回",
+        "operationId": "getGoodsListWithPage",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsSearchQo",
+            "description": "goodsSearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsSearchQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GoodsSearchPageVo"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getNearbyShopList": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "附近服务站列表",
+        "operationId": "getNearbyShopList",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsSearchQo",
+            "description": "goodsSearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsSearchQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SellerShopInfoSearchVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getSecCategoryAndChildList": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取二级分类及其子类列表",
+        "operationId": "getSecCategoryAndChildList",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsCategorySearchQo",
+            "description": "goodsCategorySearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsCategoryQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GoodsCategoryVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getStoreCategoryList": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取店铺前台分类列表",
+        "operationId": "getStoreCategoryList",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsCategorySearchQo",
+            "description": "goodsCategorySearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsCategoryQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GoodsCategoryVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getStoreHotWordList": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取店铺热词列表",
+        "operationId": "getStoreHotWordList",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsCategorySearchQo",
+            "description": "goodsCategorySearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsCategoryQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HotWordVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getStoreSecCategoryList": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取店铺二级分类列表",
+        "operationId": "getStoreSecCategoryList",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsCategorySearchQo",
+            "description": "goodsCategorySearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsCategoryQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GoodsCategoryVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/getTyingStockData": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取商品搭售的库存数据",
+        "operationId": "getTyingStockData",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsDetailQo",
+            "description": "goodsDetailQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsDetailQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GoodsDetailTyingVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/guessULike": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "猜你喜欢",
+        "operationId": "guessULike",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsSearchQo",
+            "description": "goodsSearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsSearchQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GoodsSearchVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/indexRecommendGoods": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "首页推荐商品",
+        "operationId": "indexRecommendGoods",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsSearchQo",
+            "description": "goodsSearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsSearchQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GoodsSearchVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/itServiceList": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "IT服务列表",
+        "operationId": "itServiceList",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "goodsSearchQo",
+            "description": "goodsSearchQo",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoodsSearchQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SellerShopInfoSearchVo"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/listPage": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "自营商品列表查询",
+        "operationId": "listPageUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "param",
+            "description": "param",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ZiYingGoodsQo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/IPage«ZiYingGoodsEntity»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/queryProductType": {
+      "get": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "获取产品分类列表",
+        "operationId": "queryProductTypeUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/产品相关-ProductTypeEo 产品分类表"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/v1/updateGoodsExtra": {
+      "post": {
+        "tags": [
+          "GoodsControllerV1"
+        ],
+        "summary": "根据goodsId修改商品扩展信息",
+        "operationId": "updateGoodsExtra",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateParam",
+            "description": "updateParam",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ZiYingGoodsExtraVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/goods/wz/v1/getByTyingActiveGoods202112List": {
+      "get": {
+        "tags": [
+          "WzGoodsControllerV1"
+        ],
+        "summary": "获取百应搭售活动商品列表",
+        "operationId": "getByTyingActiveGoods202112List",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ByTyingActiveVo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/seller/dashboard/getStatistic": {
+      "get": {
+        "tags": [
+          "DashboardController"
+        ],
+        "summary": "商家统计数据",
+        "operationId": "getStatistic",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SellerStatisticVo"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/wx/shop/getWxGoodsDetailShopInfo/{ruId}": {
+      "get": {
+        "tags": [
+          "ShopController"
+        ],
+        "summary": "获取商品详情页的商家信息",
+        "operationId": "getWxGoodsDetailShopInfo",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "ruId",
+            "in": "path",
+            "description": "ruId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SellerShopInfoVo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/wx/shop/getWxShopInfo/{ruId}": {
+      "get": {
+        "tags": [
+          "ShopController"
+        ],
+        "summary": "获取商家信息",
+        "operationId": "getWxShopInfo",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "ruId",
+            "in": "path",
+            "description": "ruId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SellerShopInfoVo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ActGoodsInfoVo": {
+      "type": "object",
+      "properties": {
+        "actGoodsCooperationNum": {
+          "type": "integer",
+          "format": "int32",
+          "example": 100,
+          "description": "秒杀协同人数"
+        },
+        "actGoodsDiscount": {
+          "type": "number",
+          "example": 0,
+          "description": "秒杀活动折扣"
+        },
+        "actGoodsPrice": {
+          "type": "number",
+          "example": 0,
+          "description": "秒杀活动价格"
+        },
+        "actGoodsSaleNum": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0,
+          "description": "秒杀活动销量"
+        },
+        "actGoodsStock": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0,
+          "description": "秒杀活动库存"
+        },
+        "actGoodsWholesalePrice": {
+          "type": "number",
+          "example": 0,
+          "description": "秒杀活动批发价格价格"
+        },
+        "actId": {
+          "type": "integer",
+          "format": "int64",
+          "example": 0,
+          "description": "秒杀活动id"
+        },
+        "actInfoBeginTime": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1645592508L",
+          "description": "秒杀活动开始时间"
+        },
+        "actInfoBeginTimeStr": {
+          "type": "string",
+          "example": "2022-02-24 11:38",
+          "description": "秒杀活动开始时间"
+        },
+        "actInfoEndTime": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1645592508L",
+          "description": "秒杀活动结束时间"
+        },
+        "actInfoEndTimeStr": {
+          "type": "string",
+          "example": "2022-02-24 11:38",
+          "description": "秒杀活动结束时间"
+        },
+        "actInfoStatus": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-待生效；2-生效中；3-已经失效；4-强制结束",
+          "description": "秒杀活动状态"
+        },
+        "actor": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "1-全部用户；2-会员等级；3-新人专享"
+        },
+        "currentStagBeginTime": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1645592508L",
+          "description": "当前场次开始时间"
+        },
+        "currentStagEndTime": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1645592508L",
+          "description": "当前场次结束时间"
+        },
+        "isCrossDays": {
+          "type": "string",
+          "format": "byte",
+          "example": "0：否；1：是；",
+          "description": "下一个档次活动是否跨天"
+        },
+        "nextStagBeginTime": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1645592508L",
+          "description": "当前场次开始时间"
+        },
+        "nextStagEndTime": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1645592508L",
+          "description": "当前场次结束时间"
+        }
+      },
+      "title": "ActGoodsInfoVo",
+      "description": "商品秒杀信息"
+    },
+    "ActSecKillWithGoodsVo": {
+      "type": "object",
+      "properties": {
+        "actPrice": {
+          "type": "number",
+          "example": 11.99,
+          "description": "活动价格"
+        },
+        "actSaleNum": {
+          "type": "integer",
+          "format": "int32",
+          "example": 5,
+          "description": "活动销量"
+        },
+        "actStock": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "活动库存"
+        },
+        "actTitle": {
+          "type": "string",
+          "example": "xxxxxxx",
+          "description": "秒杀活动名称"
+        },
+        "actor": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "1-全部用户；2-会员等级；3-新人专享"
+        },
+        "beginTime": {
+          "type": "string",
+          "example": "2022-01-01",
+          "description": "秒杀活动开始时间"
+        },
+        "buyLimit": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0,
+          "description": "购买限制（0-不限购，>0限购）"
+        },
+        "cooperationNum": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1234,
+          "description": "协同人数"
+        },
+        "endTime": {
+          "type": "string",
+          "example": "2022-01-11",
+          "description": "秒杀活动结束时间"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "商品id"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1L",
+          "description": "活动id"
+        },
+        "inCurStage": {
+          "type": "boolean",
+          "example": true,
+          "description": "是否在当前场次"
+        },
+        "range": {
+          "type": "string",
+          "example": "1，2",
+          "description": "活动范围：1-PC客户端；2-小程序；3-商家APP,注(1,2,3)"
+        },
+        "ruId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "商家id"
+        },
+        "stage": {
+          "type": "string",
+          "description": "参与场次:多个场次分割展示"
+        },
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "活动状态:1-待生效；2-生效中；3-已经失效；4-强制结束"
+        },
+        "useCoupon": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "优惠券叠加：1-允许；2-不允许"
+        },
+        "useCouponType": {
+          "type": "string",
+          "example": 1,
+          "description": "使用优惠券类型：use_coupon=1的情况 下，1,2,3"
+        }
+      },
+      "title": "ActSecKillWithGoodsVo",
+      "description": "秒杀活动加商品信息"
+    },
+    "ByActiveWelfareVo": {
+      "type": "object",
+      "properties": {
+        "downTitle": {
+          "type": "string",
+          "example": "xxx",
+          "description": "下标题"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 3,
+          "description": "商品id"
+        },
+        "imgUrl": {
+          "type": "string",
+          "description": "图标"
+        },
+        "upTitle": {
+          "type": "string",
+          "example": "xxx",
+          "description": "上标题"
+        }
+      },
+      "title": "ByActiveWelfareVo",
+      "description": "专属福利"
+    },
+    "ByTyingActiveAdVo": {
+      "type": "object",
+      "properties": {
+        "adLink": {
+          "type": "string",
+          "example": "http://xxx.com/xxx",
+          "description": "广告链接地址"
+        },
+        "clickButtonLink": {
+          "type": "string",
+          "example": "http://xxx.com/xxx",
+          "description": "广告按钮链接地址"
+        },
+        "imageUrl": {
+          "type": "string",
+          "example": "http://xxx.com/xxx",
+          "description": "广告位图片地址"
+        }
+      },
+      "title": "ByTyingActiveAdVo",
+      "description": "百应搭售活动广告vo"
+    },
+    "ByTyingActiveGoodVo": {
+      "type": "object",
+      "properties": {
+        "tyingActiveGoodVoList": {
+          "type": "array",
+          "description": "活动商品列表",
+          "items": {
+            "$ref": "#/definitions/ByTyingActiveGoodVo"
+          }
+        },
+        "tyingGoodsList": {
+          "type": "array",
+          "description": "搭售商品列表",
+          "items": {
+            "$ref": "#/definitions/GoodsSearchVo"
+          }
+        },
+        "tyingType": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "搭售商品类型"
+        },
+        "tyingTypeName": {
+          "type": "string",
+          "example": "加装服务",
+          "description": "搭售商品名称"
+        },
+        "tyingTypeSubName": {
+          "type": "string",
+          "example": "加装服务",
+          "description": "搭售商品名称"
+        }
+      },
+      "title": "ByTyingActiveGoodVo"
+    },
+    "ByTyingActiveVo": {
+      "type": "object",
+      "properties": {
+        "activityList": {
+          "type": "array",
+          "description": "活动商品数据",
+          "items": {
+            "$ref": "#/definitions/ByTyingActiveGoodVo"
+          }
+        },
+        "byActiveWelfareVoList": {
+          "type": "array",
+          "description": "福利",
+          "items": {
+            "$ref": "#/definitions/ByActiveWelfareVo"
+          }
+        },
+        "noticeText": {
+          "type": "string",
+          "description": "提示文案"
+        }
+      },
+      "title": "ByTyingActiveVo",
+      "description": "加装搭售活动返回值"
+    },
+    "GetLocationQo": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "string",
+          "description": "维度"
+        },
+        "lng": {
+          "type": "string",
+          "description": "经度"
+        }
+      },
+      "title": "GetLocationQo",
+      "description": "获取地理位置信息"
+    },
+    "GetTouchAdListQo": {
+      "type": "object",
+      "properties": {
+        "adType": {
+          "type": "string",
+          "example": "app",
+          "description": "运营位类型"
+        },
+        "cityName": {
+          "type": "string",
+          "example": "北京",
+          "description": "城市名 从header获取"
+        },
+        "position": {
+          "type": "string",
+          "example": "lease_home",
+          "description": "运营位位置"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "userId"
+        }
+      },
+      "title": "GetTouchAdListQo",
+      "description": "商城运营banner列表qo"
+    },
+    "GoodsCategoryQo": {
+      "type": "object",
+      "properties": {
+        "cityName": {
+          "type": "string",
+          "example": "北京市",
+          "description": "城市"
+        },
+        "ruId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "店铺id"
+        },
+        "secCateId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "二级分类id"
+        },
+        "terminal": {
+          "type": "string",
+          "example": "pc wx",
+          "description": "终端"
+        },
+        "thirdCatId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "三级分类id"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 6,
+          "description": "用户id"
+        }
+      },
+      "title": "GoodsCategoryQo",
+      "description": "查询商品分类的请求体"
+    },
+    "GoodsCategoryVo": {
+      "type": "object",
+      "properties": {
+        "cateId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 5,
+          "description": "分类Id"
+        },
+        "cateName": {
+          "type": "string",
+          "example": "电脑",
+          "description": "分类名字"
+        },
+        "cateType": {
+          "type": "string",
+          "example": "cate 、 recommend、 activity",
+          "description": "分类类型"
+        },
+        "children": {
+          "type": "array",
+          "description": "子类信息",
+          "items": {
+            "$ref": "#/definitions/GoodsCategoryVo"
+          }
+        },
+        "icon": {
+          "type": "string",
+          "description": "图标"
+        },
+        "touchIcons": {
+          "type": "string",
+          "description": "图标"
+        }
+      },
+      "title": "GoodsCategoryVo",
+      "description": "查询返回的分类数据"
+    },
+    "GoodsDetailQo": {
+      "type": "object",
+      "properties": {
+        "cityName": {
+          "type": "string",
+          "example": "北京市",
+          "description": "城市"
+        },
+        "fromPage": {
+          "type": "string",
+          "example": "app商品管理详情：goodsManageDetail",
+          "description": "调用页面"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "商品id"
+        },
+        "isScan": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1：是，0：否",
+          "description": "是否是预览"
+        },
+        "number": {
+          "type": "integer",
+          "format": "int32",
+          "example": 2,
+          "description": "加车数量"
+        },
+        "screenWidth": {
+          "type": "integer",
+          "format": "int32",
+          "example": 750,
+          "description": "屏幕宽度"
+        },
+        "terminal": {
+          "type": "string",
+          "example": "wx",
+          "description": "端"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 2,
+          "description": "登录用户id"
+        }
+      },
+      "title": "GoodsDetailQo",
+      "description": "商品详情页请求参数"
+    },
+    "GoodsDetailTyingVo": {
+      "type": "object",
+      "properties": {
+        "tyingGoodsList": {
+          "type": "array",
+          "description": "搭售商品信息",
+          "items": {
+            "$ref": "#/definitions/GoodsDetailVo"
+          }
+        },
+        "tyingType": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1 2 3 4 5 6",
+          "description": "搭售类型"
+        },
+        "tyingTypeName": {
+          "type": "string",
+          "example": "1：加装服务，2：维修服务，3：远程服务，4：延保服务，5：上门服务，6：特色服务",
+          "description": "搭售类型名称"
+        }
+      },
+      "title": "GoodsDetailTyingVo",
+      "description": "商品详情页搭售信息"
+    },
+    "GoodsDetailVo": {
+      "type": "object",
+      "properties": {
+        "actGoodsInfoVo": {
+          "description": "秒杀活动商品信息",
+          "$ref": "#/definitions/ActGoodsInfoVo"
+        },
+        "actSecKillWithGoodsVo": {
+          "description": "秒杀活动加商品信息",
+          "$ref": "#/definitions/ActSecKillWithGoodsVo"
+        },
+        "appDesc": {
+          "type": "string",
+          "description": "图文"
+        },
+        "buyNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "已购买数量"
+        },
+        "channelPrice": {
+          "type": "number",
+          "example": 56.66,
+          "description": "商品渠道价"
+        },
+        "channelPriceRangeList": {
+          "type": "array",
+          "description": "价格区间列表",
+          "items": {
+            "type": "number"
+          }
+        },
+        "commentNumber": {
+          "type": "integer",
+          "format": "int32",
+          "example": 6,
+          "description": "商品评论数"
+        },
+        "disable": {
+          "type": "boolean",
+          "example": false,
+          "description": "搭售是否可售"
+        },
+        "discount": {
+          "type": "boolean",
+          "example": false,
+          "description": "搭售是否有优惠"
+        },
+        "encouragePrice": {
+          "type": "number",
+          "example": 56.66,
+          "description": "鼓励金金额"
+        },
+        "galleryList": {
+          "type": "array",
+          "description": "商品轮播图",
+          "items": {
+            "type": "string"
+          }
+        },
+        "goodsDetailList": {
+          "type": "array",
+          "description": "商品详情图列表",
+          "items": {
+            "type": "string"
+          }
+        },
+        "goodsDetailTxt": {
+          "type": "string",
+          "description": "商品详情图文本描述"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 45084,
+          "description": "商品id"
+        },
+        "goodsImg": {
+          "type": "string",
+          "description": "商品主图"
+        },
+        "goodsName": {
+          "type": "string",
+          "example": "立体清洁保养服务",
+          "description": "商品名称"
+        },
+        "goodsNoticeList": {
+          "type": "array",
+          "description": "商品头图列表",
+          "items": {
+            "type": "string"
+          }
+        },
+        "goodsNumber": {
+          "type": "integer",
+          "format": "int32",
+          "example": 8,
+          "description": "库存"
+        },
+        "goodsThumb": {
+          "type": "string",
+          "description": "商品主图小图"
+        },
+        "goodsVolumePriceVoList": {
+          "type": "array",
+          "description": "阶梯价信息",
+          "items": {
+            "$ref": "#/definitions/GoodsVolumePriceVo"
+          }
+        },
+        "isCanSale": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1：可售，0：不可售",
+          "description": "是否可售"
+        },
+        "isDelete": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1删除 0未删除",
+          "description": "删除状态"
+        },
+        "isOnSale": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1可售 0不可售",
+          "description": "可售状态"
+        },
+        "isReal": {
+          "type": "integer",
+          "format": "int32",
+          "example": "0 服务 1实物 2MA 3SaaS",
+          "description": "商品是否实物"
+        },
+        "isVertical": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1：竖着，0：横着",
+          "description": "商家APP 多sku判断是否垂直 如果有阶梯价横排，没有就竖排"
+        },
+        "lenovoParentId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 45084,
+          "description": "spuId"
+        },
+        "limitNum": {
+          "type": "integer",
+          "format": "int32",
+          "description": "商品限购数量"
+        },
+        "ruId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "商家id"
+        },
+        "salesVolume": {
+          "type": "integer",
+          "format": "int32",
+          "example": 8,
+          "description": "销量"
+        },
+        "sellerShopInfoVo": {
+          "description": "商家信息",
+          "$ref": "#/definitions/SellerShopInfoVo"
+        },
+        "shippingTempTitle": {
+          "type": "string",
+          "description": "运费模板标题"
+        },
+        "shopPrice": {
+          "type": "number",
+          "example": 56.66,
+          "description": "商品零售价"
+        },
+        "sku": {
+          "type": "array",
+          "description": "多sku信息",
+          "items": {
+            "$ref": "#/definitions/GoodsDetailVo"
+          }
+        },
+        "skuName": {
+          "type": "string",
+          "example": "基础保养",
+          "description": "商品规格名称"
+        },
+        "ssdActivityVo": {
+          "description": "ssd活动",
+          "$ref": "#/definitions/SsdActivityVo"
+        },
+        "tying": {
+          "type": "array",
+          "description": "搭售信息",
+          "items": {
+            "$ref": "#/definitions/GoodsDetailTyingVo"
+          }
+        },
+        "tyingPrice": {
+          "type": "number",
+          "example": 56.66,
+          "description": "搭售价"
+        },
+        "ziTi": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1：自提，2：非自提",
+          "description": "是否自提"
+        }
+      },
+      "title": "GoodsDetailVo",
+      "description": "商品详情页返回值"
+    },
+    "GoodsSearchPageVo": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "总条数"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页"
+        },
+        "goodsSearchVoList": {
+          "type": "array",
+          "description": "搜索的商品列表",
+          "items": {
+            "$ref": "#/definitions/GoodsSearchVo"
+          }
+        },
+        "totalPage": {
+          "type": "integer",
+          "format": "int32",
+          "description": "总页数"
+        }
+      },
+      "title": "GoodsSearchPageVo",
+      "description": "商品搜索的返回值带分页"
+    },
+    "GoodsSearchQo": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "integer",
+          "format": "int32",
+          "example": 20211111,
+          "description": "活动"
+        },
+        "addTimeOrderType": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-正序 2-倒序",
+          "description": "添加时间排序参数"
+        },
+        "cityName": {
+          "type": "string",
+          "example": "北京市",
+          "description": "所在城市名字"
+        },
+        "customFirstCateId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 2,
+          "description": "用户自定义一级分类id"
+        },
+        "customSecondCateId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 2,
+          "description": "用户自定义二级分类id"
+        },
+        "distanceOrderType": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-距离优先",
+          "description": "距离优先"
+        },
+        "fourthCatId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 4,
+          "description": "四级分类id"
+        },
+        "goodsIdList": {
+          "type": "array",
+          "description": "商品id列表",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "ifNew": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0,
+          "description": "是否新品: 0-否(默认) 1-是"
+        },
+        "ifRecommen": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-推荐",
+          "description": "推荐商品"
+        },
+        "keywords": {
+          "type": "string",
+          "example": "联想电脑",
+          "description": "搜索词"
+        },
+        "latitude": {
+          "type": "string",
+          "example": 39.097,
+          "description": "维度"
+        },
+        "longitude": {
+          "type": "string",
+          "example": 120.0987,
+          "description": "经度"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "当前页"
+        },
+        "ruId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "商品id"
+        },
+        "ruIdList": {
+          "type": "array",
+          "description": "商家列表",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "salesVolumeOrderType": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-正序 2-倒序",
+          "description": "销量排序参数"
+        },
+        "secCatId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 2,
+          "description": "二级分类id"
+        },
+        "shopPriceOrderType": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-正序 2-倒序",
+          "description": "价格排序参数"
+        },
+        "shopScoreOrderType": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-评分优先",
+          "description": "评分优先"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "页码"
+        },
+        "terminal": {
+          "type": "string",
+          "example": "wx",
+          "description": "终端"
+        },
+        "thirdCatId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 3,
+          "description": "三级分类id"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 3,
+          "description": "用户id"
+        }
+      },
+      "title": "GoodsSearchQo",
+      "description": "商品搜索的请求体"
+    },
+    "GoodsSearchVo": {
+      "type": "object",
+      "properties": {
+        "actGoodsCooperationNum": {
+          "type": "integer",
+          "format": "int32",
+          "example": 100,
+          "description": "秒杀协同人数"
+        },
+        "actGoodsPrice": {
+          "type": "number",
+          "example": 0,
+          "description": "秒杀活动价格"
+        },
+        "actGoodsWholesalePrice": {
+          "type": "number",
+          "example": 0,
+          "description": "秒杀活动批发价格价格"
+        },
+        "actId": {
+          "type": "integer",
+          "format": "int64",
+          "example": 0,
+          "description": "秒杀活动id"
+        },
+        "actInfoStatus": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-待生效；2-生效中；3-已经失效；4-强制结束",
+          "description": "秒杀活动状态"
+        },
+        "actor": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "1-全部用户；2-会员等级；3-新人专享"
+        },
+        "channelPrice": {
+          "type": "number",
+          "example": 3.45,
+          "description": "商品渠道价 - APP展示"
+        },
+        "dataSource": {
+          "type": "string",
+          "example": 1,
+          "description": "数据源"
+        },
+        "encouragePrice": {
+          "type": "number",
+          "example": 34.45,
+          "description": "鼓励金金额"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 2,
+          "description": "商品skuId"
+        },
+        "goodsName": {
+          "type": "string",
+          "example": 3,
+          "description": "商品名字"
+        },
+        "goodsThumb": {
+          "type": "string",
+          "example": "https://lenovo-test-xianniu.oss-cn-beijing.aliyuncs.com/demand/files/20211014/163417935449938.gif",
+          "description": "商品图地址"
+        },
+        "hasStock": {
+          "type": "boolean",
+          "example": true,
+          "description": "是否有库存 true有库存 false无库存"
+        },
+        "isReal": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1,
+          "description": "是否实物"
+        },
+        "isShowQi": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1：显示，2：不显示",
+          "description": "是否显示xx元起"
+        },
+        "sellerShopInfoVo": {
+          "description": "商家信息",
+          "$ref": "#/definitions/SellerShopInfoSearchVo"
+        },
+        "shopPrice": {
+          "type": "number",
+          "example": 3.45,
+          "description": "商品零售价"
+        }
+      },
+      "title": "GoodsSearchVo",
+      "description": "商品搜索的返回值"
+    },
+    "GoodsVolumePriceVo": {
+      "type": "object",
+      "properties": {
+        "channelNumber": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "商品优惠数量"
+        },
+        "channelPrice": {
+          "type": "number",
+          "example": 100,
+          "description": "商品优惠价格 元"
+        },
+        "maxNumber": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "商品优惠数量最大值"
+        },
+        "minNumber": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "商品优惠数量最小值"
+        }
+      },
+      "title": "GoodsVolumePriceVo",
+      "description": "商品阶梯价返回信息"
+    },
+    "HotWordVo": {
+      "type": "object",
+      "properties": {
+        "hotWordName": {
+          "type": "string",
+          "example": "xxx",
+          "description": "热词"
+        },
+        "hotWordUrl": {
+          "type": "string",
+          "description": "跳转url"
+        }
+      },
+      "title": "HotWordVo"
+    },
+    "IPage«ZiYingGoodsEntity»": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "hitCount": {
+          "type": "boolean"
+        },
+        "pages": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZiYingGoodsEntity"
+          }
+        },
+        "searchCount": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "IPage«ZiYingGoodsEntity»"
+    },
+    "IndexCateAdVo": {
+      "type": "object",
+      "properties": {
+        "buttonName": {
+          "type": "string",
+          "example": "xxx",
+          "description": "按钮名称"
+        },
+        "cateId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 6,
+          "description": "分类id"
+        },
+        "cateName": {
+          "type": "string",
+          "example": "xxx",
+          "description": "分类名称"
+        },
+        "cateSubName": {
+          "type": "string",
+          "example": "xxx",
+          "description": "分类子标题名称"
+        }
+      },
+      "title": "IndexCateAdVo",
+      "description": "首页分类广告"
+    },
+    "InformationExtendVo": {
+      "type": "object",
+      "properties": {
+        "bossIdentityCode": {
+          "type": "string",
+          "example": "130627xxxxxxxxxxx",
+          "description": "技服经理身份证号"
+        },
+        "bossMobilePhone": {
+          "type": "string",
+          "example": 17777777777,
+          "description": "技服经理手机号"
+        },
+        "bossName": {
+          "type": "string",
+          "example": "xxx",
+          "description": "技服经理"
+        },
+        "companyId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 6,
+          "description": "stepsFields.fid"
+        },
+        "emergencyPhone": {
+          "type": "string",
+          "example": 17777777777,
+          "description": "应急联系电话"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "example": 6,
+          "description": "主键"
+        },
+        "isMain": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "是否主站"
+        },
+        "newStationCode": {
+          "type": "string",
+          "example": 53245677,
+          "description": "新服务站编号"
+        },
+        "servicePhone": {
+          "type": "string",
+          "example": 17777777777,
+          "description": "服务咨询电话"
+        },
+        "shopId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 6,
+          "description": "information.shop_id"
+        },
+        "stationName": {
+          "type": "string",
+          "example": "xxxxx",
+          "description": "服务站名称"
+        },
+        "stationType": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "服务站类型 1=内部 2=三方"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 6,
+          "description": "用户id"
+        }
+      },
+      "title": "InformationExtendVo",
+      "description": "服务站扩展信息"
+    },
+    "SellerActivityRankingVo": {
+      "type": "object",
+      "properties": {
+        "rankingDescribe": {
+          "type": "string",
+          "description": "榜单说明"
+        },
+        "rankingName": {
+          "type": "string",
+          "description": "榜单名称"
+        }
+      },
+      "title": "SellerActivityRankingVo",
+      "description": "榜单配置"
+    },
+    "SellerShopInfoSearchVo": {
+      "type": "object",
+      "properties": {
+        "distance": {
+          "type": "string",
+          "example": "1Km",
+          "description": "距离"
+        },
+        "featureNames": {
+          "type": "string",
+          "example": "xxx,eeed",
+          "description": "经营范围"
+        },
+        "goodsList": {
+          "type": "array",
+          "description": "店内商品数据",
+          "items": {
+            "$ref": "#/definitions/GoodsSearchVo"
+          }
+        },
+        "isCollect": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "关注状态 1：关注 0：未关注"
+        },
+        "ruId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "商家id"
+        },
+        "shopLogo": {
+          "type": "string",
+          "description": "商家Logo"
+        },
+        "shopName": {
+          "type": "string",
+          "example": 1,
+          "description": "商家名称"
+        },
+        "shopScore": {
+          "type": "number",
+          "example": 4.9,
+          "description": "商家评分"
+        }
+      },
+      "title": "SellerShopInfoSearchVo",
+      "description": "商家信息"
+    },
+    "SellerShopInfoVo": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "所在市id"
+        },
+        "creditMoney": {
+          "type": "number",
+          "example": 100,
+          "description": "信用额度"
+        },
+        "district": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "所在区id"
+        },
+        "frozenMoney": {
+          "type": "number",
+          "example": 1.98,
+          "description": "冻结资金"
+        },
+        "goodsSearchVoList": {
+          "type": "array",
+          "description": "商家的商品信息",
+          "items": {
+            "$ref": "#/definitions/GoodsSearchVo"
+          }
+        },
+        "informationExtendVo": {
+          "description": "商家扩展信息",
+          "$ref": "#/definitions/InformationExtendVo"
+        },
+        "informationId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "informationId"
+        },
+        "isCollect": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "是否关注"
+        },
+        "latitude": {
+          "type": "string",
+          "example": 1,
+          "description": "维度"
+        },
+        "longitude": {
+          "type": "string",
+          "example": 1,
+          "description": "经度"
+        },
+        "mobile": {
+          "type": "string",
+          "example": 16666666666,
+          "description": "联系电话"
+        },
+        "openTimeStr": {
+          "type": "string",
+          "example": "xxx",
+          "description": "商家营业时间"
+        },
+        "payBillActivity": {
+          "type": "object",
+          "description": "买单信息"
+        },
+        "province": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "所在省id"
+        },
+        "ruId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "商家id"
+        },
+        "sellerActivityRankingInfo": {
+          "description": "活动榜单",
+          "$ref": "#/definitions/SellerActivityRankingVo"
+        },
+        "sellerMoney": {
+          "type": "number",
+          "example": 10.09,
+          "description": "商家账户金额"
+        },
+        "serviceLenovoId": {
+          "type": "string",
+          "example": 1,
+          "description": "客服lenovoId"
+        },
+        "shippingTemplateVo": {
+          "description": "运费模板信息",
+          "$ref": "#/definitions/ShippingTemplateVo"
+        },
+        "shopAddress": {
+          "type": "string",
+          "example": "xxx",
+          "description": "商家地址"
+        },
+        "shopLogo": {
+          "type": "string",
+          "description": "店铺头像"
+        },
+        "shopName": {
+          "type": "string",
+          "example": 1,
+          "description": "商家名称"
+        },
+        "shopSales": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "销量"
+        },
+        "shopScore": {
+          "type": "number",
+          "example": 1,
+          "description": "店铺评分"
+        },
+        "shopType": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "商家类型"
+        },
+        "street": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "所在街道id"
+        },
+        "supportInvoice": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1-可开 0-不可开",
+          "description": "商家 是否可开发票"
+        }
+      },
+      "title": "SellerShopInfoVo",
+      "description": "商家信息"
+    },
+    "SellerStatisticVo": {
+      "type": "object",
+      "properties": {
+        "bgColor": {
+          "type": "string",
+          "example": "#F4F9FF",
+          "description": "背景色"
+        },
+        "iconUrl": {
+          "type": "string",
+          "example": "https://baiyingxianniu.oss-cn-beijing.aliyuncs.com/uploads/tody/tody1.png",
+          "description": "icon图标"
+        },
+        "tips": {
+          "type": "string",
+          "example": "订单CA是指成交订单中的商品个数总和",
+          "description": "tips"
+        },
+        "todayNum": {
+          "type": "string",
+          "example": 100,
+          "description": "今日数量"
+        },
+        "todayTitle": {
+          "type": "string",
+          "example": "今日订单数",
+          "description": "今日标题"
+        },
+        "upDownNum": {
+          "type": "number",
+          "example": 10.09,
+          "description": "较昨日升降百分比"
+        },
+        "yesterdayNum": {
+          "type": "string",
+          "example": 90,
+          "description": "昨日数量"
+        },
+        "yesterdayTitle": {
+          "type": "string",
+          "example": "昨日订单数",
+          "description": "昨日标题"
+        }
+      },
+      "title": "SellerStatisticVo",
+      "description": "商家工作台统计数据"
+    },
+    "ShippingTemplateVo": {
+      "type": "object",
+      "properties": {
+        "freeMoney": {
+          "type": "number",
+          "example": 10.09,
+          "description": "免费额度"
+        },
+        "freightType": {
+          "type": "boolean",
+          "example": false,
+          "description": "运费类型：0不包含 1=包含"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "运费模板id"
+        },
+        "ruId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 10,
+          "description": "商家ID"
+        },
+        "shippingFee": {
+          "type": "number",
+          "example": 109,
+          "description": "基础运费"
+        },
+        "shippingTitle": {
+          "type": "string",
+          "example": "xxx",
+          "description": "运费标题"
+        },
+        "status": {
+          "type": "boolean",
+          "example": false,
+          "description": "状态：0=未生效 1=生效"
+        },
+        "type": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0,
+          "description": "类型：0=全国 1=地区"
+        }
+      },
+      "title": "ShippingTemplateVo",
+      "description": "运费模板"
+    },
+    "SsdActivityVo": {
+      "type": "object",
+      "properties": {
+        "isActivityCity": {
+          "type": "boolean",
+          "description": "是否是活动城市"
+        },
+        "isSSDGoods": {
+          "type": "boolean",
+          "description": "是否是ssd商品"
+        },
+        "showOriPrice": {
+          "type": "integer",
+          "format": "int32",
+          "description": "显示原价"
+        },
+        "unActivityCityTips": {
+          "type": "string",
+          "description": "非活动城市的提示信息"
+        }
+      },
+      "title": "SsdActivityVo",
+      "description": "ssd加装活动"
+    },
+    "TouchAdVo": {
+      "type": "object",
+      "properties": {
+        "adId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "广告位id"
+        },
+        "adLink": {
+          "type": "string",
+          "example": "http://xxx.com/xxx",
+          "description": "广告链接地址"
+        },
+        "adName": {
+          "type": "string",
+          "example": "企业采租",
+          "description": "广告位名字"
+        },
+        "endDate": {
+          "type": "string",
+          "example": "2023-12-25 11:08:17",
+          "description": "生效结束时间"
+        },
+        "imageUrl": {
+          "type": "string",
+          "example": "http://xxx.com/xxx",
+          "description": "广告位图片地址"
+        },
+        "mediaType": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0,
+          "description": "媒体类型"
+        },
+        "miniType": {
+          "type": "integer",
+          "format": "int32",
+          "example": "1 2",
+          "description": "根据跳转方式不同增加的字段"
+        },
+        "positionId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "广告位位置id"
+        },
+        "startDate": {
+          "type": "string",
+          "example": "2020-12-25 11:08:17",
+          "description": "生效开始时间"
+        }
+      },
+      "title": "TouchAdVo",
+      "description": "商城运营位的vo"
+    },
+    "ZiYingGoodsEntity": {
+      "type": "object",
+      "properties": {
+        "addTime": {
+          "type": "integer",
+          "format": "int32",
+          "description": "首次添加时间"
+        },
+        "approveSale": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "立项可售"
+        },
+        "crmFirstCateId": {
+          "type": "integer",
+          "format": "int64",
+          "example": "5l",
+          "description": "crm一级分类"
+        },
+        "crmFirstCateName": {
+          "type": "string",
+          "example": "5l",
+          "description": "一级分类名称"
+        },
+        "crmSecondCateId": {
+          "type": "integer",
+          "format": "int64",
+          "example": "5l",
+          "description": "crm二级分类"
+        },
+        "crmSecondCateName": {
+          "type": "string",
+          "example": "5l",
+          "description": "二级分类名称"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "商品id"
+        },
+        "goodsImg": {
+          "type": "string",
+          "description": "商品实际大小图片"
+        },
+        "goodsName": {
+          "type": "string",
+          "description": "商品名称"
+        },
+        "goodsNumber": {
+          "type": "integer",
+          "format": "int32",
+          "example": 100,
+          "description": "sku库存"
+        },
+        "goodsUnit": {
+          "type": "string",
+          "description": "单位 "
+        },
+        "isDelete": {
+          "type": "integer",
+          "format": "int32",
+          "example": 100,
+          "description": "删除标示：0-正常；1-删除"
+        },
+        "isOnSale": {
+          "type": "integer",
+          "format": "int32",
+          "example": 100,
+          "description": "该商品是否开放销售，1，是；0，否 "
+        },
+        "isReal": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否是实物，1，是；0，否；比如虚拟卡就为0，不是实物;2:ma商品；3：saas商品； "
+        },
+        "lastUpdate": {
+          "type": "integer",
+          "format": "int32",
+          "description": "最后更新时间"
+        },
+        "materialCode": {
+          "type": "string",
+          "example": 31085923,
+          "description": "联想sku对应物料码"
+        },
+        "peiZhi": {
+          "type": "string",
+          "example": "xxxx",
+          "description": "备注信息"
+        },
+        "pn": {
+          "type": "string",
+          "description": "物料编号"
+        },
+        "shopPrice": {
+          "type": "number",
+          "example": 100.01,
+          "description": "零售价（含税）"
+        },
+        "shopSale": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "自营店可售"
+        },
+        "skuName": {
+          "type": "string",
+          "description": "sku名称"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "商品归属商家id "
+        },
+        "ziyingBeizhu": {
+          "type": "string",
+          "example": "xxxx",
+          "description": "备注信息"
+        }
+      },
+      "title": "ZiYingGoodsEntity",
+      "description": "商品"
+    },
+    "ZiYingGoodsExtraVo": {
+      "type": "object",
+      "properties": {
+        "approveSale": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "立项可售"
+        },
+        "billGoodsName": {
+          "type": "string",
+          "example": "技术服务费",
+          "description": "商品开票名称"
+        },
+        "crmFirstCateId": {
+          "type": "integer",
+          "format": "int64",
+          "example": "5l",
+          "description": "crm一级分类"
+        },
+        "crmSecondCateId": {
+          "type": "integer",
+          "format": "int64",
+          "example": "5l",
+          "description": "crm二级分类"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "example": 5,
+          "description": "商品id"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "example": 5,
+          "description": "自增id"
+        },
+        "peiZhi": {
+          "type": "string",
+          "example": "xxxx",
+          "description": "配置信息"
+        },
+        "shopSale": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1,
+          "description": "自营店可售"
+        },
+        "ziyingBeizhu": {
+          "type": "string",
+          "example": "xxxx",
+          "description": "备注信息"
+        }
+      },
+      "title": "ZiYingGoodsExtraVo",
+      "description": "自营商品扩展信息返回的结构体"
+    },
+    "ZiYingGoodsQo": {
+      "type": "object",
+      "properties": {
+        "crmFirstCateId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "crm的大类id"
+        },
+        "crmSecondCateId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "crm的小类id"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页面"
+        },
+        "goodsId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "商品id"
+        },
+        "goodsIds": {
+          "type": "array",
+          "description": "商品id集合",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "goodsName": {
+          "type": "string",
+          "description": "商品名称"
+        },
+        "isDelete": {
+          "type": "integer",
+          "format": "int32",
+          "description": "-1查询全部，0-未删除"
+        },
+        "isOnSale": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上下架状态:0-全部；1-未上架；2-已上架"
+        },
+        "materialCode": {
+          "type": "string",
+          "example": 31085923,
+          "description": "联想sku对应物料码"
+        },
+        "peiZhi": {
+          "type": "string",
+          "description": "商品配置"
+        },
+        "pn": {
+          "type": "string",
+          "description": "物料编号"
+        },
+        "saleRange": {
+          "type": "integer",
+          "format": "int32",
+          "description": "可售范围:0-全部；1-商城售卖；2-立项售卖"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "分页条数"
+        },
+        "skuName": {
+          "type": "string",
+          "description": "sku名称"
+        }
+      },
+      "title": "ZiYingGoodsQo",
+      "description": "商品搜索"
+    },
+    "产品相关-ProductTypeEo 产品分类表": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "分类编码"
+        },
+        "enabledMark": {
+          "type": "boolean",
+          "description": "有效标志"
+        },
+        "financialType": {
+          "type": "string",
+          "description": "财务分类"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "id"
+        },
+        "id2": {
+          "type": "string",
+          "description": "id-同步蜻蜓id"
+        },
+        "layers": {
+          "type": "integer",
+          "format": "int32",
+          "description": "分类层级"
+        },
+        "levelFive": {
+          "type": "number",
+          "description": "五级价阈值"
+        },
+        "levelFour": {
+          "type": "number",
+          "description": "四级价阈值"
+        },
+        "levelOne": {
+          "type": "number",
+          "description": "一级价阈值"
+        },
+        "levelThree": {
+          "type": "number",
+          "description": "三级价阈值"
+        },
+        "levelTwo": {
+          "type": "number",
+          "description": "二级价阈值"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "父id"
+        },
+        "pid2": {
+          "type": "string",
+          "description": "父级id-同步蜻蜓大类id"
+        },
+        "productManager": {
+          "type": "string",
+          "description": "产品经理"
+        },
+        "son": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/产品相关-ProductTypeEo 产品分类表"
+          }
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "taxRate": {
+          "type": "integer",
+          "format": "int32",
+          "description": "'税率"
+        },
+        "typeGroup": {
+          "type": "string",
+          "description": "产品组"
+        },
+        "typeModel": {
+          "type": "string",
+          "description": "产品类型"
+        },
+        "typeName": {
+          "type": "string",
+          "description": "分类名称"
+        }
+      },
+      "title": "产品相关-ProductTypeEo 产品分类表"
+    }
+  }
+}

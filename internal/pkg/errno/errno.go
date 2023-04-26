@@ -82,6 +82,12 @@ const (
 	ErrCouponDoNotCondition                   = 20065
 	ErrPayFail                                = 20066
 	ErrGoodsExist                             = 20067
+	ErrUrlFail                                = iota
+	ErrReadUrlFail
+	ErrCreateFileFail
+	ErrWriteFileFail
+	ErrNotLatestVersionFail
+	ErrUrlTypeFailNotSupport
 )
 
 // CodeAlertMap 错图码映射错误提示，展示给用户
@@ -167,6 +173,12 @@ var CodeAlertMap = map[int]string{
 	ErrCouponDoNotCondition:                   "优惠券不满足使用条件",
 	ErrPayFail:                                "支付失败",
 	ErrGoodsExist:                             "商品名称已经存在",
+	ErrUrlFail:                                "获取url数据失败!",
+	ErrReadUrlFail:                            "读取url数据内容失败!",
+	ErrCreateFileFail:                         "创建或打开文件失败!",
+	ErrWriteFileFail:                          "写入文件失败!",
+	ErrNotLatestVersionFail:                   "未获取到任何有效的版本号数据!",
+	ErrUrlTypeFailNotSupport:                  "错误路径类型不支持的路径类型",
 }
 
 // CodeMsgMap 错误码映射错误信息，不展示给用户
@@ -252,4 +264,10 @@ var CodeMsgMap = map[int]string{
 	ErrCouponDoNotCondition:                   "ErrCouponDoNotCondition",
 	ErrPayFail:                                "ErrPayFail",
 	ErrGoodsExist:                             "ErrGoodsExist",
+	ErrUrlFail:                                "ErrUrlFail",
+	ErrReadUrlFail:                            "ErrReadUrlFail",
+	ErrCreateFileFail:                         "ErrCreateFileFail",
+	ErrWriteFileFail:                          "ErrWriteFileFail",
+	ErrNotLatestVersionFail:                   "ErrNotLatestVersionFail",
+	ErrUrlTypeFailNotSupport:                  "ErrUrlTypeFailNotSupport",
 }
