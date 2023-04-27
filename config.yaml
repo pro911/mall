@@ -8,7 +8,7 @@ app:
   resources: "resources/"
 
 http_server:
-  port: 8000
+  port: 9501
 
 log:
   level: "debug"
